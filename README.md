@@ -25,7 +25,7 @@ ER図
 <https://app.diagrams.net/#G17lrPNh_ySsC62XzYZTGhL7RXcrM7htlh>
 
 テーブル定義書  
-<https://docs.google.com/spreadsheets/d/1GrihIfWc5oyqZkKEze6m6W_cvzH2DAX1/edit#gid=1739957604>
+<https://docs.google.com/spreadsheets/d/1GrihIfWc5oyqZkKEze6m6W_cvzH2DAX1/edit#gid=1243549839>
 
 アプリケーション詳細設計書  
 <https://docs.google.com/spreadsheets/d/1P9pCN-uQozIHk6WfIcSBDYDVEJx3eQmFeilxlpnXswQ/edit#gid=0>
