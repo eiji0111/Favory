@@ -1,0 +1,29 @@
+<div class="row my-5 d-flex flex-column">
+  <div class="col-6 mx-auto p-5 border border-dark rounded-lg shadow">
+    <div class="col text-center"><h1>新規登録</h1></div>
+    <div class="col form-group">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'mb-3 form-control' %>
+        <%= f.label :nickname %>
+        <%= f.text_field :nickname, class: 'mb-3 form-control' %>
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'mb-3 form-control' %>
+        <%= f.label :birthday %><br>
+        <%= f.date_select :birthday, use_month_numbers: true,start_year: 1971,
+            end_year: (Time.now.year - 10), default: Date.new(2001, 1, 1), class: 'form-control' %><br>
+        <div class="col my-3 text-center">
+          <%= f.radio_button :sex, :man %>
+          <%= f.label :sex, "男性", value: :man %>
+          <%= f.radio_button :sex, :woman %>
+          <%= f.label :sex, "女性", value: :woman %>
+        </div>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'mb-5 form-control' %>
+        <div class="col text-center">
+          <%= f.submit '新規登録', class: 'btn btn-primary btn-lg rounded-pill' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
