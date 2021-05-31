@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     patch 'customers/update' => 'customers#update', as: 'update_customer'
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
-    get 'customers/:id/followed' => 'relationships#followed', as: 'followed' # お気に入り一覧
+    get 'customers/followed' => 'relationships#followed', as: 'followed' # お気に入り一覧
     post 'follow/:id' => 'relationships#follow', as: 'follow' # お気に入りする
     post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す
     get 'chat/:id' => 'chats#show', as: 'chat'
