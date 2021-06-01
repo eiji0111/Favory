@@ -3,15 +3,11 @@ Admin.create!(
   password: "aaaaaa"
   )
   
-  from = Time.parse("1950/01/01")
-  to = Time.parse("2000/01/01")
-  date = Random.rand(from..to)
-  
 Customer.create!(
   name: "石原さとみ",
   nickname: "さとみん",
   email: "b@b",
-  birthday: date,
+  birthday: Date.new(1986, 12, 24),
   sex: 1,
   password: "bbbbbb",
   address: 13,
@@ -21,6 +17,6 @@ Customer.create!(
   jobs: "女優",
   annual_income: 7,
   marriage_history: "なし",
-  children: false,
+  children: 0,
   personality: 1
   )

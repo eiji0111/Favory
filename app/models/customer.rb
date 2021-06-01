@@ -6,18 +6,20 @@ class Customer < ApplicationRecord
 
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-  has_many :followings, through: :active_relationships, source: :followed
-  has_many :followers, through: :passive_relationships, source: :follower
+  has_many :following_customer, through: :active_relationships, source: :followed
+  has_many :follower_customer, through: :passive_relationships, source: :follower
   has_many :customer_rooms
   has_many :chats
   has_many :rooms, through: :customer_rooms
   
+  attachment :profile_image
   validates :name, presence: true
   validates :nickname, presence: true
   validates :email, presence: true, uniqueness: true
   validates :sex, presence: true
 
   enum sex: { man: 0, woman: 1 }
+  enum children: { "なし": 0, "あり": 1 }
   enum address: {
     "秘密": 0, "北海道": 1, "青森県": 2, "岩手県": 3, "宮城県": 4, "秋田県": 5, "山形県": 6, "福島県": 7,
     "茨城県": 8, "栃木県": 9, "群馬県": 10, "埼玉県": 11, "千葉県": 12, "東京都": 13, "神奈川県": 14,
@@ -40,18 +42,23 @@ class Customer < ApplicationRecord
     "まじめ": 4, "社交的": 5, "おおらか": 6
   },_suffix: true
 
-  # フォローする
+  # お気に入りする
   def follow(customer_id)
     active_relationships.create(followed_id: customer_id)
   end
   
-  # フォローを外す
+  # お気に入りから外す
   def unfollow(customer_id)
     active_relationships.find_by(followed_id: customer_id).destroy
   end
   
-  # すでにフォローしているのか確認
+  # すでにお気に入りしているのか確認
   def following?(customer)
-    followings.include?(customer)
+    following_customer.include?(customer)
+  end
+  
+  # 生年月日から年齢を計算
+  def age
+    (Date.today.strftime('%Y%m%d').to_i - birthday.strftime('%Y%m%d').to_i) / 10000
   end
 end

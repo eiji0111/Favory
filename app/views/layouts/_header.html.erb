@@ -18,7 +18,7 @@
         </li>
       <% elsif customer_signed_in? %>
         <li class="nav-item mr-3">
-          <%= link_to 'マイページ', mypage_path, class: 'btn btn-outline-dark' %>
+          <%= link_to 'マイページ', customer_path(current_customer), class: 'btn btn-outline-dark' %>
         </li>
         <li class="nav-item mr-3">
           <%= link_to '男性会員一覧', customers_path, class: 'btn btn-outline-dark' %>

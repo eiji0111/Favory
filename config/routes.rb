@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :admin, controllers: {
-    sessions: 'admin/sessions',
+    sessions: 'admin/sessions'
   }
   
   namespace :admin do
@@ -17,11 +17,9 @@ Rails.application.routes.draw do
   
   scope module: :public do
     root 'homes#top'
-    get 'customers/my_page' => 'customers#show', as: 'mypage'
-    get 'customers/edit' => 'customers#edit', as: 'edit_customer'
-    patch 'customers/update' => 'customers#update', as: 'update_customer'
-    get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
-    patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
+    get 'customers/unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    patch 'customers/:id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_customer'
+    put 'customers/withdraw/:name' => 'customers#withdraw'
     get 'customers/followed' => 'relationships#followed', as: 'followed' # お気に入り一覧
     post 'follow/:id' => 'relationships#follow', as: 'follow' # お気に入りする
     post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す
@@ -30,7 +28,7 @@ Rails.application.routes.draw do
     get 'contacts/confirm' => 'contacts#confirm', as: 'confirm_contact'
     get 'contacts/complete' => 'contacts#complete', as: 'complete_contact'
     
-    resources :customers, only: [:index]
+    resources :customers, only: [:index, :show, :edit, :update]
     resources :chats, only: [:create]
     resources :contacts, only: [:new, :create]
   end
