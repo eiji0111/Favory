@@ -1,0 +1,94 @@
+<%= form_with model: @customer, local:true do |f| %>
+  <div class="row my-5">
+    <div class="col-4 text-center">
+      <% if @customer.sex == 'man' %>
+        <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg", fallback: "no-image-man.jpg", class: 'rounded-circle' %>
+        <%= f.attachment_field :profile_image, class: "form-control-file customer_image" %>
+      <% else %>
+        <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg", fallback: "no-image-woman.jpg", class: 'rounded-circle' %>
+        <%= f.attachment_field :profile_image, class: "form-control-file customer_image" %>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <table class="table table-borderless">
+        <thead>
+          <th scope="col"><h4>基本情報</h4></th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><%= f.label :name, '名前' %></th>
+            <td><%= f.text_field :name, class: "form-control name" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :nickname, 'ニックネーム' %></th>
+            <td><%= f.text_field :nickname, class: "form-control nickname" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :birthday, '生年月日' %></th>
+            <td>
+              <%= f.date_select :birthday, use_month_numbers: true,start_year: 1971,
+                  end_year: (Time.now.year - 10), class: 'form-control birthday' %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :address, '居住地' %></th>
+            <td>
+              <%= f.select :address, Customer.addresses.keys, class: "form-control address" %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :hobby, '趣味' %></th>
+            <td><%= f.text_field :hobby, class: "form-control hobby" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :jobs, '職業' %></th>
+            <td><%= f.text_field :jobs, class: "form-control jobs" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :annual_income, '年収' %></th>
+            <td><%= f.select :annual_income, Customer.annual_incomes.keys, class: "form-control annual_income" %> 万</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <table class="table table-borderless">
+        <thead>
+          <th scope="col"><h4>恋愛</h4></th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><%= f.label :marriage_history, '結婚歴' %></th>
+            <td><%= f.text_field :marriage_history, class: "form-control marriage_history" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :children, '子供の有無' %></th>
+            <td><%= f.select :children, Customer.children.keys, class: "form-control children" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :personality, '性格' %></th>
+            <td><%= f.select :personality, Customer.personalities.keys, class: "form-control personality" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row mt-5 d-flex flex-column">
+    <div class="col">
+      <% if current_customer.id != @customer.id %>
+        <% if current_customer.following?(@customer) %>
+          <%= link_to 'お気に入りから外す', unfollow_path(@customer.id), method: :POST,class: "btn btn-success btn-sm" %>
+        <% else %>
+          <%= link_to 'お気に入りする', follow_path(@customer.id), method: :POST,class: "btn btn-success btn-sm" %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-2 offset-2"><h4>ひとこと</h4></div>
+    <div class="col-6 mx-auto"><%= f.text_field :one_thing, class: "form-control one_thing" %></div>
+    <div class="col d-flex justify-content-center mt-3">
+      <%= f.submit class: 'btn btn-secondary' %>
+    </div>
+  </div>
+<% end %>
