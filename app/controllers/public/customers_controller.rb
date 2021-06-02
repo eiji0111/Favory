@@ -3,11 +3,11 @@ class Public::CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update]
   
   def men
-    @customers = Customer.where(sex: 0).page(params[:page])
+    @customers = Customer.where(sex: 0, is_valid: true).page(params[:page])
   end
   
   def women
-    @customers = Customer.where(sex: 1).page(params[:page])
+    @customers = Customer.where(sex: 1, is_valid: true).page(params[:page])
   end
   
   def show
