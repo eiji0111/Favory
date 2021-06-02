@@ -13,7 +13,7 @@ class Public::CustomersController < ApplicationController
   
   def update
     if @customer.update(customer_params)
-      flash[:notice] = 'プロフィールを更新しました'
+      flash[:success] = 'プロフィールを更新しました'
       redirect_to customer_path(@customer)
     else
       render "edit"
@@ -21,9 +21,14 @@ class Public::CustomersController < ApplicationController
   end
   
   def unsubscribe
+    @customer = Customer.find_by(email: params[:email])
   end
   
   def withdraw
+    @customer = Customer.find_by(email: params[:email])
+    @customer.update(is_valid: false)
+    reset_session
+    redirect_to root_path
   end
   
   private
