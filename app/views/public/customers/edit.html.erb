@@ -5,7 +5,7 @@
         <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg", fallback: "no-image-man.jpg", class: 'rounded-circle' %>
         <%= f.attachment_field :profile_image, class: "form-control-file customer_image" %>
       <% else %>
-        <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg", fallback: "no-image-woman.jpg", class: 'rounded-circle' %>
+        <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg", fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
         <%= f.attachment_field :profile_image, class: "form-control-file customer_image" %>
       <% end %>
     </div>
@@ -89,6 +89,7 @@
     <div class="col-6 mx-auto"><%= f.text_field :one_thing, class: "form-control one_thing" %></div>
     <div class="col d-flex justify-content-center mt-3">
       <%= f.submit class: 'btn btn-secondary' %>
+      <%= link_to '退会をご希望の方はこちらから', confirm_unsubscribe_path(@customer.email) %>
     </div>
   </div>
 <% end %>

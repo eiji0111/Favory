@@ -17,9 +17,9 @@ Rails.application.routes.draw do
   
   scope module: :public do
     root 'homes#top'
-    get 'customers/unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
-    patch 'customers/:id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_customer'
-    put 'customers/withdraw/:name' => 'customers#withdraw'
+    get 'customers/unsubscribe/:email' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    patch 'customers/:id/withdraw/:email' => 'customers#withdraw', as: 'withdraw_customer'
+    put 'customers/withdraw/:email' => 'customers#withdraw'
     get 'customers/followed' => 'relationships#followed', as: 'followed' # お気に入り一覧
     post 'follow/:id' => 'relationships#follow', as: 'follow' # お気に入りする
     post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す

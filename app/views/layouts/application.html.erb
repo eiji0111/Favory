@@ -13,7 +13,7 @@
     <div class="container-lg">
       <%= render 'layouts/header' %>
       <main>
-        <p id="notice"><%= notice %></p>
+        <%= render 'layouts/flash_messages' %>
         <%= yield %>
       </main>
       <%= render 'layouts/footer' %>
