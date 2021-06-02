@@ -4,6 +4,8 @@ class Public::CustomersController < ApplicationController
   
   def men
     @customers = Customer.where(sex: 0, is_valid: true).page(params[:page])
+    # @q = Customer.where(sex: 0, is_valid: true).ransack(params[:q])
+    # @customers = @q.result(distinct: true).page(params[:page])
   end
   
   def women
