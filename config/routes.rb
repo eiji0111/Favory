@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
+    get 'customers/men' => 'customers#men', as: 'men' # 男性会員一覧
+    get 'customers/women' => 'customers#women', as: 'women' # 女性会員一覧
     
-    resources :customers, only: [:index, :show, :edit, :update]
+    resources :customers, only: [:show, :edit, :update]
   end
   
   devise_for :customers, controllers: {
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   
   scope module: :public do
     root 'homes#top'
+    get 'customers/men' => 'customers#men', as: 'customer_men' # 男性会員一覧
+    get 'customers/women' => 'customers#women', as: 'customer_women' # 女性会員一覧
     get 'customers/unsubscribe/:email' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch 'customers/:id/withdraw/:email' => 'customers#withdraw', as: 'withdraw_customer'
     put 'customers/withdraw/:email' => 'customers#withdraw'
@@ -28,7 +32,7 @@ Rails.application.routes.draw do
     get 'contacts/confirm' => 'contacts#confirm', as: 'confirm_contact'
     get 'contacts/complete' => 'contacts#complete', as: 'complete_contact'
     
-    resources :customers, only: [:index, :show, :edit, :update]
+    resources :customers, only: [:show, :edit, :update]
     resources :chats, only: [:create]
     resources :contacts, only: [:new, :create]
   end

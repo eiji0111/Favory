@@ -1,5 +1,5 @@
 <div class="row my-5">
-  <div class="col-6">
+  <div class="col-12 col-md-6 text-center">
     <% if @customer.sex == 'man' %>
       <%= attachment_image_tag @customer, :profile_image, size: "400x400", format: "jpeg",
           fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
@@ -8,7 +8,7 @@
           fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
     <% end %>
   </div>
-  <div class="col-3">
+  <div class="col-12 col-md-3">
     <table class="table table-borderless">
       <thead>
         <th scope="col"><h4>基本情報</h4></th>
@@ -48,7 +48,7 @@
       </tbody>
     </table>
   </div>
-  <div class="col-3">
+  <div class="col-12 col-md-3">
     <table class="table table-borderless">
       <thead>
         <th scope="col"><h4>恋愛</h4></th>
