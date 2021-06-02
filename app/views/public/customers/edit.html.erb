@@ -82,6 +82,8 @@
   </div>
   <div class="row text-center">
     <div class="col-12 mb-3"><%= f.submit class: 'btn btn-secondary' %></div>
-    <div class="col-12 ml-md-auto"><%= link_to '退会をご希望の方はこちらから', confirm_unsubscribe_path(@customer.email) %></div>
+    <div class="col-12 ml-md-auto">
+      <%= link_to '退会をご希望の方はこちらから', confirm_unsubscribe_path(@customer.email) %>
+    </div>
   </div>
 <% end %>
