@@ -2,7 +2,12 @@ class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
   before_action :set_customer, only: [:show, :edit, :update]
   
-  def index
+  def men
+    @customers = Customer.where(sex: 0).page(params[:page])
+  end
+  
+  def women
+    @customers = Customer.where(sex: 1).page(params[:page])
   end
   
   def show

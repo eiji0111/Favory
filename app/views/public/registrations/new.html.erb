@@ -11,7 +11,7 @@
         <%= f.text_field :email, class: 'mb-3 form-control' %>
         <%= f.label :birthday %><br>
         <%= f.date_select :birthday, use_month_numbers: true,start_year: 1971,
-            end_year: (Time.now.year - 10), default: Date.new(2001, 1, 1), class: 'form-control' %><br>
+            end_year: (Time.now.year - 10), default: Date.new(1996, 1, 1), class: 'form-control' %><br>
         <div class="col my-3 text-center">
           <%= f.radio_button :sex, :man %>
           <%= f.label :sex, "男性", value: :man %>
