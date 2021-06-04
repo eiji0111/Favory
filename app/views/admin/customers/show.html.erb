@@ -1,0 +1,83 @@
+<div class="row mt-5">
+  <div class="col-12 col-lg-4 text-center">
+    <% if @customer.sex == 'man' %>
+      <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg",
+          fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+    <% else %>
+      <%= attachment_image_tag @customer, :profile_image,size: "300x300", format: "jpeg",
+          fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+    <% end %>
+    <% if @customer.is_valid? %>
+      <p>会員ステータス <span class="text-success">有効</span></p>
+    <% else %>
+      <p>会員ステータス <span class="text-muted">退会済み</span></p>
+    <% end %>
+  </div>
+  <div class="col-10 col-md-6 col-lg-4 mx-auto">
+    <table class="table table-borderless">
+      <thead>
+        <th scope="col"><h4>基本情報</h4></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">名前</th>
+          <td><%= @customer.name %></td>
+        </tr>
+        <tr>
+          <th scope="row">ニックネーム</th>
+          <td><%= @customer.nickname %></td>
+        </tr>
+        <tr>
+          <th scope="row">年齢</th>
+          <td><%= @customer.age %>歳</td>
+        </tr>
+        <tr>
+          <th scope="row">居住地</th>
+          <td><%= @customer.address %></td>
+        </tr>
+        <tr>
+          <th scope="row">趣味</th>
+          <td><%= @customer.hobby %></td>
+        </tr>
+        <tr>
+          <th scope="row">職業</th>
+          <td><%= @customer.jobs %></td>
+        </tr>
+        <tr>
+          <th scope="row">年収</th>
+          <td><%= @customer.annual_income %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-10 col-md-6 col-lg-4 mx-auto">
+    <table class="table table-borderless">
+      <thead>
+        <th scope="col"><h4>恋愛</h4></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">結婚歴</th>
+          <td><%= @customer.marriage_history %></td>
+        </tr>
+        <tr>
+          <th scope="row">子供の有無</th>
+          <td><%= @customer.children %></td>
+        </tr>
+        <tr>
+          <th scope="row">性格</th>
+          <td><%= @customer.personality %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row d-flex flex-column">
+  <div class="col-5 offset-md-1 offset-lg-2"><h4>ひとこと</h4></div>
+  <div class="col-10 col-md-8 col-lg-6 mx-auto border border-dark rounded-lg"><p><%= @customer.one_thing %></p></div>
+  <div class="col mt-4 text-center">
+    <%= link_to '編集する', edit_admin_customer_path, class: 'btn btn-secondary rounded-pill' %>
+  </div>
+</div>

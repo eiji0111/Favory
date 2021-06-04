@@ -1,0 +1,93 @@
+<%= form_with model: @customer, url: admin_customer_path(@customer), local:true do |f| %>
+  <div class="row mt-5">
+    <div class="col-12 col-lg-4 text-center">
+      <% if @customer.sex == 'man' %>
+        <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg",
+            fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+      <% else %>
+        <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg",
+            fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+      <% end %>
+      <div class="col-12 col-md-6 col-lg-12 mx-auto">
+        <%= f.attachment_field :profile_image, class: "form-control-file customer_image" %>
+      </div>
+      <div class="form-control border-0">
+        会員ステータス：
+        <%= label :is_valid_true, "有効" %>
+        <%= f.radio_button :is_valid, true %>
+        <%= label :is_valid_false, "無効" %>
+        <%= f.radio_button :is_valid, false %>
+      </div>
+      <h4 class="mt-3 text-left"><%= f.label :one_thing, 'ひとこと' %></h4>
+      <%= f.text_field :one_thing, class: "form-control one_thing" %>
+    </div>
+    <div class="col-12 col-md-7 col-lg-4">
+      <table class="table table-borderless">
+        <thead>
+          <th scope="col"><h4>基本情報</h4></th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><%= f.label :name, '名前' %></th>
+            <td><%= f.text_field :name, class: "form-control name" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :nickname, 'ニックネーム' %></th>
+            <td><%= f.text_field :nickname, class: "form-control nickname" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :birthday, '生年月日' %></th>
+            <td>
+              <%= f.date_select :birthday, use_month_numbers: true,start_year: 1971,
+                  end_year: (Time.now.year - 10), class: 'form-control birthday' %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :address, '居住地' %></th>
+            <td>
+              <%= f.select :address, Customer.addresses.keys, class: "form-control address" %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :hobby, '趣味' %></th>
+            <td><%= f.text_field :hobby, class: "form-control hobby" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :jobs, '職業' %></th>
+            <td><%= f.text_field :jobs, class: "form-control jobs" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :annual_income, '年収' %></th>
+            <td><%= f.select :annual_income, Customer.annual_incomes.keys, class: "form-control annual_income" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-md-5 col-lg-4">
+      <table class="table table-borderless">
+        <thead>
+          <th scope="col"><h4>恋愛</h4></th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><%= f.label :marriage_history, '結婚歴' %></th>
+            <td><%= f.text_field :marriage_history, class: "form-control marriage_history" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :children, '子供の有無' %></th>
+            <td><%= f.select :children, Customer.children.keys, class: "form-control children" %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= f.label :personality, '性格' %></th>
+            <td><%= f.select :personality, Customer.personalities.keys, class: "form-control personality" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-12 mb-3"><%= f.submit class: 'btn btn-secondary rounded-pill' %></div>
+  </div>
+<% end %>
