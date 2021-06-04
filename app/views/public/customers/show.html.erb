@@ -9,11 +9,13 @@
     <% end %>
     <div class="col py-2">
       <% if current_customer != @customer %>
-        <% if current_customer.following?(@customer) %>
-          <%= link_to 'お気に入りから外す', unfollow_path(@customer.id), method: :POST,class: "btn btn-success btn-sm" %>
-        <% else %>
-          <%= link_to 'お気に入りする', follow_path(@customer.id), method: :POST,class: "btn btn-success btn-sm" %>
-        <% end %>
+        <div id="follow_form">
+          <% if current_customer.following?(@customer) %>
+            <%= render partial: "public/relationships/unfollow", locals: { customer: @customer } %>
+          <% else %>
+            <%= render partial: "public/relationships/follow", locals: { customer: @customer } %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
@@ -82,7 +84,7 @@
 </div>
 <div class="row d-flex flex-column">
   <div class="col-5 offset-md-1 offset-lg-2"><h4>ひとこと</h4></div>
-  <div class="col-10 col-md-8 col-lg-6 mx-auto border border-dark rounded-lg"><p><%= @customer.one_thing %></p></div>
+  <div class="col-10 col-md-8 col-lg-6 mx-auto"><p><%= @customer.one_thing %></p></div>
   <div class="col mt-4 text-center">
     <% if current_customer == @customer %>
       <%= link_to '編集する', edit_customer_path, class: 'btn btn-secondary rounded-pill' %>
