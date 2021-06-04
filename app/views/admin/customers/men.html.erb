@@ -23,7 +23,13 @@
             </td>
             <td class="align-middle"><%= customer.age %> 歳</td>
             <td class="align-middle"><%= customer.address %></td>
-            <td class="align-middle"><%= customer.is_valid %></td>
+            <td class="align-middle">
+              <% if customer.is_valid? %>
+                <span class="text-success">有効</span>
+              <% else %>
+                <span class="text-muted">無効</span>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
