@@ -58,7 +58,7 @@
   - VPC
   - EC2
   - RDS
-  - Route
+  - Route53
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1nqrAB20gnEBvI_QPzxBkJDO9FE0FekSOV_cdJ2uol1k/edit#gid=0>
