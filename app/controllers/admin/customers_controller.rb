@@ -3,11 +3,13 @@ class Admin::CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update]
   
   def men
-    @customers = Customer.where(sex: 0).page(params[:page]).per(10)
+    @q = Customer.where(sex: 0).ransack(params[:q])
+    @customers = @q.result(distinct: true).page(params[:page]).per(10)
   end
   
   def women
-    @customers = Customer.where(sex: 1).page(params[:page]).per(10)
+    @q = Customer.where(sex: 1).ransack(params[:q])
+    @customers = @q.result(distinct: true).page(params[:page]).per(10)
   end
   
   def show
