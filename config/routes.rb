@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す
     get 'chat/:id' => 'chats#show', as: 'chat'
     post 'contacts/back' => 'contacts#back', as: 'back_contact' # お問い合わせ確認画面へ戻る
-    get 'contacts/confirm' => 'contacts#confirm', as: 'confirm_contact'
+    post 'contacts/confirm' => 'contacts#confirm', as: 'confirm_contact'
     get 'contacts/complete' => 'contacts#complete', as: 'complete_contact'
     
     resources :customers, only: [:show, :edit, :update]
