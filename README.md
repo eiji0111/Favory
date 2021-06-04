@@ -48,6 +48,18 @@
 ### 詳細設計
 [アプリケーション詳細設計書](https://docs.google.com/spreadsheets/d/1P9pCN-uQozIHk6WfIcSBDYDVEJx3eQmFeilxlpnXswQ/edit#gid=0)
 
+## 使用技術
+- Ruby 2.6.3
+- Ruby on Rails 5.2.6
+- MySQL 5.7.22
+- Nginx
+- Puma
+- AWS
+  - VPC
+  - EC2
+  - RDS
+  - Route
+
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1nqrAB20gnEBvI_QPzxBkJDO9FE0FekSOV_cdJ2uol1k/edit#gid=0>
 

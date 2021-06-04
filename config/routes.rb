@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     put 'customers/withdraw/:email' => 'customers#withdraw'
     get 'customers/followed' => 'relationships#followed', as: 'followed' # お気に入り一覧
     post 'follow/:id' => 'relationships#follow', as: 'follow' # お気に入りする
-    post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す
+    delete 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す
     get 'chat/:id' => 'chats#show', as: 'chat'
     post 'contacts/back' => 'contacts#back', as: 'back_contact' # お問い合わせ確認画面へ戻る
     post 'contacts/confirm' => 'contacts#confirm', as: 'confirm_contact'
