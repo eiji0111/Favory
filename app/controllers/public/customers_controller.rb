@@ -3,12 +3,12 @@ class Public::CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update]
   
   def men
-    @q = Customer.where(sex: 0).ransack(params[:q])
+    @q = Customer.where(sex: 0, is_valid: true).ransack(params[:q])
     @customers = @q.result(distinct: true).page(params[:page]).per(10)
   end
   
   def women
-    @q = Customer.where(sex: 1).ransack(params[:q])
+    @q = Customer.where(sex: 1, is_valid: true).ransack(params[:q])
     @customers = @q.result(distinct: true).page(params[:page]).per(10)
   end
   
@@ -23,7 +23,7 @@ class Public::CustomersController < ApplicationController
       flash[:success] = 'プロフィールを更新しました'
       redirect_to customer_path(@customer)
     else
-      render "edit"
+      render :edit
     end
   end
   
