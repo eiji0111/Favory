@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     post 'follow/:id' => 'relationships#follow', as: 'follow' # お気に入りする
     delete 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す
     get 'chat/:id' => 'chats#show', as: 'chat'
+    delete 'chat/:id' => 'chats#destroy', as: 'chat_destroy'
     post 'contacts/back' => 'contacts#back', as: 'back_contact' # お問い合わせ確認画面へ戻る
     post 'contacts/confirm' => 'contacts#confirm', as: 'confirm_contact'
     get 'contacts/complete' => 'contacts#complete', as: 'complete_contact'
