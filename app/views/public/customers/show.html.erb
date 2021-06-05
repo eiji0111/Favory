@@ -7,17 +7,20 @@
       <%= attachment_image_tag @customer, :profile_image,size: "300x300", format: "jpeg",
           fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
     <% end %>
-    <div class="col py-2">
       <% if current_customer != @customer %>
-        <div id="follow_form">
-          <% if current_customer.following?(@customer) %>
-            <%= render partial: "public/relationships/unfollow", locals: { customer: @customer } %>
-          <% else %>
-            <%= render partial: "public/relationships/follow", locals: { customer: @customer } %>
-          <% end %>
+        <div class="col py-2">
+            <div id="follow_form">
+              <% if current_customer.following?(@customer) %>
+                <%= render partial: "public/relationships/unfollow", locals: { customer: @customer } %>
+              <% else %>
+                <%= render partial: "public/relationships/follow", locals: { customer: @customer } %>
+              <% end %>
+            </div>
+        </div>
+        <div class="col">
+          <%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-primary btn-sm rounded-pill' %>
         </div>
       <% end %>
-    </div>
   </div>
   <div class="col-10 col-md-6 col-lg-4 mx-auto">
     <table class="table table-borderless">
