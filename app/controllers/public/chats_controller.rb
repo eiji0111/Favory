@@ -1,6 +1,7 @@
 class Public::ChatsController < ApplicationController
   before_action :authenticate_customer!
   
+  
   def show
     @customer = Customer.find(params[:id])
     rooms = current_customer.customer_rooms.pluck(:room_id)
@@ -21,6 +22,14 @@ class Public::ChatsController < ApplicationController
   
   def create
     @chat = current_customer.chats.new(chat_params)
+    @chat.save
+    redirect_to request.referer
+  end
+  
+  def destroy
+    @chat = current_customer.chats.find(params[:id])
+    @chat.destroy
+    redirect_to request.referer
   end
   
   private
