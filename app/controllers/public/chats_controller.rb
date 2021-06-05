@@ -35,6 +35,6 @@ class Public::ChatsController < ApplicationController
   private
   
   def chat_params
-     params.require(:chat).permit(:message, :room_id)
+    params.require(:chat).permit(:message, :room_id)
   end
 end

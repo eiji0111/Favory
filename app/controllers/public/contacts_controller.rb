@@ -17,6 +17,7 @@ class Public::ContactsController < ApplicationController
   
   def create
     if @contact.save
+      ContactMailer.send_mail(@contact).deliver_now
       redirect_to complete_contact_path
     else
       render :new
