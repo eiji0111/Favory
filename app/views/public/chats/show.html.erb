@@ -1,2 +1,55 @@
-<h1>Public::Chats#show</h1>
-<p>Find me in app/views/public/chats/show.html.erb</p>
+<div class="row">
+  <div class="col-xs-6 mx-auto my-5">
+    <h3><%= @customer.nickname %>さんとのチャット</h3>
+    <table class="message table">
+      <thead>
+        <tr>
+          <th style="text-align: right; font-size: 20px;">
+            <% if current_customer.sex == 'man' %>
+              <%= attachment_image_tag current_customer, :profile_image, size: "50x50", format: "jpeg",
+                  fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+            <% else %>
+              <%= attachment_image_tag current_customer, :profile_image,size: "50x50", format: "jpeg",
+                  fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+            <% end %>
+            <%= current_customer.nickname %>
+          </th>
+          <th style="text-align: left; font-size: 20px;">
+            <%= @customer.nickname %>
+            <% if @customer.sex == 'man' %>
+              <%= attachment_image_tag @customer, :profile_image, size: "50x50", format: "jpeg",
+                  fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+            <% else %>
+              <%= attachment_image_tag @customer, :profile_image,size: "50x50", format: "jpeg",
+                  fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+            <% end %>
+          </th>
+        </tr>
+      </thead>
+      <% @chats.each do |chat| %>
+        <% if chat.customer_id == current_customer.id %>
+        <tbody>
+          <tr>
+            <th>
+              <p style="text-align: left;"><%= chat.message %></p>
+            </th>
+            <th></th>
+          </tr>
+        <% else %>
+          <tr>
+            <th></th>
+            <th><p style="text-align: right;"><%= chat.message %></p></th>
+          </tr>
+        </tbody>
+        <% end %>
+      <% end %>
+    </table>
+    <%= form_with model: @chat, remote: true do |f| %>
+      <div class="form-group">
+        <%= f.text_field :message %>
+        <%= f.hidden_field :room_id %>
+        <%= f.submit "送信", class: "btn btn-sm btn-success chat-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
