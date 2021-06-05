@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :admin, controllers: {
-    sessions: 'admin/sessions'
+    sessions: 'admin/sessions',
   }
   
   namespace :admin do
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get 'customers/men' => 'customers#men', as: 'men' # 男性会員一覧
     get 'customers/women' => 'customers#women', as: 'women' # 女性会員一覧
     
-    resources :customers, only: [:show, :edit, :update]
+    resources :customers, only: [:show, :edit, :update, :destroy]
   end
   
   devise_for :customers, controllers: {

@@ -88,6 +88,9 @@
     </div>
   </div>
   <div class="row text-center">
-    <div class="col-12 mb-3"><%= f.submit class: 'btn btn-secondary rounded-pill' %></div>
+    <div class="col-12">
+      <%= f.submit class: 'btn btn-secondary rounded-pill mr-3' %>
+      <%= link_to '削除する', admin_customer_path(@customer), data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger rounded-pill' %>
+    </div>
   </div>
 <% end %>

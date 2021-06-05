@@ -1,6 +1,6 @@
 class Admin::CustomersController < ApplicationController
   before_action :authenticate_admin!
-  before_action :set_customer, only: [:show, :edit, :update]
+  before_action :set_customer, only: [:show, :edit, :update, :destroy]
   
   def men
     @q = Customer.where(sex: 0).ransack(params[:q])
@@ -23,7 +23,25 @@ class Admin::CustomersController < ApplicationController
       flash[:success] = '会員情報を更新しました'
       redirect_to admin_customer_path(@customer)
     else
-      render "edit"
+      render :edit
+    end
+  end
+  
+  def destroy
+    if @customer.sex == man
+      if @customer.destroy
+        flash[:success] = '会員を削除しました'
+        redirect_to admin_men_path
+      else
+        render :edit
+      end
+    else
+      if @customer.destroy
+        flash[:success] = '会員を削除しました'
+        redirect_to admin_women_path
+      else
+        render :edit
+      end
     end
   end
   
@@ -34,7 +52,8 @@ class Admin::CustomersController < ApplicationController
   end
   
   def customer_params
-    params.require(:customer).permit(:profile_image, :nickname, :birthday, :address, :is_valid, :hobby, :jobs,
-                                     :annual_income, :marriage_history, :children, :personality, :one_thing)
+    params.require(:customer).permit(:profile_image, :nickname, :birthday, :address, :is_valid,
+                                     :hobby, :jobs, :annual_income, :marriage_history, :children,
+                                     :personality, :one_thing)
   end
 end

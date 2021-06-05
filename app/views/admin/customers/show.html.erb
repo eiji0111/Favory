@@ -38,11 +38,23 @@
         </tr>
         <tr>
           <th scope="row">趣味</th>
-          <td><%= @customer.hobby %></td>
+          <td>
+            <% if @customer.hobby.empty? %>
+              未設定
+            <% else %>
+              <%= @customer.hobby %>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <th scope="row">職業</th>
-          <td><%= @customer.jobs %></td>
+          <td>
+            <% if @customer.jobs.empty? %>
+              未設定
+            <% else %>
+              <%= @customer.jobs %>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <th scope="row">年収</th>
@@ -60,7 +72,13 @@
       <tbody>
         <tr>
           <th scope="row">結婚歴</th>
-          <td><%= @customer.marriage_history %></td>
+          <td>
+            <% if @customer.marriage_history.empty? %>
+              未設定
+            <% else %>
+              <%= @customer.marriage_history %>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <th scope="row">子供の有無</th>
@@ -74,9 +92,19 @@
     </table>
   </div>
 </div>
-<div class="row d-flex flex-column">
-  <div class="col-5 offset-md-1 offset-lg-2"><h4>ひとこと</h4></div>
-  <div class="col-10 col-md-8 col-lg-6 mx-auto border border-dark rounded-lg"><p><%= @customer.one_thing %></p></div>
+<div class="row">
+  <div class="col-12 offset-md-1 offset-lg-4">
+    <h4>ひとこと</h4>
+    <p>
+      <% if @customer.one_thing.empty? %>
+        はじめまして！よろしくお願いします！
+      <% else %>
+        <%= @customer.one_thing %>
+      <% end %>
+    </p>
+  </div>
+</div>
+<div class="row">
   <div class="col mt-4 text-center">
     <%= link_to '編集する', edit_admin_customer_path, class: 'btn btn-secondary rounded-pill' %>
   </div>
