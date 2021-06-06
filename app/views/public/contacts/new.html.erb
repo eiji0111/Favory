@@ -5,9 +5,9 @@
       <%= form_with model: @contact, url: confirm_contact_path, local: true do |f| %>
       <%= f.label :name, class: 'col col-md-3 offset-md-1' %>
       <%= f.text_field :name, class: 'col-10 col-md-7 mx-auto mb-3 form-control' %>
-      <%= f.label :email, class: 'col col-md-3 offset-md-1' %>
+      <%= f.label :email, class: 'col col-md-5 offset-md-1' %>
       <%= f.email_field :email, class: 'col-10 col-md-7 mx-auto mb-3 form-control' %>
-      <%= f.label :content, "お問い合わせ内容" %>
+      <%= f.label :content %>
       <%= f.text_area :content,class: 'mb-3 form-control' %>
       <div class="col text-center">
         <%= f.submit '確認画面へ', class: 'btn btn-primary rounded-pill' %>
