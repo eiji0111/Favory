@@ -1,7 +1,65 @@
-<div class="row">
-  <div class="col">
-    <h1>Public::Homes#top</h1>
-    <p>Find me in app/views/public/homes/top.html.erb</p>
-    <%= link_to 'はじめよう', new_customer_session_path, class: 'btn btn-primary' %>
+<div class="jumbotron jumbotron-fulid top-image">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="d-md-none">Favoryで</h1>
+        <h2 class="d-md-none">運命の出会いを...</h2>
+        <h1 class="d-none d-md-block display-4">Favoryで</h1>
+        <h1 class="d-none d-md-block display-4">運命の出会いを...</h1>
+        <%= link_to 'はじめよう', new_customer_session_path, onfocus: "this.blur();",
+            class: 'btn btn-gradient text-white my-3 rounded-pill' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2>Favory ファボリー とは</h2>
+    </div>
+    <div class="col-12 py-3 text-center">
+      <p>
+        お気に入り（favorite）<br>
+        と<br>
+        ある物体の集まり（-ry）<br>
+        を組み合わせた言葉です。<br>
+        自分の選んだお気に入りの中から<br>
+        運命の一人と出会えることを期待しています。
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12 py-3">
+      <h2>使い方は簡単3STEP</h2>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <%= image_tag 'signup-image.png', style: 'width: 100%;' %>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <%= image_tag 'favorite-image.png', style: 'width: 100%;' %>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <%= image_tag 'chatting-image.png', style: 'width: 100%;' %>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

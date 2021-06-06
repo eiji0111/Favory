@@ -1,14 +1,14 @@
-<footer class="footer">
-  <div class="container">
-    <div class="col"><%= image_tag 'logo-img.jpg', size: "110x45" %></div>
-    <div class="col d-flex align-items-center">
-      <%= link_to '', root_path, class: 'ml-1 fab fa-twitter-square fa-2x pr-1 header_icon' %>
-      <%= link_to '', root_path, class: 'ml-1 fab fa-instagram-square fa-2x pr-1 header_icon' %>
-      <%= link_to '', root_path, class: 'ml-1 fab fa-youtube-square fa-2x pr-1 header_icon' %>
-    <% unless admin_signed_in? %>
-      <%= link_to 'お問い合わせ', new_contact_path, class: 'ml-auto btn btn-primary btn-sm rounded-pill' %>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12"><%= image_tag 'logo-image.png', size: "110x45" %></div>
+    <div class="col-12 d-flex align-items-center">
+      <%= link_to '', root_path, class: 'ml-1 fab fa-twitter-square fa-2x pr-1 footer_icon' %>
+      <%= link_to '', root_path, class: 'ml-1 fab fa-instagram-square fa-2x pr-1 footer_icon' %>
+      <%= link_to '', root_path, class: 'ml-1 fab fa-youtube-square fa-2x pr-1 footer_icon' %>
+      <% unless admin_signed_in? %>
+        <%= link_to 'お問い合わせ', new_contact_path, class: 'ml-auto btn btn-primary btn-sm rounded-pill' %>
+      <% end %>
     </div>
-    <div class="col"><p><small>&copy; Favory, Inc, Made by Mori</small></p></div>
+    <div class="col-12"><p><small>&copy; Favory, Inc, Made by Mori</small></p></div>
   </div>
-</footer>
+</div>

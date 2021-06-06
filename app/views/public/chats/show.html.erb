@@ -1,61 +1,63 @@
-<div class="row">
-  <div class="col-xs-6 col-md-8 col-lg-8 mx-auto my-5">
-    <table class="message table">
-      <thead>
-        <tr>
-          <th style="text-align: left; font-size: 20px;">
-            <%= link_to customer_path(current_customer) do %>
-              <% if current_customer.sex == 'man' %>
-                <%= attachment_image_tag current_customer, :profile_image, size: "50x50", format: "jpeg",
-                    fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
-              <% else %>
-                <%= attachment_image_tag current_customer, :profile_image,size: "50x50", format: "jpeg",
-                    fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
-              <% end %>
-            <% end %>
-            <p><%= current_customer.nickname %></p>
-          </th>
-          <th style="text-align: right; font-size: 20px;">
-            <%= link_to customer_path(@customer) do %>
-              <% if @customer.sex == 'man' %>
-                <%= attachment_image_tag @customer, :profile_image, size: "50x50", format: "jpeg",
-                    fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
-              <% else %>
-                <%= attachment_image_tag @customer, :profile_image,size: "50x50", format: "jpeg",
-                    fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
-              <% end %>
-            <% end %>
-            <p><%= @customer.nickname %></p>
-          </th>
-        </tr>
-      </thead>
-      <% @chats.each do |chat| %>
-        <% if chat.customer_id == current_customer.id %>
-        <tbody>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-md-8 col-lg-8 mx-auto my-5">
+      <table class="message table">
+        <thead>
           <tr>
-            <th>
-              <%= link_to ' ', chat_destroy_path(chat), method: :delete, class: 'far fa-times-circle text-danger' %>
-              <p class="p-1 d-inline-block border border-success rounded-pill" style="text-align: left;">
-                <%= chat.message %>
-              </p>
+            <th style="text-align: left; font-size: 20px;">
+              <%= link_to customer_path(current_customer) do %>
+                <% if current_customer.sex == 'man' %>
+                  <%= attachment_image_tag current_customer, :profile_image, size: "50x50", format: "jpeg",
+                      fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+                <% else %>
+                  <%= attachment_image_tag current_customer, :profile_image,size: "50x50", format: "jpeg",
+                      fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+                <% end %>
+              <% end %>
+              <p><%= current_customer.nickname %></p>
             </th>
-            <th></th>
+            <th style="text-align: right; font-size: 20px;">
+              <%= link_to customer_path(@customer) do %>
+                <% if @customer.sex == 'man' %>
+                  <%= attachment_image_tag @customer, :profile_image, size: "50x50", format: "jpeg",
+                      fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+                <% else %>
+                  <%= attachment_image_tag @customer, :profile_image,size: "50x50", format: "jpeg",
+                      fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+                <% end %>
+              <% end %>
+              <p><%= @customer.nickname %></p>
+            </th>
           </tr>
-        <% else %>
-          <tr>
-            <th></th>
-            <th><p class="p-1 float-right d-inline-block border border-success rounded-pill" style="text-align: right;"><%= chat.message %></p></th>
-          </tr>
-        </tbody>
+        </thead>
+        <% @chats.each do |chat| %>
+          <% if chat.customer_id == current_customer.id %>
+          <tbody>
+            <tr>
+              <th>
+                <%= link_to ' ', chat_destroy_path(chat), method: :delete, class: 'far fa-times-circle text-danger' %>
+                <p class="p-1 d-inline-block border border-success rounded-pill" style="text-align: left;">
+                  <%= chat.message %>
+                </p>
+              </th>
+              <th></th>
+            </tr>
+          <% else %>
+            <tr>
+              <th></th>
+              <th><p class="p-1 float-right d-inline-block border border-success rounded-pill" style="text-align: right;"><%= chat.message %></p></th>
+            </tr>
+          </tbody>
+          <% end %>
         <% end %>
+      </table>
+      <%= form_with model: @chat, local: true do |f| %>
+        <div class="form-group">
+          <%= f.text_field :message %>
+          <%= f.hidden_field :room_id %>
+          <%= f.submit "送信", class: "btn btn-sm btn-success chat-btn" %>
+        </div>
       <% end %>
-    </table>
-    <%= form_with model: @chat, local: true do |f| %>
-      <div class="form-group">
-        <%= f.text_field :message %>
-        <%= f.hidden_field :room_id %>
-        <%= f.submit "送信", class: "btn btn-sm btn-success chat-btn" %>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>
