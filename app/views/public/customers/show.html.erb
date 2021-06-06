@@ -1,124 +1,126 @@
-<div class="row mt-5">
-  <div class="col-12 col-lg-4 text-center">
-    <% if @customer.sex == 'man' %>
-      <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg",
-          fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
-    <% else %>
-      <%= attachment_image_tag @customer, :profile_image,size: "300x300", format: "jpeg",
-          fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
-    <% end %>
-      <% if current_customer != @customer %>
-        <div class="col py-2">
-            <div id="follow_form">
-              <% if current_customer.following?(@customer) %>
-                <%= render partial: "public/relationships/unfollow", locals: { customer: @customer } %>
-              <% else %>
-                <%= render partial: "public/relationships/follow", locals: { customer: @customer } %>
-              <% end %>
-            </div>
-        </div>
-        <div class="col">
-          <%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-primary btn-sm rounded-pill' %>
-        </div>
-      <% end %>
-  </div>
-  <div class="col-10 col-md-6 col-lg-4 mx-auto">
-    <table class="table table-borderless">
-      <thead>
-        <th scope="col"><h4>基本情報</h4></th>
-        <th></th>
-      </thead>
-      <tbody>
-        <% if current_customer == @customer %>
-        <tr>
-          <th scope="row">名前</th>
-          <td><%= @customer.name %></td>
-        </tr>
-        <% end %>
-        <tr>
-          <th scope="row">ニックネーム</th>
-          <td><%= @customer.nickname %></td>
-        </tr>
-        <tr>
-          <th scope="row">年齢</th>
-          <td><%= @customer.age %>歳</td>
-        </tr>
-        <tr>
-          <th scope="row">居住地</th>
-          <td><%= @customer.address %></td>
-        </tr>
-        <tr>
-          <th scope="row">趣味</th>
-          <td>
-            <% if @customer.hobby.empty? %>
-              未設定
-            <% else %>
-              <%= @customer.hobby %>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">職業</th>
-          <td>
-            <% if @customer.jobs.empty? %>
-              未設定
-            <% else %>
-              <%= @customer.jobs %>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">年収</th>
-          <td><%= @customer.annual_income %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-10 col-md-6 col-lg-4 mx-auto">
-    <table class="table table-borderless">
-      <thead>
-        <th scope="col"><h4>恋愛</h4></th>
-        <th></th>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">結婚歴</th>
-          <td>
-            <% if @customer.marriage_history.empty? %>
-              未設定
-            <% else %>
-              <%= @customer.marriage_history %>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">子供の有無</th>
-          <td><%= @customer.children %></td>
-        </tr>
-        <tr>
-          <th scope="row">性格</th>
-          <td><%= @customer.personality %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="row">
-  <div class="col-12 offset-md-1 offset-lg-4">
-    <h4>ひとこと</h4>
-    <p>
-      <% if @customer.one_thing.empty? %>
-        はじめまして！よろしくお願いします！
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12 col-lg-4 text-center">
+      <% if @customer.sex == 'man' %>
+        <%= attachment_image_tag @customer, :profile_image, size: "300x300", format: "jpeg",
+            fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
       <% else %>
-        <%= @customer.one_thing %>
+        <%= attachment_image_tag @customer, :profile_image,size: "300x300", format: "jpeg",
+            fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
       <% end %>
-    </p>
+        <% if current_customer != @customer %>
+          <div class="col py-2">
+              <div id="follow_form">
+                <% if current_customer.following?(@customer) %>
+                  <%= render partial: "public/relationships/unfollow", locals: { customer: @customer } %>
+                <% else %>
+                  <%= render partial: "public/relationships/follow", locals: { customer: @customer } %>
+                <% end %>
+              </div>
+          </div>
+          <div class="col">
+            <%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-primary btn-sm rounded-pill' %>
+          </div>
+        <% end %>
+    </div>
+    <div class="col-10 col-md-6 col-lg-4 mx-auto">
+      <table class="table table-borderless">
+        <thead>
+          <th scope="col"><h4>基本情報</h4></th>
+          <th></th>
+        </thead>
+        <tbody>
+          <% if current_customer == @customer %>
+          <tr>
+            <th scope="row">名前</th>
+            <td><%= @customer.name %></td>
+          </tr>
+          <% end %>
+          <tr>
+            <th scope="row">ニックネーム</th>
+            <td><%= @customer.nickname %></td>
+          </tr>
+          <tr>
+            <th scope="row">年齢</th>
+            <td><%= @customer.age %>歳</td>
+          </tr>
+          <tr>
+            <th scope="row">居住地</th>
+            <td><%= @customer.address %></td>
+          </tr>
+          <tr>
+            <th scope="row">趣味</th>
+            <td>
+              <% if @customer.hobby.empty? %>
+                未設定
+              <% else %>
+                <%= @customer.hobby %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">職業</th>
+            <td>
+              <% if @customer.jobs.empty? %>
+                未設定
+              <% else %>
+                <%= @customer.jobs %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">年収</th>
+            <td><%= @customer.annual_income %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-10 col-md-6 col-lg-4 mx-auto">
+      <table class="table table-borderless">
+        <thead>
+          <th scope="col"><h4>恋愛</h4></th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">結婚歴</th>
+            <td>
+              <% if @customer.marriage_history.empty? %>
+                未設定
+              <% else %>
+                <%= @customer.marriage_history %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">子供の有無</th>
+            <td><%= @customer.children %></td>
+          </tr>
+          <tr>
+            <th scope="row">性格</th>
+            <td><%= @customer.personality %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col mt-4 text-center">
-    <% if current_customer == @customer %>
-      <%= link_to '編集する', edit_customer_path, class: 'btn btn-secondary rounded-pill' %>
-    <% end %>
+  <div class="row">
+    <div class="col-12 col-md-11 col-lg-8 offset-md-1 offset-lg-4">
+      <h4>ひとこと</h4>
+      <p>
+        <% if @customer.one_thing.empty? %>
+          はじめまして！よろしくお願いします！
+        <% else %>
+          <%= @customer.one_thing %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mt-4 text-center">
+      <% if current_customer == @customer %>
+        <%= link_to '編集する', edit_customer_path, class: 'btn btn-secondary rounded-pill' %>
+      <% end %>
+    </div>
   </div>
 </div>
