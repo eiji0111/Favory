@@ -1,6 +1,31 @@
 ja:
-  enums:
-    customer:
-      sex:
-        man: '男性'
-        woman: '女性'
+  activerecord:
+    attributes:
+      customer:
+        name: "お名前"
+        nickname: "ニックネーム"
+        birthday: "生年月日"
+        sex: "性別"
+        one_thing: "ひとこと"
+        hobby: "趣味"
+        jobs: "職業"
+        annual_income: "年収"
+        marriage_history: "結婚歴"
+        children: "子供の有無"
+        personality: "性格"
+        email: "メールアドレス"
+        address: "居住地"
+        password: "パスワード"
+        password_confirmation: "パスワード(確認用)"
+      admin:
+        email: "メールアドレス"
+        password: "パスワード"
+      contact:
+        name: "お名前"
+        email: "メールアドレス"
+        content: "お問い合わせ内容"
+    enums:
+      customer:
+        sex:
+          man: '男性'
+          woman: '女性'
