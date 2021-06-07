@@ -1,11 +1,23 @@
 <div class="container">
+  <div class="col d-flex justify-content-end align-items-end">
+    <%= sort_link(@q, :created_at, "新着順") %>
+  </div>
   <div class="row">
-    <nav class="col-md-3 d-none d-md-block bg-light">
+    <nav class="col-12 col-md-3 bg-light sidebar py-3 mb-3 rounded">
       <div class="sidebar-sticky">
         <%= search_form_for @q, url: customer_men_path do |f| %>
         <div class="col mb-3">
+          <%= f.label :nickname_cont, 'ニックネーム' %>
+          <%= f.search_field :nickname_cont, class: 'form-control form-control-sm' %>
+        </div>
+        <div class="col mb-3">
           <%= f.label :address_eq, "居住地" %>
           <%= f.select :address_eq, Customer.addresses.map{|k, v|[k, v]}, {prompt: "選択してください"}, class: 'form-control form-control-sm' %>
+        </div>
+        <div class="col mb-3">
+          <%= f.label :birthday_to_age_gteq, "年齢", class: 'col-form-label' %>
+          <%= f.number_field :birthday_to_age_gteq, class: 'form-control form-control-sm' %>以上
+          <%= f.number_field :birthday_to_age_lt, class: 'form-control form-control-sm' %>未満
         </div>
         <div class="col text-center">
           <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill' %>
@@ -13,31 +25,28 @@
         <% end %>
       </div>
     </nav>
-    <div class="col d-flex justify-content-end align-items-end">
-      <%= sort_link(@q, :created_at, "新着順") %>
+    <div class="d-flex flex-wrap col-md-9 col-lg-9 px-4">
+      <% @customers.each do |customer| %>
+        <div class="col-6 col-md-4 col-lg-3 text-center mb-4">
+          <%= link_to customer_path(customer) do %>
+            <%= attachment_image_tag customer, :profile_image, size: '150x150', format: "jpeg",
+                fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+          <% end %>
+          <p class="mb-0">
+            <%= customer.age %>歳 
+            <% if customer.address != "秘密" %>
+              <%= customer.address %>
+            <% end %>
+          </p>
+          <p>
+            <% if (Time.zone.now.prev_day(3)..Time.zone.now).cover?(customer.created_at) %>
+              <span class="new-tag">new</span>
+            <% end %>
+            <%= customer.nickname %>
+          </p>
+        </div>
+      <% end %>
     </div>
-  </div>  
-  <div class="row mt-5">
-    <% @customers.each do |customer| %>
-      <div class="col-6 col-md-3 col-lg-2 text-center mb-4">
-        <%= link_to customer_path(customer) do %>
-          <%= attachment_image_tag customer, :profile_image, size: '150x150', format: "jpeg",
-              fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
-        <% end %>
-        <p class="mb-0">
-          <%= customer.age %>歳 
-          <% if customer.address != "秘密" %>
-            <%= customer.address %>
-          <% end %>
-        </p>
-        <p>
-          <% if (Time.zone.now.prev_day(3)..Time.zone.now).cover?(customer.created_at) %>
-            <span class="new-tag">new</span>
-          <% end %>
-          <%= customer.nickname %>
-        </p>
-      </div>
-    <% end %>
   </div>
   <div class="row">
     <div class="col d-flex justify-content-center">
