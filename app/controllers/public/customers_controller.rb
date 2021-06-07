@@ -4,12 +4,14 @@ class Public::CustomersController < ApplicationController
   
   def men
     @q = Customer.where(sex: 0, is_valid: true).ransack(params[:q])
-    @customers = @q.result(distinct: true).page(params[:page]).per(10)
+    @q.sorts = 'created_at asc' if @q.sorts.empty?
+    @customers = @q.result(distinct: true).page(params[:page])
   end
   
   def women
     @q = Customer.where(sex: 1, is_valid: true).ransack(params[:q])
-    @customers = @q.result(distinct: true).page(params[:page]).per(10)
+    @q.sorts = 'created_at asc' if @q.sorts.empty?
+    @customers = @q.result(distinct: true).page(params[:page])
   end
   
   def show
@@ -45,7 +47,7 @@ class Public::CustomersController < ApplicationController
   end
   
   def customer_params
-    params.require(:customer).permit(:profile_image, :nickname, :birthday, :address,
+    params.require(:customer).permit(:name, :profile_image, :nickname, :birthday, :address,
                                      :hobby, :jobs, :annual_income, :marriage_history,
                                      :children, :personality, :one_thing)
   end

@@ -4,11 +4,13 @@ class Admin::CustomersController < ApplicationController
   
   def men
     @q = Customer.where(sex: 0).ransack(params[:q])
+    @q.sorts = 'created_at asc' if @q.sorts.empty?
     @customers = @q.result(distinct: true).page(params[:page]).per(10)
   end
   
   def women
     @q = Customer.where(sex: 1).ransack(params[:q])
+    @q.sorts = 'created_at asc' if @q.sorts.empty?
     @customers = @q.result(distinct: true).page(params[:page]).per(10)
   end
   
@@ -28,7 +30,7 @@ class Admin::CustomersController < ApplicationController
   end
   
   def destroy
-    if @customer.sex == man
+    if @customer.sex == 'man'
       if @customer.destroy
         flash[:success] = '会員を削除しました'
         redirect_to admin_men_path
@@ -52,8 +54,8 @@ class Admin::CustomersController < ApplicationController
   end
   
   def customer_params
-    params.require(:customer).permit(:profile_image, :nickname, :birthday, :address, :is_valid,
-                                     :hobby, :jobs, :annual_income, :marriage_history, :children,
-                                     :personality, :one_thing)
+    params.require(:customer).permit(:name, :profile_image, :nickname, :birthday, :sex, :address,
+                                     :is_valid, :hobby, :jobs, :annual_income, :marriage_history,
+                                     :children, :personality, :one_thing)
   end
 end

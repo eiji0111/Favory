@@ -5,42 +5,42 @@
       <%= link_to 'お気に入りしてくれた人', follower_path, class: 'btn btn-primary btn-sm rounded-pill' %>
       <%= link_to 'マッチング済', matchers_path, class: 'btn btn-primary btn-sm rounded-pill' %>
     </div>
-    <% if @followeds.blank? %>
+    <% if @followers.blank? %>
       <div class="col text-center">
         <h6 class="d-md-none">
-          お気に入りしているユーザーはいません。<br>
-          気になるユーザーをお気に入りしてみよう！
+          お気に入りしてくれたユーザーはいません。<br>
+          個性あふれるプロフィールにしてみよう！
         </h6>
         <h3 class="d-none d-md-block">
-          お気に入りしているユーザーはいません。<br>
-          気になるユーザーをお気に入りしてみよう！
+          お気に入りしてくれたユーザーはいません。<br>
+          個性あふれるプロフィールにしてみよう！
         </h3>
       </div>
     <% end %>
-    <% @followeds.each do |followed| %>
+    <% @followers.each do |follower| %>
       <div class="col-6 col-md-3 col-lg-2 text-center mb-4">
-        <%= link_to customer_path(followed) do %>
-          <%= attachment_image_tag followed, :profile_image, size: '150x150', format: "jpeg",
+        <%= link_to customer_path(follower) do %>
+          <%= attachment_image_tag follower, :profile_image, size: '150x150', format: "jpeg",
               fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
         <% end %>
         <p class="mb-0">
-          <%= followed.age %>歳 
-          <% if followed.address != "秘密" %>
-            <%= followed.address %>
+          <%= follower.age %>歳 
+          <% if follower.address != "秘密" %>
+            <%= follower.address %>
           <% end %>
         </p>
         <p>
-          <% if (Time.zone.now.prev_day(3)..Time.zone.now).cover?(followed.created_at) %>
+          <% if (Time.zone.now.prev_day(3)..Time.zone.now).cover?(follower.created_at) %>
             <span class="new-tag">new</span>
           <% end %>
-          <%= followed.nickname %>
+          <%= follower.nickname %>
         </p>
       </div>
     <% end %>
   </div>
   <div class="row">
     <div class="col d-flex justify-content-center">
-      <%= paginate @followeds %>
+      <%= paginate @followers %>
     </div>
   </div>
 </div>
