@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     patch 'customers/:id/withdraw/:email' => 'customers#withdraw', as: 'withdraw_customer'
     put 'customers/withdraw/:email' => 'customers#withdraw'
     get 'customers/followed' => 'relationships#followed', as: 'followed' # お気に入り一覧
+    get 'customers/follower' => 'relationships#follower', as: 'follower' # お気に入りされた一覧
+    get 'customers/matchers' => 'relationships#matchers', as: 'matchers' # 互いにお気に入りしている一覧
     post 'follow/:id' => 'relationships#follow', as: 'follow' # お気に入りする
     delete 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す
     get 'chat/:id' => 'chats#show', as: 'chat'

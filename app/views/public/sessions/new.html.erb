@@ -1,16 +1,21 @@
-<div class="row my-5 d-flex flex-column">
-  <div class="col-10 col-md-8 col-lg-5 mx-auto mb-3 p-3 p-md-5 border border-dark rounded-lg shadow">
-    <div class="col text-center"><h3>ログイン</h3></div>
-    <div class="col form-group">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= f.label :email, class: 'col col-md-5 offset-md-1' %>
-        <%= f.email_field :email, class: 'col-10 col-md-7 mx-auto mb-3 form-control' %>
-        <%= f.label :password, class: 'col col-md-4 offset-md-1' %>
-        <%= f.password_field :password, class: 'col-10 col-md-7 mx-auto mb-3 form-control' %>
-        <div class="col text-center">
-          <%= f.submit 'ログイン', class: 'btn btn-primary rounded-pill' %>
-        </div>
-      <% end %>
+<div class="container">
+  <div class="row my-5 d-flex flex-column">
+    <div class="col-10 col-md-8 col-lg-6 mx-auto mb-3 p-3 p-md-5 border border-dark rounded-lg shadow">
+      <div class="col text-center"><h3>ログイン</h3></div>
+      <div class="col form-group">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+            html: { class: "needs-validation", novalidate: :novalidate }) do |f| %>
+          <%= f.label :email, class: 'col col-md-5 offset-md-1 mt-3' %>
+          <%= f.email_field :email, class: 'col-10 col-md-7 mx-auto form-control', required: :required %>
+          <div class="invalid-feedback col-11 col-md-8 mx-auto">メールアドレスを入力して下さい</div>
+          <%= f.label :password, class: 'col col-md-4 offset-md-1 mt-3' %>
+          <%= f.password_field :password, class: 'col-10 col-md-7 mx-auto form-control', required: :required %>
+          <div class="invalid-feedback col-10 col-md-7 mx-auto">パスワードを入力して下さい</div>
+          <div class="col text-center">
+            <%= f.submit 'ログイン', class: 'btn btn-primary rounded-pill mt-3' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

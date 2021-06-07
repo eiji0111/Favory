@@ -51,7 +51,7 @@
           <tr>
             <th scope="row">趣味</th>
             <td>
-              <% if @customer.hobby.empty? %>
+              <% if @customer.hobby.blank? %>
                 未設定
               <% else %>
                 <%= @customer.hobby %>
@@ -61,7 +61,7 @@
           <tr>
             <th scope="row">職業</th>
             <td>
-              <% if @customer.jobs.empty? %>
+              <% if @customer.jobs.blank? %>
                 未設定
               <% else %>
                 <%= @customer.jobs %>
@@ -85,7 +85,7 @@
           <tr>
             <th scope="row">結婚歴</th>
             <td>
-              <% if @customer.marriage_history.empty? %>
+              <% if @customer.marriage_history.blank? %>
                 未設定
               <% else %>
                 <%= @customer.marriage_history %>
@@ -108,7 +108,7 @@
     <div class="col-12 col-md-11 col-lg-8 offset-md-1 offset-lg-4">
       <h4>ひとこと</h4>
       <p>
-        <% if @customer.one_thing.empty? %>
+        <% if @customer.one_thing.blank? %>
           はじめまして！よろしくお願いします！
         <% else %>
           <%= @customer.one_thing %>

@@ -1,13 +1,13 @@
 <div class="jumbotron jumbotron-fulid top-image">
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col py-5">
         <h1 class="d-md-none">Favoryで</h1>
         <h2 class="d-md-none">運命の出会いを...</h2>
         <h1 class="d-none d-md-block display-4">Favoryで</h1>
         <h1 class="d-none d-md-block display-4">運命の出会いを...</h1>
         <%= link_to 'はじめよう', new_customer_session_path, onfocus: "this.blur();",
-            class: 'btn btn-gradient text-white my-3 rounded-pill' %>
+            class: 'btn btn-lg btn-gradient text-white my-3 rounded-pill' %>
       </div>
     </div>
   </div>
@@ -35,29 +35,32 @@
       <h2>使い方は簡単3STEP</h2>
     </div>
     <div class="col-12 col-md-4">
+      <h3 class="py-4">STEP①</h3>
       <div class="card">
         <%= image_tag 'signup-image.png', style: 'width: 100%;' %>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">新規登録</h5>
+          <p class="card-text">必要な事項を入力してアカウント作成</p>
         </div>
       </div>
     </div>
     <div class="col-12 col-md-4">
+      <h3 class="py-4">STEP②</h3>
       <div class="card">
         <%= image_tag 'favorite-image.png', style: 'width: 100%;' %>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">お気に入り</h5>
+          <p class="card-text">気になる人をタップ</p>
         </div>
       </div>
     </div>
     <div class="col-12 col-md-4">
+      <h3 class="py-4">STEP③</h3>
       <div class="card">
         <%= image_tag 'chatting-image.png', style: 'width: 100%;' %>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">チャットでやりとり</h5>
+          <p class="card-text">簡単な自己紹介からはじめてみましょう！</p>
         </div>
       </div>
     </div>

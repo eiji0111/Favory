@@ -15,4 +15,14 @@ class Public::RelationshipsController < ApplicationController
   def followed
     @followeds = current_customer.following_customer.page(params[:page])
   end
+  
+  # お気に入りされた一覧
+  def follower
+    @followers = current_customer.follower_customer.page(params[:page])
+  end
+  
+  # 互いにお気に入りしている
+  def matchers
+    @matchers = current_customer.matchers.page(params[:page])
+  end
 end

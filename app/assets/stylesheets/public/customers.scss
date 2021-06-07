@@ -1,3 +1,12 @@
 // Place all the styles related to the public/customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new-tag {
+  font-weight: bold;
+  background: #8a2387; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #8a2387, #e94057, #f27121);
+  background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
