@@ -1,35 +1,41 @@
 <div class="container">
-  <div class="col d-flex justify-content-end align-items-end">
-    <%= sort_link(@q, :created_at, "新着順") %>
+  <div class="row mb-3">
+    <div class="col">
+      <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseSearch"
+              aria-expanded="false" aria-controls="collapseSearch" onfocus="this.blur();">
+        <i class="fas fa-search"></i> 条件絞り込み
+      </button>
+    </div>
+    <div class="col text-right">
+      <%= sort_link(@q, :created_at, "新着順") %>
+    </div>
   </div>
-  <div class="row">
-    <nav class="col-12 col-md-3 bg-light sidebar py-3 mb-3 rounded">
-      <div class="sidebar-sticky">
-        <%= search_form_for @q, url: customer_women_path do |f| %>
-        <div class="col mb-3">
+  <nav class="col-10 col-md-5 col-lg-4 bg-light sidebar py-3 my-3 mx-auto mx-md-0 rounded collapse" id="collapseSearch">
+      <%= search_form_for @q, url: customer_women_path do |f| %>
+      <div class="row">
+        <div class="col-8 mb-3">
           <%= f.label :nickname_cont, 'ニックネーム' %>
           <%= f.search_field :nickname_cont, class: 'form-control form-control-sm' %>
-        </div>
-        <div class="col mb-3">
           <%= f.label :address_eq, "居住地" %>
           <%= f.select :address_eq, Customer.addresses.map{|k, v|[k, v]}, {prompt: "選択してください"}, class: 'form-control form-control-sm' %>
         </div>
-        <div class="col mb-3">
+        <div class="col-4 mb-3">
           <%= f.label :birthday_to_age_gteq, "年齢", class: 'col-form-label' %>
           <%= f.number_field :birthday_to_age_gteq, class: 'form-control form-control-sm' %>以上
           <%= f.number_field :birthday_to_age_lt, class: 'form-control form-control-sm' %>未満
         </div>
-        <div class="col text-center">
-          <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill' %>
-        </div>
-        <% end %>
       </div>
-    </nav>
-    <div class="d-flex flex-wrap col-md-9 col-lg-9 px-4">
+      <div class="col text-center">
+        <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill' %>
+      </div>
+      <% end %>
+  </nav>
+  <div class="row">
+    <div class="d-flex flex-wrap col-md-12 px-4">
       <% @customers.each do |customer| %>
-        <div class="col-6 col-md-4 col-lg-3 text-center mb-4">
+        <div class="col-6 col-md-3 col-lg-2 text-center mb-4">
           <%= link_to customer_path(customer) do %>
-            <%= attachment_image_tag customer, :profile_image, size: '150x150', format: "jpeg",
+            <%= attachment_image_tag customer, :profile_image, size: '130x130', format: "jpeg",
                 fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
           <% end %>
           <p class="mb-0">
@@ -39,7 +45,7 @@
             <% end %>
           </p>
           <p>
-            <% if (Time.zone.now.prev_day(3)..Time.zone.now).cover?(customer.created_at) %>
+            <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(customer.created_at) %>
               <span class="new-tag">new</span>
             <% end %>
             <%= customer.nickname %>
