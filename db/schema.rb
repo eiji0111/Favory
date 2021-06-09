@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_001544) do
+ActiveRecord::Schema.define(version: 2021_06_08_150802) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,6 +30,34 @@ ActiveRecord::Schema.define(version: 2021_06_08_001544) do
     t.text "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "communities", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "introduction", null: false
+    t.string "community_image_id"
+    t.string "owner_nickname", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "community_customers", force: :cascade do |t|
+    t.integer "community_id"
+    t.integer "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_community_customers_on_community_id"
+    t.index ["customer_id"], name: "index_community_customers_on_customer_id"
+  end
+
+  create_table "community_posts", force: :cascade do |t|
+    t.integer "community_id"
+    t.integer "customer_id"
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_community_posts_on_community_id"
+    t.index ["customer_id"], name: "index_community_posts_on_customer_id"
   end
 
   create_table "contacts", force: :cascade do |t|
