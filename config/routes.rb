@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     delete 'chat/:id' => 'chats#destroy', as: 'chat_destroy'
     post 'contacts/back' => 'contacts#back', as: 'back_contact' # お問い合わせ確認画面へ戻る
     post 'contacts/confirm' => 'contacts#confirm', as: 'confirm_contact'
+    get 'contacts/confirm' => 'contacts#back', as: 'back'
     get 'contacts/complete' => 'contacts#complete', as: 'complete_contact'
     
     resources :customers, only: [:show, :edit, :update]
