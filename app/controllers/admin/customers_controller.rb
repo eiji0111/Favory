@@ -22,7 +22,7 @@ class Admin::CustomersController < ApplicationController
   
   def update
     if @customer.update(customer_params)
-      flash[:success] = '会員情報を更新しました'
+      flash[:notice] = '会員情報を更新しました'
       redirect_to admin_customer_path(@customer)
     else
       render :edit
@@ -32,14 +32,14 @@ class Admin::CustomersController < ApplicationController
   def destroy
     if @customer.sex == 'man'
       if @customer.destroy
-        flash[:success] = '会員を削除しました'
+        flash[:alert] = '会員を削除しました'
         redirect_to admin_men_path
       else
         render :edit
       end
     else
       if @customer.destroy
-        flash[:success] = '会員を削除しました'
+        flash[:alert] = '会員を削除しました'
         redirect_to admin_women_path
       else
         render :edit
