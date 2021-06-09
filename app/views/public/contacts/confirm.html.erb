@@ -11,16 +11,17 @@
         <h6 class="mb-0">お問い合わせ内容</h6>
         <p><%= @contact.content %></p>
         <div class="col d-flex justify-content-around">
-          <%= form_with model: @contact, url: back_contact_path, local: true do |f| %>
-            <%= f.hidden_field :name %>
-            <%= f.hidden_field :email %>
-            <%= f.hidden_field :content %>
-            <%= f.submit '修正する', class: 'btn btn-secondary rounded-pill' %>
-          <% end %>
+          <!--<//%= form_with model: @contact, url: back_contact_path, local: true do |f| %>-->
+          <!--  <//%= f.hidden_field :name %>-->
+          <!--  <//%= f.hidden_field :email %>-->
+          <!--  <//%= f.hidden_field :content %>-->
+          <!--  <//%= f.submit '修正する', class: 'btn btn-secondary rounded-pill' %>-->
+          <!--<//% end %>-->
           <%= form_with model: @contact, local: true do |f| %>
             <%= f.hidden_field :name %>
             <%= f.hidden_field :email %>
             <%= f.hidden_field :content %>
+            <%= f.submit '修正する', name: 'back', class: 'btn btn-primary rounded-pill' %>
             <%= f.submit '送信する', class: 'btn btn-primary rounded-pill' %>
           <% end %>
         </div>

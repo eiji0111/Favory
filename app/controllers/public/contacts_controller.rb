@@ -1,21 +1,24 @@
 class Public::ContactsController < ApplicationController
-  before_action :set_contact, only: [:confirm, :back, :create]
+  before_action :set_contact, only: [:confirm, :create]
   
   def new
     @contact = Contact.new
   end
 
   def confirm
-    if @contact.invalid?
-      render :new
-    end
+    render :new unless @contact.valid?
   end
   
   def back
-    render :new
+    redirect_to new_contact_path, alert: "はじめから入力してください"
   end
-  
+
   def create
+    if params[:back].present?
+      render :new
+      return
+    end
+    
     if @contact.save
       ContactMailer.send_mail(@contact).deliver_now
       redirect_to complete_contact_path

@@ -5,6 +5,7 @@
       <div class="col form-group">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name),
             html: { class: "needs-validation", novalidate: :novalidate }) do |f| %>
+          <!--<//%= f.hidden_field :current_sign_in_at, value: DateTime.now %>-->
           <%= f.label :email, class: 'col col-md-5 offset-md-1 mt-3' %>
           <%= f.email_field :email, class: 'col-10 col-md-7 mx-auto form-control', required: :required %>
           <div class="invalid-feedback col-11 col-md-8 mx-auto">メールアドレスを入力して下さい</div>

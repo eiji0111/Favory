@@ -24,7 +24,7 @@ Customer.create!(
       },
       {
         name: "橋本環奈",
-        nickname: "おこったかんな",
+        nickname: "かんなちゃん",
         email: "c@c",
         birthday: Date.new(1999, 2, 3),
         sex: 1,
