@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  namespace :public do
+    get 'communities/new'
+    get 'communities/index'
+    get 'communities/show'
+    get 'communities/edit'
+  end
   devise_for :admin, controllers: {
     sessions: 'admin/sessions',
   }
@@ -38,5 +44,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :edit, :update]
     resources :chats, only: [:create]
     resources :contacts, only: [:new, :create]
+    resources :communities, except: [:destroy]
+    resources :community_posts, only: [:create]
   end
 end

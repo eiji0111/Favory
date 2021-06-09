@@ -11,7 +11,10 @@ class Customer < ApplicationRecord
   has_many :customer_rooms
   has_many :chats
   has_many :rooms, through: :customer_rooms
-  
+  has_many :community_customers
+  has_many :community_posts
+  has_many :communities, through: :community_customers
+
   attachment :profile_image
   validates :name, presence: true
   validates :nickname, presence: true
