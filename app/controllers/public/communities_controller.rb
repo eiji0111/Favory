@@ -22,11 +22,7 @@ class Public::CommunitiesController < ApplicationController
 
   def show
     @community = Community.find(params[:id])
-
-    # if !@community.customers.include?(current_customer)
-    #   @community.customers << current_customer
-    # end
-
+    @community_post = CommunityPost.new
     @community_posts = CommunityPost.where(community_id: @community.id).all
   end
 
@@ -48,7 +44,7 @@ class Public::CommunitiesController < ApplicationController
   
   def ensure_correct_user
     @community = Community.find(params[:id])
-    unless @community.owner_id == current_customer.id
+    unless @community.owner_nickname == current_customer.nickname
       redirect_to communities_path
     end
   end
