@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>コミュニティ詳細</h3>
+    </div>
+    <div class="col-10 col-md-4 mx-auto mx-md-0">
+      <%= attachment_image_tag(@community, :community_image,
+          fallback: "no-image.png", class: 'img-fluid') %>
+    </div>
+    <div class="col-12 col-md-8">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">コミュニティ名</th>
+            <td><%= @community.name %></td>
+          </tr>
+          <tr>
+            <th scope="row">コミュニティ概要</th>
+            <td><%= @community.introduction %></td>
+          </tr>
+          <tr>
+            <th scope="row">作成者</th>
+            <td><%= @community.owner_nickname %></td>
+          </tr>
+          <tr>
+            <th scope="row">ステータス</th>
+            <td><%= @community.valid_status %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-3 mx-auto">
+      <%= link_to '編集する', edit_admin_community_path(@community), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_150802) do
     t.text "introduction", null: false
     t.string "community_image_id"
     t.string "owner_nickname", null: false
+    t.integer "valid_status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

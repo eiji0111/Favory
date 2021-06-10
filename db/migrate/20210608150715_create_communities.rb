@@ -5,6 +5,7 @@ class CreateCommunities < ActiveRecord::Migration[5.2]
       t.text :introduction, null: false
       t.string :community_image_id
       t.string :owner_nickname, null: false
+      t.integer :valid_status, null: false, default: 0
       t.timestamps
     end
   end

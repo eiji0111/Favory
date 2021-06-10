@@ -7,14 +7,14 @@ class Public::CommunitiesController < ApplicationController
   end
 
   def index
-    @communities = Community.all.order(updated_at: :desc)
+    @communities = Community.valid_all(params[:page])
   end
   
   def create
     @community = Community.new(community_params)
     @community.owner_nickname = current_customer.nickname
     if @community.save
-      redirect_to communities_path, notice: 'コミュニティを作成しました'
+      redirect_to communities_path, notice: '管理者が内容を確認・承認したのち、こちらに反映されます'
     else
       render :new
     end
