@@ -31,12 +31,12 @@
       <% end %>
   </nav>
   <div class="row">
-    <div class="d-flex flex-wrap col-md-12 px-4">
+    <div class="d-flex flex-wrap scroll-list jscroll">
       <% @customers.each do |customer| %>
         <div class="col-6 col-md-4 col-lg-3 text-center mb-4">
           <%= link_to customer_path(customer) do %>
-            <%= attachment_image_tag customer, :profile_image, size: '150x150', format: "jpeg",
-                fallback: "no-image-woman.jpg", style: 'object-fit: cover; position: relative;', class: 'rounded-circle' %>
+            <%= attachment_image_tag customer, :profile_image, size: "180x180", format: "jpeg",
+                fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
           <% end %>
           <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(customer.created_at) %>
             <span class="new-tag">new</span>
@@ -53,12 +53,8 @@
             &ensp;<i class="bi bi-clock"></i> <span style="font-size: 12px;"><%= time_ago_in_words(customer.current_sign_in_at) %>前</span>
           </p>
         </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col d-flex justify-content-center">
       <%= paginate @customers %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -4,6 +4,7 @@
 
 .new-tag {
   font-weight: bold;
+  font-size: 18px;
   background: #8a2387; /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #8a2387, #e94057, #f27121);
   background: linear-gradient(to right, #8a2387, #e94057, #f27121);
@@ -12,4 +13,8 @@
   position: absolute;
   top: 5px;
   left: 65px;
+}
+
+nav.pagination {
+  display: none;
 }

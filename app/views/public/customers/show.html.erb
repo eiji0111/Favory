@@ -120,24 +120,28 @@
   <div class="row mt-3">
     <div class="col-12"><h3>作成したコミュニティ</h3></div>
       <% if @communities.blank? %>
-        <div class="col-12"><p>まだコミュニティを作成していません</p></div>
+        <div class="col-12">
+          <p>まだコミュニティを作成していません。</p>
+        </div>
       <% end %>
     <div class="d-flex flex-nowrap overflow-auto col-12 px-4">
       <% @communities.each do |community| %>
-        <div class="col-6 col-md-4 col-lg-3 m-3 p-0 card border border-dark rounded">
-          <%= attachment_image_tag(community, :community_image, size: "150x150",
-              fallback: "no-image.png", style: 'object-fit: cover;', class: 'card-img-top') %>
-          <div class="card-body">
-            <h5 class="card-title">
-              <%= link_to community.name, community_path(community) %>
-            </h5>
-            <p class="card-text text-nowrap text-truncate"><%= community.introduction %></p>
-            <p><%= community.owner_nickname %></p>
-            <p class="text-center mb-0">
-              <%= link_to "参加する", community_path(community), class: 'btn btn-primary btn-sm rounded-pill' %>
-            </p>
+        <% if community.valid_status == "許可済み" %>
+          <div class="col-6 col-md-4 col-lg-3 m-3 p-0 card border border-dark rounded">
+            <%= attachment_image_tag(community, :community_image, size: "150x150",
+                fallback: "no-image.png", style: 'object-fit: cover;', class: 'card-img-top') %>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= link_to community.name, community_path(community) %>
+              </h5>
+              <p class="card-text text-nowrap text-truncate"><%= community.introduction %></p>
+              <p><%= community.owner_nickname %></p>
+              <p class="text-center mb-0">
+                <%= link_to "参加する", community_path(community), class: 'btn btn-primary btn-sm rounded-pill' %>
+              </p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
