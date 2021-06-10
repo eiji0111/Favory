@@ -8,20 +8,21 @@
         <%= attachment_image_tag @customer, :profile_image,size: "300x300", format: "jpeg",
             fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
       <% end %>
-        <% if current_customer != @customer %>
-          <div class="col py-2">
-            <div id="follow_form">
-              <% if current_customer.following?(@customer) %>
-                <%= render partial: "public/relationships/unfollow", locals: { customer: @customer } %>
-              <% else %>
-                <%= render partial: "public/relationships/follow", locals: { customer: @customer } %>
-              <% end %>
-            </div>
+      <% if current_customer != @customer %>
+        <div class="col py-2">
+          <p>最終ログイン<%= time_ago_in_words(@customer.current_sign_in_at) %>前</p>
+          <div id="follow_form">
+            <% if current_customer.following?(@customer) %>
+              <%= render partial: "public/relationships/unfollow", locals: { customer: @customer } %>
+            <% else %>
+              <%= render partial: "public/relationships/follow", locals: { customer: @customer } %>
+            <% end %>
           </div>
-          <div class="col">
-            <%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-success btn-sm rounded-pill far fa-comments' %>
-          </div>
-        <% end %>
+        </div>
+        <div class="col">
+          <%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-success btn-sm rounded-pill far fa-comments' %>
+        </div>
+      <% end %>
     </div>
     <div class="col-10 col-md-6 col-lg-4 mx-auto">
       <table class="table table-borderless">

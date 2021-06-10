@@ -20,7 +20,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "橋本環奈",
@@ -37,7 +38,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "浜辺美波",
@@ -54,7 +56,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "綾瀬はるか",
@@ -71,7 +74,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "有村架純",
@@ -88,7 +92,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "新木優子",
@@ -105,7 +110,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "山本舞香",
@@ -122,7 +128,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "永野芽郁",
@@ -139,7 +146,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "森七菜",
@@ -156,7 +164,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "広瀬すず",
@@ -173,7 +182,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "本田翼",
@@ -190,7 +200,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "吉沢亮",
@@ -207,7 +218,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "新田真剣佑",
@@ -224,7 +236,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "ヒカキン",
@@ -241,7 +254,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "伊野尾慧",
@@ -258,7 +272,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "山崎賢人",
@@ -275,7 +290,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "川尻蓮",
@@ -292,7 +308,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "與那城奨",
@@ -309,7 +326,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "北村匠海",
@@ -326,7 +344,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "佐藤健",
@@ -343,7 +362,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "川西拓実",
@@ -360,7 +380,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "山下智久",
@@ -377,7 +398,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "中村倫也",
@@ -394,7 +416,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       },
       {
         name: "田中圭",
@@ -411,7 +434,8 @@ Customer.create!(
         annual_income: 7,
         marriage_history: "なし",
         children: 0,
-        personality: 1
+        personality: 1,
+        current_sign_in_at: Time.zone.now
       }
     ]
   )

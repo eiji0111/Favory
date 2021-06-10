@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  namespace :admin do
+    get 'communities/index'
+    get 'communities/show'
+    get 'communities/edit'
+  end
   namespace :public do
     get 'communities/new'
     get 'communities/index'
@@ -16,6 +21,7 @@ Rails.application.routes.draw do
     get 'customers/women' => 'customers#women', as: 'women' # 女性会員一覧
     
     resources :customers, only: [:show, :edit, :update, :destroy]
+    resources :communities, except: [:new]
   end
   
   devise_for :customers, controllers: {

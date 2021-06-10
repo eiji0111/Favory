@@ -3,13 +3,13 @@ class Public::CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update]
   
   def men
-    @q = Customer.where(sex: 0, is_valid: true).ransack(params[:q])
+    @q = Customer.valid_men(params[:q])
     @q.sorts = 'created_at asc' if @q.sorts.empty?
     @customers = @q.result(distinct: true).page(params[:page])
   end
   
   def women
-    @q = Customer.where(sex: 1, is_valid: true).ransack(params[:q])
+    @q = Customer.valid_women(params[:q])
     @q.sorts = 'created_at asc' if @q.sorts.empty?
     @customers = @q.result(distinct: true).page(params[:page])
   end
@@ -23,8 +23,12 @@ class Public::CustomersController < ApplicationController
   
   def update
     if @customer.update(customer_params)
-      flash[:notice] = 'プロフィールを更新しました'
-      redirect_to customer_path(@customer)
+      if @customer.saved_changes?
+        flash[:notice] = 'プロフィールを更新しました'
+        redirect_to customer_path(@customer)
+      else
+        redirect_to customer_path(@customer)
+      end
     else
       render :edit
     end

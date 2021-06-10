@@ -9,14 +9,15 @@
     </div>
     <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
       <% @community_posts.each do |community_post| %>
-      <div class="col">
-        <%= community_post.content %>
-      </div>
+        <div class="col border">
+          <%= community_post.content %>
+          <%= community_post.created_at.strftime("%Y-%m-%d") %>
+        </div>
       <% end %>
       <%= form_with model: @community_post, local: true do |f| %>
         <%= f.hidden_field :customer_id, value: current_customer.id %>
         <%= f.hidden_field :community_id, value: @community.id %>
-        <div class="form-group">
+        <div class="col-4 form-group">
           <%= f.label :content, "投稿" %>
           <%= f.text_field :content, class: 'form-control' %>
         </div>

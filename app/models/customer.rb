@@ -2,7 +2,7 @@ class Customer < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable
 
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -14,6 +14,10 @@ class Customer < ApplicationRecord
   has_many :community_customers
   has_many :community_posts
   has_many :communities, through: :community_customers
+  
+  scope :valid_men, -> (params) { where(sex: 0, is_valid: true).ransack(params) }
+  scope :valid_women, -> (params) { where(sex: 1, is_valid: true).ransack(params) }
+
 
   attachment :profile_image
   validates :name, presence: true

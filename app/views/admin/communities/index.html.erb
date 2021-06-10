@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>コミュニティ一覧</h3>
+    </div>
+    <div class="col-12">
+      <table class="table table-sm table-hover">
+        <thead>
+          <tr>
+            <th scope="col">コミュニティID</th>
+            <th scope="col">コミュニティ名</th>
+            <th scope="col">コミュニティ概要</th>
+            <th scope="col">作成者</th>
+            <th scope="col">ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @communities.each do |community| %>
+            <tr>
+              <th scope="row"><%= community.id %></th>
+              <td>
+                <%= link_to admin_community_path(community) do %>
+                  <%= community.name %>
+                <% end %>
+              </td>
+              <td><%= community.introduction %></td>
+              <td><%= community.owner_nickname %></td>
+              <td><%= community.valid_status %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

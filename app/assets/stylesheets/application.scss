@@ -16,6 +16,7 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
 html {
   position: relative;
@@ -40,5 +41,28 @@ footer {
   background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
   &:hover {
     background-image: linear-gradient(120deg, #f5576c 0%, #f093fb 100%);
+  }
+}
+
+/* フッターメニューアイコン */
+.footer_icon {
+  color: #000;
+  &:hover {
+    color: #000;
+    textdecoration: none;
+  }
+}
+.bi-square {
+  color: #77EEFF;
+  &:hover {
+    color: #77EEFF;
+    textdecoration: none;
+  }
+}
+.bi-circle {
+  color: #FF82B2;
+  &:hover {
+    color: #FF82B2;
+    textdecoration: none;
   }
 }
