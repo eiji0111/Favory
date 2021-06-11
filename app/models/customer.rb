@@ -14,10 +14,10 @@ class Customer < ApplicationRecord
   has_many :community_customers
   has_many :community_posts
   has_many :communities, through: :community_customers
+  has_one :army_request
   
   scope :valid_men, -> (params) { where(sex: 0, is_valid: true).ransack(params) }
   scope :valid_women, -> (params) { where(sex: 1, is_valid: true).ransack(params) }
-
 
   attachment :profile_image
   validates :name, presence: true

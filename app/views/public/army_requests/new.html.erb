@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>自衛官認証申請フォーム</h3>
+    </div>
+    <div class="col-10 mx-auto">
+      <%= form_with model: @army_request, local: true do |f| %>
+        <%= f.hidden_field :customer_id, value: current_customer.id %>
+        <div class="form-group">
+          <%= f.label :type, '陸自・海自・空自' %>
+          <%= f.select :type, ArmyRequest.types.keys, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :base, '駐屯地・基地名' %>
+          <%= f.text_field :base, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :identification_number, '認識番号' %>
+          <%= f.text_field :identification_number, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :identification_image, '自衛官認証写真' %>
+          <%= f.attachment_field :identification_image, class: "form-control-file" %>
+          <p>
+            ※自衛官身分証を持った状態の写真を添付してください。<br>
+            写真がボケていたり、身分証の文字が判別しづらい写真では承認致しかねますので、<br>
+            あらかじめご了承ください。
+          </p>
+        </div>
+        <%= f.submit '申請する', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

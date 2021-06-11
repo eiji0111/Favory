@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     
     resources :customers, only: [:show, :edit, :update, :destroy]
     resources :communities, except: [:new, :create]
+    resources :army_requests, only: [:index, :show]
   end
   
   devise_for :customers, controllers: {
@@ -42,5 +43,6 @@ Rails.application.routes.draw do
     resources :contacts, only: [:new, :create]
     resources :communities, except: [:destroy]
     resources :community_posts, only: [:create]
+    resources :army_requests, only: [:new, :create]
   end
 end
