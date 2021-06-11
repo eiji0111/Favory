@@ -1,18 +1,21 @@
 <div class="container bg-light">
   <div class="row mb-3">
     <div class="col">
-      <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseSearch"
+      <button class="btn btn-outline-info mt-3 rounded-pill" type="button" data-toggle="collapse" data-target="#collapseSearch"
               aria-expanded="false" aria-controls="collapseSearch" onfocus="this.blur();">
-        <i class="fas fa-search"></i> 条件絞り込み
+        <i class="bi bi-search"></i> 絞り込み
       </button>
-    </div>
-    <div class="col text-right">
-      <%= sort_link(@q, :created_at, "新着順") %>
     </div>
   </div>
   <nav class="col-10 col-md-5 col-lg-4 bg-light sidebar py-3 my-3 mx-auto mx-md-0 rounded collapse" id="collapseSearch">
       <%= search_form_for @q, url: customer_women_path do |f| %>
       <div class="row">
+        <div class="col-6 mb-3">
+          <%= f.label :sorts, ' 並び替え', class: 'fas fa-search' %>
+          <%= f.select( :sorts, { '並び替え': 'id asc', '新着順': 'created_at desc', '年齢順（若い順）': 'birthday desc' },
+                                { onchange: 'this.form.submit()'}, class: 'form-control form-control-sm') %>
+        </div>
+        <div class="col-12 fas fa-search mb-1"> 詳細検索</div>
         <div class="col-8 mb-3">
           <%= f.label :nickname_cont, 'ニックネーム' %>
           <%= f.search_field :nickname_cont, class: 'form-control form-control-sm' %>
@@ -38,10 +41,10 @@
             <%= attachment_image_tag customer, :profile_image, size: "180x180", format: "jpeg",
                 fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
           <% end %>
-          <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(customer.created_at) %>
-            <span class="new-tag">new</span>
-          <% end %>
           <p class="mb-0">
+            <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(customer.created_at) %>
+              <span class="new-tag">new</span>
+            <% end %>
             <%= customer.age %>歳 
             <% if customer.address != "秘密" %>
               <%= customer.address %>
@@ -49,8 +52,8 @@
           </p>
           <p>
             <i class="bi bi-check-circle text-success"></i>&ensp;
-            <i class="bi bi-heart text-danger"></i> <%= customer.follower_customer.count %>
-            &ensp;<i class="bi bi-clock"></i> <span style="font-size: 12px;"><%= time_ago_in_words(customer.current_sign_in_at) %>前</span>
+            <i class="bi bi-heart text-danger"></i> <%= customer.follower_customer.size %>&ensp;
+            <i class="bi bi-clock"></i> <span style="font-size: 12px;"><%= time_ago_in_words(customer.current_sign_in_at) %>前</span>
           </p>
         </div>
       <%= paginate @customers %>

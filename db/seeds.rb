@@ -4,25 +4,47 @@ Admin.create!(
   )
 
 100.times do |n|
-    Customer.create!(
-      name: "テスト太郎#{n + 1}",
-      nickname: "さとみん",
-      email: "test#{n + 1}@test.com",
-      birthday: Date.new(1986, 12, 24),
-      sex: 0,
-      password: "bbbbbb",
-      address: 13,
-      is_valid: true,
-      one_thing: "よろしくお願いします",
-      hobby: "映画鑑賞",
-      jobs: "女優",
-      annual_income: 7,
-      marriage_history: "なし",
-      children: 0,
-      personality: 1,
-      current_sign_in_at: Time.zone.now
-    )
-  end
+  Customer.create!(
+    name: "テスト太郎#{n + 1}",
+    nickname: "たろう",
+    email: "test#{n + 1}@test.com",
+    birthday: Date.new(1998, 12, 24),
+    sex: 0,
+    password: "aaaaaa",
+    address: 13,
+    is_valid: true,
+    one_thing: "よろしくお願いします",
+    hobby: "映画鑑賞",
+    jobs: "テスト",
+    annual_income: 7,
+    marriage_history: "なし",
+    children: 0,
+    personality: 1,
+    current_sign_in_at: Time.zone.now
+  )
+end
+  
+100.times do |n|
+  Customer.create!(
+    name: "テスト花子#{n + 1}",
+    nickname: "はなこ",
+    email: "hanako#{n + 1}@hanako.com",
+    birthday: Date.new(1998, 12, 24),
+    sex: 1,
+    password: "aaaaaa",
+    address: 13,
+    is_valid: true,
+    one_thing: "よろしくお願いします",
+    hobby: "音楽鑑賞",
+    jobs: "テスト",
+    annual_income: 7,
+    marriage_history: "なし",
+    children: 0,
+    personality: 1,
+    current_sign_in_at: Time.zone.now
+  )
+end
+  
 Customer.create!(
     [
       {
