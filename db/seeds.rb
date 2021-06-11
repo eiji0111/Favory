@@ -20,7 +20,8 @@ Admin.create!(
     marriage_history: "なし",
     children: 0,
     personality: 1,
-    current_sign_in_at: Time.zone.now
+    current_sign_in_at: Time.zone.now,
+    army_flag: false
   )
 end
   
@@ -41,7 +42,8 @@ end
     marriage_history: "なし",
     children: 0,
     personality: 1,
-    current_sign_in_at: Time.zone.now
+    current_sign_in_at: Time.zone.now,
+    army_flag: false
   )
 end
   
@@ -63,7 +65,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "橋本環奈",
@@ -81,7 +84,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "浜辺美波",
@@ -99,7 +103,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "綾瀬はるか",
@@ -117,7 +122,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "有村架純",
@@ -135,7 +141,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "新木優子",
@@ -153,7 +160,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "山本舞香",
@@ -171,7 +179,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "永野芽郁",
@@ -189,7 +198,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "森七菜",
@@ -207,7 +217,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "広瀬すず",
@@ -225,7 +236,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "本田翼",
@@ -243,7 +255,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "吉沢亮",
@@ -261,7 +274,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "新田真剣佑",
@@ -279,7 +293,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "ヒカキン",
@@ -297,7 +312,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "伊野尾慧",
@@ -315,7 +331,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "山崎賢人",
@@ -333,7 +350,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "川尻蓮",
@@ -351,7 +369,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "與那城奨",
@@ -369,7 +388,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "北村匠海",
@@ -387,7 +407,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "佐藤健",
@@ -405,7 +426,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "川西拓実",
@@ -423,7 +445,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "山下智久",
@@ -441,7 +464,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "中村倫也",
@@ -459,7 +483,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       },
       {
         name: "田中圭",
@@ -477,7 +502,8 @@ Customer.create!(
         marriage_history: "なし",
         children: 0,
         personality: 1,
-        current_sign_in_at: Time.zone.now
+        current_sign_in_at: Time.zone.now,
+        army_flag: false
       }
     ]
   )
