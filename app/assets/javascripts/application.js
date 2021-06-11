@@ -34,6 +34,7 @@
   }, false);
 })();
 
+/* 会員一覧無限スクロール 
 /* global $ */
 $(window).on('scroll', function() {
   var scrollHeight = $(document).height();
