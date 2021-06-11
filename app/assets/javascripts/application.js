@@ -14,6 +14,7 @@
 //= require bootstrap-sprockets
 
 //= require rails-ujs
+//= require jquery.jscroll.min.js
 //= require activestorage
 //= require turbolinks
 //= require_tree .
@@ -34,13 +35,14 @@
   }, false);
 })();
 
-/* 会員一覧無限スクロール 
+/* 会員一覧無限スクロール */
 /* global $ */
 $(window).on('scroll', function() {
   var scrollHeight = $(document).height();
   var scrollPosition = $(window).height() + $(window).scrollTop();
   if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
     $('.jscroll').jscroll({
+      loadingHtml: '<i class="fa fa-spinner">Now Loading...</i>',
       contentSelector: '.scroll-list',
       nextSelector: 'span.next:last a'
     });

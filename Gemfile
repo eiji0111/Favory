@@ -49,6 +49,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop-airbnb'
+  gem 'bullet'
 end
 
 group :test do
@@ -63,6 +64,7 @@ group :test do
   gem "factory_bot_rails"
   gem 'faker'
   gem 'faker-japanese'
+  gem 'gimei'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
