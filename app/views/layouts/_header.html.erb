@@ -16,6 +16,9 @@
           <%= link_to 'コミュニティ一覧', admin_communities_path, class: 'btn btn-outline-dark' %>
         </li>
         <li class="nav-item mr-3">
+          <%= link_to '自衛官申請一覧', admin_communities_path, class: 'btn btn-outline-dark' %>
+        </li>
+        <li class="nav-item mr-3">
           <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-dark' %>
         </li>
       <% elsif customer_signed_in? %>

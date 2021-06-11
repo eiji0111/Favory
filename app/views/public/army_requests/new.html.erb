@@ -8,7 +8,7 @@
         <%= f.hidden_field :customer_id, value: current_customer.id %>
         <div class="form-group">
           <%= f.label :type, '陸自・海自・空自' %>
-          <%= f.select :type, ArmyRequest.types.keys, class: "form-control" %>
+          <%= f.select :type, ArmyRequest.types.keys, { include_blank: '選択してください'}, { class: 'form-control' } %>
         </div>
         <div class="form-group">
           <%= f.label :base, '駐屯地・基地名' %>
