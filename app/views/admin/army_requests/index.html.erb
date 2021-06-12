@@ -1,2 +1,39 @@
-<h1>Admin::ArmyRequests#index</h1>
-<p>Find me in app/views/admin/army_requests/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>自衛官申請一覧</h3>
+    </div>
+    <div class="col-10 mx-auto">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">申請ID</th>
+            <th scope="col">会員ID</th>
+            <th scope="col">申請者名</th>
+            <th scope="col">申請日</th>
+            <th scope="col">ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @army_requests.each do |army_request| %>
+            <tr>
+              <th scope="row"><%= army_request.id %></th>
+              <td><%= army_request.customer_id %></td>
+              <td>
+                <%= link_to army_request.customer.name, admin_army_request_path(army_request) %>
+              </td>
+              <td><%= army_request.created_at %></td>
+              <td>
+                <% if army_request.customer.army_flag? %>
+                  <span class="text-success">承認</span>
+                <% else %>
+                  <span class="text-muted">未承認</span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
