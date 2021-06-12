@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     
     resources :customers, only: [:show, :edit, :update, :destroy]
     resources :communities, except: [:new, :create]
-    resources :army_requests, only: [:index, :show]
+    resources :army_requests, only: [:index, :show, :update]
   end
   
   devise_for :customers, controllers: {
@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     post 'contacts/confirm' => 'contacts#confirm', as: 'confirm_contact'
     get 'contacts/confirm' => 'contacts#back', as: 'back'
     get 'contacts/complete' => 'contacts#complete', as: 'complete_contact'
-    
+
     resources :customers, only: [:show, :edit, :update]
     resources :chats, only: [:create]
     resources :contacts, only: [:new, :create]

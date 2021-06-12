@@ -44,7 +44,8 @@
             <th scope="col">名前</th>
             <th scope="col">年齢</th>
             <th scope="col">住所</th>
-            <th scope="col">ステータス</th>
+            <th scope="col">自衛官承認</th>
+            <th scope="col">会員ステータス</th>
           </tr>
         </thead>
         <tbody>
@@ -60,6 +61,13 @@
               </td>
               <td class="align-middle"><%= customer.age %> 歳</td>
               <td class="align-middle"><%= customer.address %></td>
+              <td class="align-middle">
+                <% if customer.army_flag? %>
+                  <span class="text-success">承認</span>
+                <% else %>
+                  <span class="text-muted">非承認</span>
+                <% end %>
+              </td>
               <td class="align-middle">
                 <% if customer.is_valid? %>
                   <span class="text-success">有効</span>

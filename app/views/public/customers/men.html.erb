@@ -56,7 +56,9 @@
             <i class="bi bi-clock"></i> <span style="font-size: 12px;"><%= time_ago_in_words(customer.current_sign_in_at) %>前</span>
           </p>
         </div>
-      <%= paginate @customers %>
+        <div class="jscroll-pagination">
+          <%= paginate @customers %>
+        </div>
       <% end %>
     </div>
   </div>
