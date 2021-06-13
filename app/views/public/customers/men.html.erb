@@ -8,37 +8,37 @@
     </div>
   </div>
   <nav class="col-10 col-md-5 col-lg-4 bg-light sidebar py-3 my-3 mx-auto mx-md-0 rounded collapse" id="collapseSearch">
-      <%= search_form_for @q, url: customer_men_path do |f| %>
-      <div class="row">
-        <div class="col-6 mb-3">
-          <%= f.label :sorts, ' 並び替え', class: 'fas fa-search' %>
-          <%= f.select( :sorts, { '並び替え': 'id asc', '新着順': 'created_at desc', '年齢順（若い順）': 'birthday desc' },
-                                { onchange: 'this.form.submit()'}, class: 'form-control form-control-sm') %>
-        </div>
-        <div class="col-12 fas fa-search mb-1"> 詳細検索</div>
-        <div class="col-8 mb-3">
-          <%= f.label :nickname_cont, 'ニックネーム' %>
-          <%= f.search_field :nickname_cont, class: 'form-control form-control-sm' %>
-          <%= f.label :address_eq, "居住地" %>
-          <%= f.select :address_eq, Customer.addresses.map{|k, v|[k, v]}, {prompt: "選択してください"}, class: 'form-control form-control-sm' %>
-        </div>
-        <div class="col-4 mb-3">
-          <%= f.label :birthday_to_age_gteq, "年齢", class: 'col-form-label' %>
-          <%= f.number_field :birthday_to_age_gteq, class: 'form-control form-control-sm' %>以上
-          <%= f.number_field :birthday_to_age_lt, class: 'form-control form-control-sm' %>未満
-        </div>
+    <%= search_form_for @q, url: customer_men_path do |f| %>
+    <div class="row">
+      <div class="col-6 mb-3">
+        <%= f.label :sorts, ' 並び替え', class: 'fas fa-search' %>
+        <%= f.select( :sorts, { '並び替え': 'id asc', '新着順': 'created_at desc', '年齢順（若い順）': 'birthday desc' },
+                              { onchange: 'this.form.submit()'}, class: 'form-control form-control-sm') %>
       </div>
-      <div class="col text-center">
-        <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill' %>
+      <div class="col-12 fas fa-search mb-1"> 詳細検索</div>
+      <div class="col-8 mb-3">
+        <%= f.label :nickname_cont, 'ニックネーム' %>
+        <%= f.search_field :nickname_cont, class: 'form-control form-control-sm' %>
+        <%= f.label :address_eq, "居住地" %>
+        <%= f.select :address_eq, Customer.addresses.map{|k, v|[k, v]}, {prompt: "選択してください"}, class: 'form-control form-control-sm' %>
       </div>
-      <% end %>
+      <div class="col-4 mb-3">
+        <%= f.label :birthday_to_age_gteq, "年齢", class: 'col-form-label' %>
+        <%= f.number_field :birthday_to_age_gteq, class: 'form-control form-control-sm' %>以上
+        <%= f.number_field :birthday_to_age_lt, class: 'form-control form-control-sm' %>未満
+      </div>
+    </div>
+    <div class="col text-center">
+      <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill' %>
+    </div>
+    <% end %>
   </nav>
   <div class="row">
     <div class="d-flex flex-wrap scroll-list jscroll">
       <% @customers.each do |customer| %>
         <div class="col-6 col-md-4 col-lg-3 text-center mb-4">
           <%= link_to customer_path(customer) do %>
-            <%= attachment_image_tag customer, :profile_image, size: "180x180", format: "jpeg",
+            <%= attachment_image_tag customer, :profile_image, size: "165x165", format: "jpeg",
                 fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded' %>
           <% end %>
           <p class="mb-0">
@@ -51,7 +51,6 @@
             <% end %>
           </p>
           <p>
-            <i class="bi bi-check-circle text-success"></i>&ensp;
             <i class="bi bi-heart text-danger"></i> <%= customer.follower_customer.size %>&ensp;
             <i class="bi bi-clock"></i> <span style="font-size: 12px;"><%= time_ago_in_words(customer.current_sign_in_at) %>前</span>
           </p>
