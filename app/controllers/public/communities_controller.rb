@@ -23,7 +23,7 @@ class Public::CommunitiesController < ApplicationController
   def show
     @community = Community.find(params[:id])
     @community_post = CommunityPost.new
-    @community_posts = CommunityPost.where(community_id: @community.id).all
+    @community_posts = CommunityPost.recent(@community).page(params[:page]).per(10)
   end
 
   def edit
