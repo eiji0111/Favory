@@ -51,3 +51,16 @@ $(window).on('scroll', function() {
     }
   }
 });
+
+/* コミュニティ詳細無限スクロール */
+$(window).on('scroll', function() {
+  var scrollHeight = $(document).height();
+  var scrollPosition = $(window).height() + $(window).scrollTop();
+  if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.1) {
+    $('.jscroll').jscroll({
+      loadingHtml: '<i class="fa fa-spinner">Now Loading...</i>',
+      contentSelector: '.scroll-list',
+      nextSelector: 'span.next:last a'
+    });
+  }
+});

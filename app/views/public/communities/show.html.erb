@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-10 mx-auto d-flex">
-      <div class="col-6 text-center">
+    <div class="col-10 mx-auto d-md-flex">
+      <div class="col-12 col-md-6 text-center">
         <%= attachment_image_tag(@community, :community_image,
             fallback: "no-image.png", style: 'width: 300px; object-fit: cover;', class: 'img-fluid') %>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <h4 class="border-bottom d-inline-block">コミュニティ名</h4>
         <p><%= @community.name %></p>
         <h4 class="border-bottom d-inline-block">概要</h4>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="col-12 py-5">
-      <div class="col-9 mx-auto py-2 text-right">
+      <div class="col-12 col-md-11 col-lg-9 mx-auto py-2 text-right">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-outline-info btn-lg rounded-circle" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
           <i class="far fa-paper-plane"></i>
@@ -33,11 +33,11 @@
           </div>
         </div>
       </div>
-      <div id="community_post">
+      <div id="community_post" class="jscroll scroll-list">
         <%= render 'list', community_posts: @community_posts %>
-      </div>
-      <div class="d-flex justify-content-center py-3">
-        <%= paginate @community_posts %>
+        <div class="jscroll-pagination">
+          <%= paginate @community_posts %>
+        </div>
       </div>
     </div>
   </div>
