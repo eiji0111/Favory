@@ -3,7 +3,7 @@ class Public::CommunityPostsController < ApplicationController
   def create
     @community_posts = current_customer.community_posts.new(community_posts_params)
     if @community_posts.save
-      redirect_to community_path(@community_posts.community.id)
+      @community_posts = CommunityPost.recent(@community_posts.community).page(params[:page]).per(10)
     else
       redirect_back fallback_location: @community_posts
     end

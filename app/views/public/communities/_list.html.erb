@@ -1,0 +1,20 @@
+<% community_posts.each do |community_post| %>
+  <div class="col-12 col-md-11 col-lg-9 mx-auto p-2 border d-flex rounded">
+    <div class="col-3 col-md-2 col-lg-1">
+      <%= link_to customer_path(community_post.customer) do %>
+        <%= attachment_image_tag(community_post.customer, :profile_image, size: "50x50",
+            fallback: "no-image.jpg", style: 'object-fit: cover;', class: 'rounded-circle') %>
+      <% end %>
+    </div>
+    <div class="col-9 col-md-10 col-lg-11">
+      <p>
+        <%= community_post.customer.nickname %>
+        <%= community_post.created_at.strftime('%-m月%-d日') %>
+      </p>
+      <p><%= community_post.content %></p>
+      <div class="text-right">
+        <i class="far fa-clock clock-icon"></i><%= time_ago_in_words(community_post.created_at) %>前
+      </div>
+    </div>
+  </div>
+<% end %>
