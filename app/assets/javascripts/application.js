@@ -40,12 +40,14 @@
 $(window).on('scroll', function() {
   var scrollHeight = $(document).height();
   var scrollPosition = $(window).height() + $(window).scrollTop();
-  if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.1) {
-    $('.jscroll').jscroll({
-      loadingHtml: '<i class="fa fa-spinner">Now Loading...</i>',
-      contentSelector: '.scroll-list',
-      nextSelector: 'span.next:last a'
-    });
-    $('div.jscroll-inner').addClass('d-flex flex-wrap');
+  if (document.URL.match("customers/men") || document.URL.match("customers/women")) {
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.1) {
+      $('.jscroll').jscroll({
+        loadingHtml: '<i class="fa fa-spinner">Now Loading...</i>',
+        contentSelector: '.scroll-list',
+        nextSelector: 'span.next:last a'
+      });
+      $('div.jscroll-inner').addClass('d-flex flex-wrap');
+    }
   }
 });
