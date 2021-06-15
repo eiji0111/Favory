@@ -20,9 +20,9 @@ class Customer < ApplicationRecord
   scope :valid_women, -> (params) { where(sex: 1, is_valid: true).ransack(params) }
 
   attachment :profile_image
-  validates :name, presence: true
+  validates :name, length: { maximum: 20, minimum: 2 }, presence: true
   validates :nickname, presence: true
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A\S+@\S+\.\S+\z/ }
   validates :sex, presence: true
 
   enum sex: { man: 0, woman: 1 }

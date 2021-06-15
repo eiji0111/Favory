@@ -1,11 +1,14 @@
 class Public::CommunityPostsController < ApplicationController
   
   def create
-    @community_posts = current_customer.community_posts.new(community_posts_params)
-    if @community_posts.save
-      @community_posts = CommunityPost.recent(@community_posts.community).page(params[:page]).per(10)
-    else
-      redirect_back fallback_location: @community_posts
+    @community_post = current_customer.community_posts.new(community_posts_params)
+    respond_to do |format|
+      if @community_post.save
+        @community_posts = CommunityPost.recent(@community_post.community).page(params[:page]).per(10)
+        format.js
+      else
+        format.js { render :errors }
+      end
     end
   end
 

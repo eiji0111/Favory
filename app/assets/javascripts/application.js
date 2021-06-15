@@ -64,3 +64,9 @@ $(window).on('scroll', function() {
     });
   }
 });
+
+
+
+function clickRemoveAlert() {
+      $('.js-message-errors').empty();
+    }
