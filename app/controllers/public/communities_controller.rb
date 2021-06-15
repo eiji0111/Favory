@@ -2,11 +2,8 @@ class Public::CommunitiesController < ApplicationController
   before_action :authenticate_customer!
   before_action :ensure_correct_user, only: [:edit, :update]
   
-  def new
-    @community = Community.new
-  end
-
   def index
+    @community = Community.new
     @communities = Community.valid_all(params[:page])
   end
   
@@ -16,7 +13,7 @@ class Public::CommunitiesController < ApplicationController
     if @community.save
       redirect_to communities_path, notice: '管理者が内容を確認・承認したのち、こちらに反映されます'
     else
-      render :new
+      redirect_to communities_path, alert: '正しく保存されませんでした'
     end
   end
 

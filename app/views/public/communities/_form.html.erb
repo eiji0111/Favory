@@ -1,4 +1,5 @@
 <%= form_with model: community_post do |f| %>
+  <div class="js-message-errors"></div>
   <div class="modal-body">
     <%= f.hidden_field :customer_id, value: current_customer.id %>
     <%= f.hidden_field :community_id, value: community.id %>
@@ -8,7 +9,7 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
     <%= f.submit "投稿", class: 'btn btn-primary' %>
   </div>
 <% end %>

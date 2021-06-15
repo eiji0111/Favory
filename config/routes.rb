@@ -41,7 +41,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :edit, :update]
     resources :chats, only: [:create]
     resources :contacts, only: [:new, :create]
-    resources :communities, except: [:destroy]
+    resources :communities, except: [:new, :destroy]
     resources :community_posts, only: [:create]
     resources :army_requests, only: [:new, :create]
   end

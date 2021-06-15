@@ -21,7 +21,44 @@
     <div class="col-6">
       <h1 class="border-bottom">COMMUNITY</h1>
       <p>コミュニティを通じて、共通の趣味や話題から気になる相手を探してみましょう！<br>自分でオリジナルのコミュニティを作成することもできます。</p>
-      <%= link_to ' 新しくコミュニティを作る', new_community_path, class: 'btn btn-success btn-lg rounded-pill bi bi-pencil-square' %>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-outline-info btn-lg rounded-pill" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
+        <i class="bi bi-pencil-square"> 新しくコミュニティを作る</i>
+      </button>
+      <!-- Modal中身 -->
+      <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalCenterTitle">新規作成</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <%= form_with model: @community, local: true do |f| %>
+            <%= render "public/shared/error_messages", resource: @community %>
+              <div class="modal-body">
+                <div class="col form-group">
+                  <%= f.label :community_image, "コミュニティ画像" %>
+                  <%= f.attachment_field :community_image, class: "form-control-file" %>
+                </div>
+                <div class="col form-group">
+                  <%= f.label :name, "コミュニティ名" %>
+                  <%= f.text_field :name, class: "form-control" %>
+                </div>
+                <div class="col form-group">
+                  <%= f.label :introduction, "コミュニティの概要" %>
+                  <%= f.text_area :introduction, class: "form-control" %>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= f.submit "作成", class: 'btn btn-primary' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row mt-3">
