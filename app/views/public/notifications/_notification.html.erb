@@ -1,0 +1,20 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+<div class="col">
+  <span>
+    <%= link_to customer_path(visitor) do %>
+    <%= attachment_image_tag visitor, :profile_image,size: "40x40", format: "jpeg",
+        fallback: "no-image.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+    <% end %>
+    <strong><%= visitor.name %></strong>
+    <%= 'さんが' %>
+    <% case notification.action %>
+    <% when 'follow' then %>
+      <%= "あなたをフォローしました" %>
+    <% end %>
+  </span>
+  <div class="small text-muted text-right">
+    <%= time_ago_in_words(notification.created_at).upcase %>
+  </div>
+</div>
+<hr>

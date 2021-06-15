@@ -44,5 +44,6 @@ Rails.application.routes.draw do
     resources :communities, except: [:new, :destroy]
     resources :community_posts, only: [:create]
     resources :army_requests, only: [:new, :create]
+    resources :notifications, only: [:index]
   end
 end
