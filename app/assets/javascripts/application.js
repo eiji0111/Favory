@@ -58,7 +58,7 @@ $(window).on('scroll', function() {
   var scrollPosition = $(window).height() + $(window).scrollTop();
   if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.1) {
     $('.jscroll').jscroll({
-      loadingHtml: '<i class="fa fa-spinner">Now Loading...</i>',
+      loadingHtml: '<i class="fa fa-spinner fa-pulse">Now Loading...</i>',
       contentSelector: '.scroll-list',
       nextSelector: 'span.next:last a'
     });
