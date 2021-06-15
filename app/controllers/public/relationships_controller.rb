@@ -4,6 +4,7 @@ class Public::RelationshipsController < ApplicationController
   def follow
     @customer = Customer.find(params[:id])
     current_customer.follow(params[:id])
+    @customer.create_notification_follow!(current_customer)
   end
 
   def unfollow
