@@ -36,7 +36,7 @@
               </button>
             </div>
             <%= form_with model: @community, local: true do |f| %>
-            <%= render "public/shared/error_messages", resource: @community %>
+            <div class="js-message-errors"></div>
               <div class="modal-body">
                 <div class="col form-group">
                   <%= f.label :community_image, "コミュニティ画像" %>
