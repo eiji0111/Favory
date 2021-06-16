@@ -16,14 +16,13 @@ class Public::ChatsController < ApplicationController
       room = customer_room.room
     end
     
-    @chats = room.chats
+    @chats = room.chats.includes(:customer)
     @chat = Chat.new(room_id: room.id)
   end
   
   def create
     @chat = current_customer.chats.new(chat_params)
-    @chat.save
-    redirect_to request.referer
+    @chat.save ? (render :create) : (redirect_to request.referer)
   end
   
   def destroy

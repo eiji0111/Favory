@@ -1,3 +1,21 @@
 // Place all the styles related to the public/chats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chat-area {
+  height: 55vh;
+  overflow-y: scroll;
+}
+
+/* メッセージ線・線 */
+.chat-current-customer {
+  border-radius: 10px 0 10px 10px;
+  // box-shadow: 0px 2px 10px -4px #777777;
+  max-width: 75%;
+  background-color: #62ddf1;
+}
+.chat-opponent-customer {
+  border-radius: 0 10px 10px 10px;
+  // box-shadow: 0px 2px 10px -4px #777777;
+  max-width: 75%;
+}

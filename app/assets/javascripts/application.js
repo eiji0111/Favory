@@ -65,8 +65,14 @@ $(window).on('scroll', function() {
   }
 });
 
-
+/* チャット時のみスクロール最下部で表示 */
+$(document).on('turbolinks:load',function scrollToEnd() {
+  if(document.URL.match(/chat\/+\d/)){
+    const messagesArea = document.getElementById('scroll-inner');
+    messagesArea.scrollTop = messagesArea.scrollHeight;
+  }
+});
 
 function clickRemoveAlert() {
-      $('.js-message-errors').empty();
-    }
+  $('.js-message-errors').empty();
+}
