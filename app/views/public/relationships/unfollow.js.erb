@@ -1,1 +1,2 @@
 $("#follow_form").html("<%= j(render partial: 'public/relationships/follow', locals: {customer: @customer}) %>");
+$("#follow_count").html("<%= j(render partial: 'public/customers/follow_count', locals: { customer: @customer }) %>");
