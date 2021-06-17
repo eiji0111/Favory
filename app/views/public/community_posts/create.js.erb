@@ -1,3 +1,4 @@
 $('#community_post').html("<%= j(render partial: 'public/communities/list', locals: { community_posts: @community_posts }) %>");
+$('textarea').val("")
 $('#ModalCenter').modal("hide");
 $('.js-message-errors').empty();
