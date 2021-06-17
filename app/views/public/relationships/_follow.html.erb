@@ -1,6 +1,6 @@
 <%= form_for(customer, url: follow_path(customer.id), method: :post, remote: true) do |f| %>
   <%= hidden_field_tag :followed_id, customer.id %>
   <%= button_tag :type => "submit", :class =>"btn btn-default", :onfocus => "this.blur();" do %>
-    <i class="far fa-heart text-danger"></i>お気に入り
+    <i class="far fa-heart fa-lg text-danger"></i>
   <% end %>
 <% end %>
