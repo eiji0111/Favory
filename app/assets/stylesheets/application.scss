@@ -39,10 +39,6 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
-}
-.container {
-  width: auto;
 }
 
 /* ボタングラデーション */
@@ -69,22 +65,14 @@ footer {
   font-size: 2rem;
 }
 
-/* フッターメニューアイコン */
-.footer_icon {
-  color: #000;
-  &:hover {
-    color: #000;
-    text-decoration: none;
-  }
-}
-.bi-square {
+.men-icon {
   color: #77EEFF;
   &:hover {
     color: #77EEFF;
     textdecoration: none;
   }
 }
-.bi-circle {
+.women-icon {
   color: #FF82B2;
   &:hover {
     color: #FF82B2;
