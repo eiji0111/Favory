@@ -23,9 +23,9 @@ Rails.application.routes.draw do
     root 'homes#top'
     get 'customers/men' => 'customers#men', as: 'customer_men' # 男性会員一覧
     get 'customers/women' => 'customers#women', as: 'customer_women' # 女性会員一覧
-    get 'customers/unsubscribe/:email' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
-    patch 'customers/:id/withdraw/:email' => 'customers#withdraw', as: 'withdraw_customer'
-    put 'customers/withdraw/:email' => 'customers#withdraw'
+    get 'customers/unsubscribe/:id' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    patch 'customers/:id/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
+    put 'customers/withdraw/:id' => 'customers#withdraw'
     get 'customers/followed' => 'relationships#followed', as: 'followed' # お気に入り一覧
     get 'customers/follower' => 'relationships#follower', as: 'follower' # お気に入りされた一覧
     get 'customers/matchers' => 'relationships#matchers', as: 'matchers' # 互いにお気に入りしている一覧

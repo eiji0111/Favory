@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 2021_06_15_023633) do
 
   create_table "army_requests", force: :cascade do |t|
     t.integer "customer_id"
-    t.integer "type", null: false
+    t.integer "army_type", null: false
     t.string "base", null: false
+    t.integer "army_class", null: false
+    t.string "occupation", null: false
     t.string "identification_number", null: false
     t.string "identification_image_id", null: false
     t.datetime "created_at", null: false
@@ -100,21 +102,36 @@ ActiveRecord::Schema.define(version: 2021_06_15_023633) do
     t.string "last_sign_in_ip"
     t.string "name", null: false
     t.string "nickname", null: false
-    t.date "birthday", null: false
     t.integer "sex", default: 0, null: false
-    t.integer "address", default: 0, null: false
     t.boolean "is_valid", default: true, null: false
+    t.boolean "army_flag", default: false, null: false
+    t.string "profile_image_id"
     t.string "one_thing"
-    t.string "hobby"
+    t.text "introduction"
+    t.date "birthday", null: false
+    t.integer "address", default: 0, null: false
+    t.integer "birthplace", default: 0, null: false
+    t.integer "work_location", default: 0, null: false
     t.string "jobs"
     t.integer "annual_income", default: 0, null: false
-    t.string "marriage_history"
-    t.integer "children", default: 0, null: false
+    t.string "height"
+    t.integer "body_shape", default: 0, null: false
+    t.integer "blood_type", default: 0, null: false
     t.integer "personality", default: 0, null: false
+    t.integer "holiday", default: 0, null: false
+    t.integer "car", default: 0, null: false
+    t.string "hobby"
+    t.integer "cigarettes", default: 0, null: false
+    t.integer "alcohol", default: 0, null: false
+    t.integer "housemate", default: 0, null: false
+    t.integer "marriage_history", default: 0, null: false
+    t.integer "children", default: 0, null: false
+    t.integer "willingness_to_marry", default: 0, null: false
+    t.integer "want_kids", default: 0, null: false
+    t.integer "hope_encounter", default: 0, null: false
+    t.integer "date_cost", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_image_id"
-    t.boolean "army_flag", default: false, null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
