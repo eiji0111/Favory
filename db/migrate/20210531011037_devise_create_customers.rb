@@ -33,17 +33,38 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
       t.string :name, null: false
       t.string :nickname, null: false
-      t.date :birthday
       t.integer :sex, null: false, default: 0
-      t.integer :address, null: false, default: 0
       t.boolean :is_valid, null: false, default: true
+      t.boolean :army_flag, null: false, default: false
+      t.string :profile_image_id
       t.string :one_thing
-      t.string :hobby
+      t.text :introduction
+      
+      t.date :birthday
+      t.integer :address, null: false, default: 0
+      t.integer :birthplace, null: false, default: 0
+      t.integer :work_location, null: false, default: 0
       t.string :jobs
       t.integer :annual_income, null: false, default: 0
-      t.string :marriage_history
-      t.boolean :children, null: false, default: false
+      
+      t.string :height
+      t.integer :body_shape, null: false, default: 0
+      t.integer :blood_type, null: false, default: 0
       t.integer :personality, null: false, default: 0
+      
+      t.integer :holiday, null: false, default: 0
+      t.integer :car, null: false, default: 0
+      t.string :hobby
+      t.integer :cigarettes, null: false, default: 0
+      t.integer :alcohol, null: false, default: 0
+      
+      t.integer :housemate, null: false, default: 0
+      t.integer :marriage_history, null: false, default: 0
+      t.integer :children, null: false, default: 0
+      t.integer :willingness_to_marry, null: false, default: 0
+      t.integer :want_kids, null: false, default: 0
+      t.integer :hope_encounter, null: false, default: 0
+      t.integer :date_cost, null: false, default: 0
 
       t.timestamps null: false
     end

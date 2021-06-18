@@ -33,13 +33,6 @@
 
 ## 設計書
 
-### 画面設計
-[UI Flows（customer, admin）](https://app.diagrams.net/#G1VG9xKFV7isXEdvUhBfHfREj8aRbUbPHl)
-
-[ワイヤーフレーム（customer）](https://app.diagrams.net/#G104fLrsdadv6faXYYhFdGKHDZ7pKivmPl)
-
-[ワイヤーフレーム（admin）](https://app.diagrams.net/#G1ZsgXeA43DF-nyVcAF73gBsIGzpBsuyEq)
-
 ### データベース設計
 [ER図](https://app.diagrams.net/#G17lrPNh_ySsC62XzYZTGhL7RXcrM7htlh)
 

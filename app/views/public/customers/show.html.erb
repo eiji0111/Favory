@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="max-width: 900px;">
   <div class="row py-5">
     <div class="col-6 text-center">
       <% if @customer.sex == 'man' %>
@@ -44,65 +44,81 @@
     </div>
   </div>
   <nav>
-    <div class="nav nav-tabs  nav-justified" id="nav-tab" role="tablist">
-      <a class="h6 nav-item nav-link active text-dark" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Profile</a>
-      <a class="h6 nav-item nav-link text-dark" id="nav-love-tab" data-toggle="tab" href="#nav-love" role="tab" aria-controls="nav-love" aria-selected="false">Love</a>
-      <a class="h6 nav-item nav-link text-dark" id="nav-hobby-tab" data-toggle="tab" href="#nav-hobby" role="tab" aria-controls="nav-hobby" aria-selected="false">Hobby</a>
-      <a class="h6 nav-item nav-link text-dark" id="nav-community-tab" data-toggle="tab" href="#nav-community" role="tab" aria-controls="nav-community" aria-selected="false">Community</a>
+    <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">
+      <a class="h6 nav-item nav-link active text-dark" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">
+        <span class="d-none d-md-inline-block border-bottom border-info">プロフィール</span> <i class="bi bi-file-person"></i>
+      </a>
+      <a class="h6 nav-item nav-link text-dark" id="nav-love-tab" data-toggle="tab" href="#nav-love" role="tab" aria-controls="nav-love" aria-selected="false">
+        <span class="d-none d-md-inline-block border-bottom border-danger">恋愛</span> <i class="bi bi-heart"></i>
+      </a>
+      <a class="h6 nav-item nav-link text-dark" id="nav-introduction-tab" data-toggle="tab" href="#nav-introduction" role="tab" aria-controls="nav-introduction" aria-selected="false">
+        <span class="d-none d-md-inline-block border-bottom border-warning">自己紹介</span> <i class="bi bi-chat-text"></i>
+      </a>
+      <a class="h6 nav-item nav-link text-dark" id="nav-community-tab" data-toggle="tab" href="#nav-community" role="tab" aria-controls="nav-community" aria-selected="false">
+        <span class="d-none d-md-inline-block border-bottom border-success">コミュニティ</span> <i class="bi bi-people"></i>
+      </a>
     </div>
   </nav>
   <div class="tab-content pt-4" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-      <ul>
-        <% if current_customer == @customer %>
-          <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-info">名　前</span><%= @customer.name %></li>
-        <% end %>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-info">年　齢</span><%= @customer.age %>歳</li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-info">居住地</span><%= @customer.address %></li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-info">職　業</span><%= @customer.jobs %></li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-info">年　収</span><%= @customer.annual_income %></li>
+      <ul class="row pl-0">
+        <div class="col-6">
+          <% if current_customer == @customer %>
+            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">名　前</span><%= @customer.name %></li>
+          <% end %>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">年　齢</span><%= @customer.age %>歳</li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">居住地</span><%= @customer.address %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">出身地</span><%= @customer.birthplace %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">勤務地</span><%= @customer.work_location %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">仕　事</span><%= @customer.jobs.blank? ? '未設定' : @customer.jobs %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">年　収</span><%= @customer.annual_income %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">身　長</span><%= @customer.height.blank? ? '未設定' : @customer.height %></li>
+        </div>
+        <div class="col-6">
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">体　型</span><%= @customer.body_shape %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">血液型</span><%= @customer.blood_type %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">性　格</span><%= @customer.personality %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">休　日</span><%= @customer.holiday %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">私有車</span><%= @customer.car %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">趣　味</span><%= @customer.hobby.blank? ? '未設定' : @customer.hobby %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">煙　草</span><%= @customer.cigarettes %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">お　酒</span><%= @customer.alcohol %></li>
+        </div>
       </ul>
     </div>
     <div class="tab-pane fade" id="nav-love" role="tabpanel" aria-labelledby="nav-love-tab">
-      <ul>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">結婚歴</span><%= @customer.marriage_history %></li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">子供の有無</span><%= @customer.children %></li>
-        <li></li>
+      <ul class="pl-0">
+        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">同居人</span><%= @customer.housemate %></li>
+        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">結婚歴</span><%= @customer.marriage_history %></li>
+        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">子供の有無</span><%= @customer.children %></li>
+        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">結婚に対する意思</span><%= @customer.willingness_to_marry %></li>
+        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">子供が欲しいか</span><%= @customer.want_kids %></li>
+        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">出会うまでの希望</span><%= @customer.hope_encounter %></li>
+        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">初回デート費用</span><%= @customer.date_cost %></li>
       </ul>
     </div>
-    <div class="tab-pane fade" id="nav-hobby" role="tabpanel" aria-labelledby="nav-hobby-tab">
-      <ul>
-        <li>
-          <% if @customer.hobby.blank? %>
-            未設定
-          <% else %>
-            <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-warning">趣　味</span><%= @customer.hobby %></li>
-          <% end %>
-        </li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-warning">性　格</span><%= @customer.personality %></li>
-      </ul>
+    <div class="tab-pane fade" id="nav-introduction" role="tabpanel" aria-labelledby="nav-introduction-tab">
+      <% if @customer.introduction.blank? %>
+        <p>まだ自己紹介を作成していません。</p>
+      <% else %>
+        <ul class="pl-0">
+          <li class="col-12 col-md-8 mx-auto mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-warning shadow">自己紹介</span>
+            <p class="pt-3"><%= @customer.introduction %></p>
+          </li>
+        </ul>
+      <% end %>
     </div>
     <div class="tab-pane fade" id="nav-community" role="tabpanel" aria-labelledby="nav-community-tab">
       <% if @communities.blank? %>
         <p>まだコミュニティを作成していません。</p>
       <% end %>
-      <div class="d-flex flex-nowrap overflow-auto col-12 px-4">
+      <div class="d-flex flex-nowrap overflow-auto">
         <% @communities.each do |community| %>
-          <% if community.valid_status == "許可済み" %>
-            <div class="col-6 col-md-4 col-lg-3 m-3 p-0 card border border-dark rounded">
+          <% if community.valid_status == "許可" %>
+            <%= link_to community_path(community) do %>
               <%= attachment_image_tag(community, :community_image, size: "150x150",
-                  fallback: "no-image.png", style: 'object-fit: cover;', class: 'card-img-top') %>
-              <div class="card-body">
-                <h5 class="card-title">
-                  <%= link_to community.name, community_path(community) %>
-                </h5>
-                <p class="card-text text-nowrap text-truncate"><%= community.introduction %></p>
-                <p><%= community.owner_nickname %></p>
-                <p class="text-center mb-0">
-                  <%= link_to "参加する", community_path(community), class: 'btn btn-primary btn-sm rounded-pill' %>
-                </p>
-              </div>
-            </div>
+                  fallback: "no-image.png", style: 'object-fit: cover;', class: 'mr-2 rounded') %>
+            <% end %>
           <% end %>
         <% end %>
       </div>

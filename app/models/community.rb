@@ -10,5 +10,5 @@ class Community < ApplicationRecord
   validates :introduction, presence: true
   attachment :community_image, destroy: false
   
-  enum valid_status: { "申請待ち": 0, "許可済み": 1, "却下": 2 }
+  enum valid_status: { "申請待ち": 0, "許可": 1, "却下": 2 }
 end
