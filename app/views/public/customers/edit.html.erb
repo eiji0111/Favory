@@ -20,16 +20,9 @@
           <p class="d-inline-block mb-0">ふぁぼ <strong><%= @customer.following_customer.count %></strong>人</p>&emsp;
           <p class="d-inline-block mb-0">ふぁぼされた <strong id="follow_count"><%= render partial: "follow_count", locals: { customer: @customer } %></strong>人</p>
         </div>
-        <div class="col d-none pt-3 d-sm-block">
-          ひとこと<br>
-          <%= f.text_field :one_thing, class: "form-control form-control-sm" %>
-          <div class="text-center mx-auto pt-3">
-            <%= f.submit '変更する', class: 'btn btn-outline-success btn-sm rounded-pill' %>
-          </div>
-        </div>
       </div>
-      <div class="col-11 mx-auto pt-3 d-sm-none">
-        ひとこと<br>
+      <div class="col-sm-6 ml-auto">
+        ひとこと
         <%= f.text_field :one_thing, class: "form-control form-control-sm" %>
         <div class="text-center mx-auto pt-3">
           <%= f.submit '変更する', class: 'btn btn-outline-success btn-sm rounded-pill' %>
@@ -109,7 +102,7 @@
         </ul>
       </div>
       <div class="tab-pane fade" id="nav-love" role="tabpanel" aria-labelledby="nav-love-tab">
-        <ul class="col-8 col-md-6 mx-auto pl-0">
+        <ul class="col-6 pl-0">
           <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">同居人</span>
             <%= f.select :housemate, Customer.housemates.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
           </li>
