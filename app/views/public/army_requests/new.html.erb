@@ -1,18 +1,26 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12">
+  <div class="row py-5">
+    <div class="col-12 text-center">
       <h3>自衛官認証申請フォーム</h3>
     </div>
-    <div class="col-10 mx-auto">
+    <div class="col-10 col-md-8 mx-auto">
       <%= form_with model: @army_request, local: true do |f| %>
         <%= f.hidden_field :customer_id, value: current_customer.id %>
         <div class="form-group">
-          <%= f.label :type, '陸自・海自・空自' %>
-          <%= f.select :type, ArmyRequest.types.keys, { include_blank: '選択してください'}, { class: 'form-control' } %>
+          <%= f.label :army_type, '陸自・海自・空自' %>
+          <%= f.select :army_type, ArmyRequest.army_types.keys, { include_blank: '選択してください'}, { class: 'form-control' } %>
         </div>
         <div class="form-group">
           <%= f.label :base, '駐屯地・基地名' %>
           <%= f.text_field :base, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :army_class, '階級' %>
+          <%= f.select :army_class, ArmyRequest.army_classes.keys, { include_blank: '選択してください'}, { class: 'form-control' } %>
+        </div>
+        <div class="form-group">
+          <%= f.label :occupation, '職種' %>
+          <%= f.text_field :occupation, class: "form-control" %>
         </div>
         <div class="form-group">
           <%= f.label :identification_number, '認識番号' %>

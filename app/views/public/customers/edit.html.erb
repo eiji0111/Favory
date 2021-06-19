@@ -4,17 +4,17 @@
       <div class="col-6 text-center">
         <% if @customer.sex == 'man' %>
           <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
-              fallback: "no-image-man.jpg", class: 'customer-image shadow rounded-circle' %>
+              fallback: "no-image-man.jpg", onClick: "$('.image-field').click()", class: 'customer-image edit-customer-image shadow rounded-circle' %>
         <% else %>
           <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
-              fallback: "no-image-woman.jpg", class: 'customer-image shadow rounded-circle' %>
+              fallback: "no-image-woman.jpg", onClick: "$('.image-field').click()", class: 'customer-image edit-customer-image shadow rounded-circle' %>
         <% end %>
-        <%= f.attachment_field :profile_image, class: "form-control-file-sm py-2" %>
+        <%= f.attachment_field :profile_image,  class: "image-field d-none form-control-file-sm py-2" %>
       </div>
       <div class="col-6">
         <div class="col">
           <%= f.label :nickname, class: 'mb-0' %>
-          <%= f.text_field :nickname, class: 'form-control form-control-sm' %>
+          <%= f.text_field :nickname, class: 'form-control shadow rounded-pill' %>
         </div>
         <div class="col pt-2">
           <p class="d-inline-block mb-0">ふぁぼ <strong><%= @customer.following_customer.count %></strong>人</p>&emsp;
@@ -23,9 +23,9 @@
       </div>
       <div class="col-sm-6 ml-auto">
         ひとこと
-        <%= f.text_field :one_thing, class: "form-control form-control-sm" %>
+        <%= f.text_field :one_thing, class: "form-control shadow rounded-pill" %>
         <div class="text-center mx-auto pt-3">
-          <%= f.submit '変更する', class: 'btn btn-outline-success btn-sm rounded-pill' %>
+          <%= f.submit '変更する', class: 'btn btn-outline-success btn-sm shadow rounded-pill' %>
         </div>
       </div>
     </div>
@@ -47,89 +47,89 @@
         <ul class="row pl-0">
           <div class="col-6">
             <% if current_customer == @customer %>
-              <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">名　前</span>
-                <%= f.text_field :name, class: "form-control form-control-sm mt-2" %>
+              <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">名　前</span>
+                <%= f.text_field :name, class: "form-control shadow rounded-pill mt-2" %>
               </li>
             <% end %>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">生年月日</span>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">生年月日</span><br>
               <%= f.date_select :birthday, { use_month_numbers: true,start_year: 1971,
-                  end_year: (Time.now.year - 10) }, { class: "form-control form-control-sm mt-2" } %>
+                end_year: (Time.now.year - 10), default: Date.new(1996, 1, 1)} , { class: 'form-control shadow rounded-pill d-inline-block w-auto mt-2 shadow rounded-pill' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">居住地</span>
-              <%= f.select :address, Customer.addresses.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">居住地</span>
+              <%= f.select :address, Customer.addresses.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">出身地</span>
-              <%= f.select :birthplace, Customer.birthplaces.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">出身地</span>
+              <%= f.select :birthplace, Customer.birthplaces.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">勤務地</span>
-              <%= f.select :work_location, Customer.work_locations.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">勤務地</span>
+              <%= f.select :work_location, Customer.work_locations.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">仕　事</span>
-              <%= f.text_field :jobs, class: "form-control form-control-sm mt-2" %></li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">年　収</span>
-              <%= f.select :annual_income, Customer.annual_incomes.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">仕　事</span>
+              <%= f.text_field :jobs, class: "form-control shadow rounded-pill mt-2" %></li>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">年　収</span>
+              <%= f.select :annual_income, Customer.annual_incomes.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">身　長</span>
-              <%= f.select :height, (135..215).to_a, { include_blank: '未設定' }, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">身　長</span>
+              <%= f.select :height, (135..215).to_a, { include_blank: '未設定' }, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
           </div>
           <div class="col-6">
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">体　型</span>
-              <%= f.select :body_shape, Customer.body_shapes.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">体　型</span>
+              <%= f.select :body_shape, Customer.body_shapes.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">血液型</span>
-              <%= f.select :blood_type, Customer.blood_types.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">血液型</span>
+              <%= f.select :blood_type, Customer.blood_types.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">性　格</span>
-              <%= f.select :personality, Customer.personalities.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">性　格</span>
+              <%= f.select :personality, Customer.personalities.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">休　日</span>
-              <%= f.select :holiday, Customer.holidays.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">休　日</span>
+              <%= f.select :holiday, Customer.holidays.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">私有車</span>
-              <%= f.select :car, Customer.cars.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">私有車</span>
+              <%= f.select :car, Customer.cars.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">趣　味</span>
-              <%= f.text_field :hobby, class: "form-control form-control-sm mt-2" %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">趣　味</span>
+              <%= f.text_field :hobby, class: "form-control shadow rounded-pill mt-2" %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">煙　草</span>
-              <%= f.select :cigarettes, Customer.cigarettes.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">煙　草</span>
+              <%= f.select :cigarettes, Customer.cigarettes.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">お　酒</span>
-              <%= f.select :alcohol, Customer.alcohols.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">お　酒</span>
+              <%= f.select :alcohol, Customer.alcohols.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
             </li>
           </div>
         </ul>
       </div>
       <div class="tab-pane fade" id="nav-love" role="tabpanel" aria-labelledby="nav-love-tab">
         <ul class="col-6 pl-0">
-          <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">同居人</span>
-            <%= f.select :housemate, Customer.housemates.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+          <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">同居人</span>
+            <%= f.select :housemate, Customer.housemates.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
           </li>
-          <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">結婚歴</span>
-            <%= f.select :marriage_history, Customer.marriage_histories.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+          <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">結婚歴</span>
+            <%= f.select :marriage_history, Customer.marriage_histories.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
           </li>
-          <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">子供の有無</span>
-            <%= f.select :children, Customer.children.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+          <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">子供の有無</span>
+            <%= f.select :children, Customer.children.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
           </li>
-          <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">結婚に対する意思</span>
-            <%= f.select :willingness_to_marry, Customer.willingness_to_marries.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+          <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">結婚に対する意思</span>
+            <%= f.select :willingness_to_marry, Customer.willingness_to_marries.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
           </li>
-          <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">子供が欲しいか</span>
-            <%= f.select :want_kids, Customer.want_kids.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+          <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">子供が欲しいか</span>
+            <%= f.select :want_kids, Customer.want_kids.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
           </li>
-          <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">出会うまでの希望</span>
-            <%= f.select :hope_encounter, Customer.hope_encounters.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+          <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">出会うまでの希望</span>
+            <%= f.select :hope_encounter, Customer.hope_encounters.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
           </li>
-          <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger">初回デート費用</span>
-            <%= f.select :date_cost, Customer.date_costs.keys, {}, { class: 'form-control form-control-sm mt-2' } %>
+          <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">初回デート費用</span>
+            <%= f.select :date_cost, Customer.date_costs.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
           </li>
         </ul>
       </div>
       <div class="tab-pane fade" id="nav-introduction" role="tabpanel" aria-labelledby="nav-introduction-tab">
         <ul class="pl-0">
-          <li class="col-12 col-md-8 mx-auto mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-warning">自己紹介</span>
-            <%= f.text_area :introduction, rows: '10', class: "form-control form-control-sm mt-2" %>
+          <li class="col-12 col-md-8 mx-auto mb-3"><span class="text-white px-3 py-1 rounded-pill bg-warning">自己紹介</span>
+            <%= f.text_area :introduction, rows: '10', class: "form-control shadow rounded mt-2 chat-textarea" %>
           </li>
         </ul>
       </div>

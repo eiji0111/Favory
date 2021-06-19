@@ -1,42 +1,40 @@
 <div class="container">
   <div class="row py-5 d-flex flex-column">
-    <div class="col-10 col-md-8 col-lg-6 mx-auto mb-3 p-3 p-md-5 border border-dark rounded-lg shadow">
+    <div class="col-10 col-md-8 col-lg-6 mx-auto mb-3 p-3 p-md-5 border border rounded-lg shadow bg-white">
       <%= render "public/shared/error_messages", resource: resource %>
-      <div class="col text-center"><h3>新規登録</h3></div>
-      <div class="col form-group">
+      <div class="col text-center text-info"><h3>新規登録</h3></div>
+      <div class="col form-group pt-3">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
             html: { class: "needs-validation", novalidate: :novalidate }) do |f| %>
-          <%= f.label :name, class: 'col col-md-4 offset-md-1 mt-3' %>
-          <%= f.text_field :name, class: 'col-10 col-md-7 mx-auto form-control', required: :required %>
+          <%= f.text_field :name, placeholder: 'お名前', class: 'col-10 col-md-7 mt-4 mx-auto form-control shadow rounded-pill bg-white', required: :required %>
           <div class="invalid-feedback col-11 col-md-8 mx-auto">お名前を入力して下さい</div>
-          <%= f.label :nickname, class: 'col col-md-5 offset-md-1 mt-3' %>
-          <%= f.text_field :nickname, class: 'col-10 col-md-7 mx-auto form-control', required: :required %>
+          <%= f.text_field :nickname, placeholder: 'ニックネーム', class: 'col-10 col-md-7 mt-4 mx-auto form-control shadow rounded-pill bg-white', required: :required %>
           <div class="invalid-feedback col-11 col-md-8 mx-auto">ニックネームを入力して下さい</div>
-          <%= f.label :email, class: 'col col-md-5 offset-md-1 mt-3' %>
-          <%= f.email_field :email, class: 'col-10 col-md-7 mx-auto form-control', required: :required %>
+          <%= f.email_field :email, placeholder: 'メールアドレス', class: 'col-10 col-md-7 mt-4 mx-auto form-control shadow rounded-pill bg-white', required: :required %>
           <div class="invalid-feedback col-11 col-md-8 mx-auto">メールアドレスを入力して下さい</div>
-          <%= f.label :birthday, class: 'col col-md-4 offset-md-1 mt-3' %>
-          <div class="col text-center">
-            <%= f.date_select :birthday, use_month_numbers: true,start_year: 1971,
-                end_year: (Time.now.year - 10), default: Date.new(1996, 1, 1), class: 'form-control' %>
+          <div class="form-group text-center pt-4">
+            <%= f.date_select :birthday, { use_month_numbers: true,start_year: 1971,
+                end_year: (Time.now.year - 10), default: Date.new(1996, 1, 1)} , { class: 'form-control d-inline-block w-auto shadow rounded-pill' } %>
           </div>
-          <%= f.label :sex, class: 'col col-md-3 offset-md-1 mt-3' %>
-          <div class="col text-center">
-            <%= f.radio_button :sex, :man %>
-            <%= f.label :sex, "男性", value: :man %>
-            <%= f.radio_button :sex, :woman %>
-            <%= f.label :sex, "女性", value: :woman %>
+          <div class="form-group col-11 col-md-8 mx-auto pt-2 text-center">
+            <div class="btn-group btn-group-toggle " data-toggle="buttons">
+              <label class="btn btn-outline-info active rounded-pill shadow mr-3">
+                <%= f.radio_button :sex, 0, {checked: true} %> 男　性
+              </label>
+              <label class="btn btn-outline-danger rounded-pill shadow">
+                <%= f.radio_button :sex, 1, {} %> 女　性
+              </label>
+            </div>
           </div>
-          <%= f.label :password, class: 'col col-md-4 offset-md-1 mt-3' %>
-          <%= f.password_field :password, class: 'col-10 col-md-7 mx-auto form-control', required: :required %>
+          <%= f.password_field :password, placeholder: 'パスワード', class: 'col-10 col-md-7 mt-4 mx-auto form-control shadow rounded-pill bg-white', required: :required %>
           <div class="invalid-feedback col-11 col-md-8 mx-auto">パスワードを入力して下さい</div>
           <div class="col text-center">
-            <%= f.submit '新規登録', class: 'btn btn-primary rounded-pill mt-3' %>
-          </div>
-          <div class="col text-center mt-3">
-            <%= link_to 'アカウントをお持ちの方はこちらから', new_customer_session_path %>
+            <%= f.submit '新規登録', class: 'btn btn-outline-info shadow rounded-pill mt-3' %>
           </div>
         <% end %>
+        <div class="col text-center pt-3">
+          <%= link_to 'アカウントをお持ちの方はこちら', new_customer_session_path, class: 'text-muted' %>
+        </div>
       </div>
     </div>
   </div>

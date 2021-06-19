@@ -1,9 +1,34 @@
 <div class="container">
   <% @url_type = customer_men_path %>
   <%= render partial: 'search', locals: { q: @q, url_type: @url_type } %>
-  <%= render 'index', objects: @customers %>
-  <div class="row">
-    <div class="col-auto mx-auto">
+  <div class="jscroll scroll-list">
+    <div class="row text-center">
+      <% @customers.each do |customer| %>
+        <div class="col">
+          <%= link_to customer_path(customer) do %>
+            <%= attachment_image_tag customer, :profile_image, size: '150x150', format: "jpeg",
+                fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'shadow rounded' %>
+          <% end %>
+          <p class="mb-0">
+            <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(customer.created_at) %>
+              <span class="new-tag">new</span>
+            <% end %>
+            <%= customer.age %>歳 
+            <% if customer.address != "秘密" %>
+              <%= customer.address %>
+            <% end %>
+          </p>
+          <p>
+            <% if customer.army_flag == true %>
+              <i class="bi bi-check-circle text-success mr-1"></i>
+            <% end %>
+            <i class="bi bi-heart text-danger"></i> <%= customer.follower_customer.size %>&ensp;
+            <i class="bi bi-clock"></i> <span style="font-size: 12px;"><%= time_ago_in_words(customer.current_sign_in_at) %>前</span>
+          </p>
+        </div>
+      <% end %>
+    </div>
+    <div class="jscroll-pagination">
       <%= paginate @customers %>
     </div>
   </div>

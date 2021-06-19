@@ -1,0 +1,31 @@
+<div class="jscroll scroll-list">
+  <div class="row text-center">
+    <% objects.each do |object| %>
+      <div class="col">
+        <%= link_to customer_path(object) do %>
+          <%= attachment_image_tag object, :profile_image, size: '150x150', format: "jpeg",
+              fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'shadow rounded' %>
+        <% end %>
+        <p class="mb-0">
+            <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(object.created_at) %>
+              <span class="new-tag">new</span>
+            <% end %>
+            <%= object.age %>歳 
+            <% if object.address != "秘密" %>
+              <%= object.address %>
+            <% end %>
+          </p>
+          <p>
+            <% if object.army_flag == true %>
+              <i class="bi bi-check-circle text-success mr-1"></i>
+            <% end %>
+            <i class="bi bi-heart text-danger"></i> <%= object.follower_customer.size %>&ensp;
+            <i class="bi bi-clock"></i> <span style="font-size: 12px;"><%= time_ago_in_words(object.current_sign_in_at) %>前</span>
+          </p>
+      </div>
+    <% end %>
+    <div class="jscroll-pagination">
+      <%= paginate objects %>
+    </div>
+  </div>
+</div>

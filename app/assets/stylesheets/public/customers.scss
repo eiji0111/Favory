@@ -4,6 +4,11 @@
 .customer-image {
   object-fit: cover;
 }
+.edit-customer-image {
+  &:hover {
+    cursor: pointer;
+  }
+}
 
 .new-tag {
   font-weight: bold;
