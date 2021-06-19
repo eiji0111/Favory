@@ -15,32 +15,32 @@
   <div class="tab-content pt-4" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-favo" role="tabpanel" aria-labelledby="nav-favo-tab">
       <% if @followeds.blank? %>
-        <div class="col py-3">
+        <div class="col py-3 text-center">
           ふぁぼしたユーザーはいません。<br>
           気になるユーザーをふぁぼしてみよう！
         </div>
       <% else %>
-        <%= render 'public/customers/index', objects: @followeds %>
+        <%= render 'index', objects: @followeds %>
       <% end %>
     </div>
     <div class="tab-pane fade" id="nav-favorited" role="tabpanel" aria-labelledby="nav-favorited-tab">
       <% if @followers.blank? %>
-        <div class="col py-3">
+        <div class="col py-3 text-center">
           ふぁぼされていません。<br>
           プロフィールを編集してみよう！
         </div>
       <% else %>
-        <%= render 'public/customers/index', objects: @followers %>
+        <%= render 'index', objects: @followers %>
       <% end %>
     </div>
     <div class="tab-pane fade" id="nav-match" role="tabpanel" aria-labelledby="nav-match-tab">
       <% if @matchers.blank? %>
-        <div class="col py-3">
+        <div class="col py-3 text-center">
           マッチングしたユーザーはいません。<br>
           積極的にふぁぼしてみよう！
         </div>
       <% else %>
-        <%= render 'public/customers/index', objects: @matchers %>
+        <%= render 'index', objects: @matchers %>
       <% end %>
     </div>
   </div>

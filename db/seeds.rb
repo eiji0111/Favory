@@ -1,7 +1,7 @@
-# Admin.create!(
-#   email: "a@a.com",
-#   password: "aaaaaa"
-#   )
+Admin.create!(
+  email: "a@a.com",
+  password: "aaaaaa"
+  )
   
 100.times do |n|
   Customer.create!(

@@ -17,6 +17,9 @@ class Public::ArmyRequestsController < ApplicationController
   private
   
   def army_request_params
-    params.require(:army_request).permit(:customer_id, :type, :base, :identification_number, :identification_image)
+    params.require(:army_request).permit(
+      :customer_id, :army_type, :base, :army_class, :occupation,
+      :identification_number, :identification_image
+    )
   end
 end

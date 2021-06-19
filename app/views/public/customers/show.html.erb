@@ -8,6 +8,9 @@
         <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
             fallback: "no-image-woman.jpg", class: 'customer-image shadow rounded-circle' %>
       <% end %>
+      <% if @customer.army_flag == true %>
+        <div class="col pt-1"><i class="bi bi-check-circle text-success mr-1"></i>自衛官認証済</div>
+      <% end %>
     </div>
     <div class="col-6">
       <div class="col">
@@ -29,9 +32,11 @@
         <p class="d-inline-block mb-0">ふぁぼされた <strong id="follow_count"><%= render partial: "follow_count", locals: { customer: @customer } %></strong>人</p>
       </div>
       <% if @customer == current_customer %>
-        <div class="col pt-3"><%= link_to '自衛官認証申請', new_army_request_path, class: 'btn btn-outline-success btn-sm rounded-pill' %></div>
+        <% if !@customer.army_flag? %>
+          <div class="col pt-3"><%= link_to '自衛官認証申請', new_army_request_path, class: 'btn btn-outline-success btn-sm shadow rounded-pill' %></div>
+        <% end %>
       <% else %>
-        <div class="col pt-3"><%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-success btn-sm rounded-pill far fa-comments' %></div>
+        <div class="col pt-3"><%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-success btn-sm shadow rounded-pill far fa-comments' %></div>
       <% end %>
       <div class="col d-none pt-3 d-sm-block">
         ひとこと<br>
@@ -64,7 +69,7 @@
       <ul class="row pl-0">
         <div class="col-6">
           <% if current_customer == @customer %>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info">名　前</span><%= @customer.name %></li>
+            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">名　前</span><%= @customer.name %></li>
           <% end %>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">年　齢</span><%= @customer.age %>歳</li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">居住地</span><%= @customer.address %></li>
@@ -73,9 +78,9 @@
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">仕　事</span><%= @customer.jobs.blank? ? '未設定' : @customer.jobs %></li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">年　収</span><%= @customer.annual_income %></li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">身　長</span><%= @customer.height.blank? ? '未設定' : @customer.height %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">体　型</span><%= @customer.body_shape %></li>
         </div>
         <div class="col-6">
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">体　型</span><%= @customer.body_shape %></li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">血液型</span><%= @customer.blood_type %></li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">性　格</span><%= @customer.personality %></li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">休　日</span><%= @customer.holiday %></li>
@@ -98,26 +103,28 @@
       </ul>
     </div>
     <div class="tab-pane fade" id="nav-introduction" role="tabpanel" aria-labelledby="nav-introduction-tab">
+      <span class="text-white px-3 py-1 rounded-pill bg-warning shadow">自己紹介</span>
       <% if @customer.introduction.blank? %>
-        <p>まだ自己紹介を作成していません。</p>
+        <p class="py-3">まだ自己紹介を作成していません。</p>
       <% else %>
         <ul class="pl-0">
-          <li class="col-12 col-md-8 mx-auto mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-warning shadow">自己紹介</span>
+          <li class="mb-3">
             <div class="col py-3"><%= safe_join(@customer.introduction.split("\n"), tag(:br)) %></div>
           </li>
         </ul>
       <% end %>
     </div>
     <div class="tab-pane fade" id="nav-community" role="tabpanel" aria-labelledby="nav-community-tab">
+      <span class="text-white px-3 py-1 rounded-pill bg-success shadow">コミュニティ</span>
       <% if @communities.blank? %>
-        <p>まだコミュニティを作成していません。</p>
+        <p class="py-3">まだコミュニティを作成していません。</p>
       <% end %>
-      <div class="d-flex flex-nowrap overflow-auto">
+      <div class="d-flex flex-nowrap overflow-auto py-3">
         <% @communities.each do |community| %>
           <% if community.valid_status == "許可" %>
             <%= link_to community_path(community) do %>
               <%= attachment_image_tag(community, :community_image, size: "150x150",
-                  fallback: "no-image.png", style: 'object-fit: cover;', class: 'mr-2 rounded') %>
+                  fallback: "no-image.png", style: 'object-fit: cover;', class: 'mr-2 shadow rounded') %>
             <% end %>
           <% end %>
         <% end %>
