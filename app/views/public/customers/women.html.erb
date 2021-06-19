@@ -1,32 +1,34 @@
 <div class="container">
   <% @url_type = customer_women_path %>
   <%= render partial: 'search', locals: { q: @q, url_type: @url_type } %>
-  <div class="row text-center">
-  <% @customers.each do |customer| %>
-    <div class="col">
-      <%= link_to customer_path(customer) do %>
-        <%= attachment_image_tag customer, :profile_image, size: '150x150', format: "jpeg",
-            fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+  <div class="jscroll scroll-list">
+    <div class="row text-center">
+      <% @customers.each do |customer| %>
+        <div class="col">
+          <%= link_to customer_path(customer) do %>
+            <%= attachment_image_tag customer, :profile_image, size: '150x150', format: "jpeg",
+                fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'shadow rounded-circle' %>
+          <% end %>
+          <p class="mb-0">
+            <%= customer.age %>歳 
+            <% if customer.address != "未設定" %>
+              <%= customer.address %>
+            <% end %>
+          </p>
+          <p>
+            <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(customer.created_at) %>
+              <span class="new-tag">new</span>
+            <% end %>
+            <%= customer.nickname %>
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-auto mx-auto">
+            <%= paginate @customers %>
+          </div>
+        </div>
       <% end %>
-      <p class="mb-0">
-        <%= customer.age %>歳 
-        <% if customer.address != "未設定" %>
-          <%= customer.address %>
-        <% end %>
-      </p>
-      <p>
-        <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(customer.created_at) %>
-          <span class="new-tag">new</span>
-        <% end %>
-        <%= customer.nickname %>
-      </p>
-    </div>
-  <% end %>
-</div>
-
-  <div class="row">
-    <div class="col-auto mx-auto">
-      <%= paginate @customers %>
     </div>
   </div>
+
 </div>

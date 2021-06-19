@@ -36,19 +36,19 @@
 
 /* 会員一覧無限スクロール */
 /* global $ */
-// $(window).on('scroll', function() {
-//   var scrollHeight = $(document).height();
-//   var scrollPosition = $(window).height() + $(window).scrollTop();
-//   if (document.URL.match("customers/men") || document.URL.match("customers/women")) {
-//     if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
-//       $('.jscroll').jscroll({
-//         loadingHtml: '<i class="fa fa-spinner">Now Loading...</i>',
-//         contentSelector: '.scroll-list',
-//         nextSelector: 'span.next:last a'
-//       });
-//     }
-//   }
-// });
+$(window).on('scroll', function() {
+  var scrollHeight = $(document).height();
+  var scrollPosition = $(window).height() + $(window).scrollTop();
+  if (document.URL.match("customers/men") || document.URL.match("customers/women")) {
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+      $('.jscroll').jscroll({
+        loadingHtml: '<i class="fa fa-spinner fa-pulse"></i>',
+        contentSelector: '.scroll-list',
+        nextSelector: 'span.next:last a'
+      });
+    }
+  }
+});
 
 /* コミュニティ詳細無限スクロール */
 $(window).on('scroll', function() {
@@ -57,7 +57,7 @@ $(window).on('scroll', function() {
   if (document.URL.match(/communities\/+\d/)) {
     if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.1) {
       $('.jscroll').jscroll({
-        loadingHtml: '<i class="fa fa-spinner fa-pulse">Now Loading...</i>',
+        loadingHtml: '<i class="fa fa-spinner fa-pulse"></i>',
         contentSelector: '.scroll-list',
         nextSelector: 'span.next:last a'
       });

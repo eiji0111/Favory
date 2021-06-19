@@ -1,9 +1,9 @@
-<div class="row text-center">
+<div class="row text-center jscroll scroll-list">
   <% objects.each do |object| %>
     <div class="col">
       <%= link_to customer_path(object) do %>
         <%= attachment_image_tag object, :profile_image, size: '150x150', format: "jpeg",
-            fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded' %>
+            fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'shadow rounded' %>
       <% end %>
       <p class="mb-0">
         <%= object.age %>歳 

@@ -1,9 +1,30 @@
 <div class="container">
   <% @url_type = customer_men_path %>
   <%= render partial: 'search', locals: { q: @q, url_type: @url_type } %>
-  <%= render 'index', objects: @customers %>
-  <div class="row">
-    <div class="col-auto mx-auto">
+  <div class="jscroll scroll-list">
+    <div class="row text-center">
+      <% @customers.each do |customer| %>
+        <div class="col">
+          <%= link_to customer_path(customer) do %>
+            <%= attachment_image_tag customer, :profile_image, size: '150x150', format: "jpeg",
+                fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'shadow rounded' %>
+          <% end %>
+          <p class="mb-0">
+            <%= customer.age %>歳 
+            <% if customer.address != "未設定" %>
+              <%= customer.address %>
+            <% end %>
+          </p>
+          <p>
+            <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(customer.created_at) %>
+              <span class="new-tag">new</span>
+            <% end %>
+            <%= customer.nickname %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+    <div class="jscroll-pagination">
       <%= paginate @customers %>
     </div>
   </div>

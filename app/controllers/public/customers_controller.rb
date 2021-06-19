@@ -24,9 +24,9 @@ class Public::CustomersController < ApplicationController
   def update
     if @customer.update(customer_params)
       if @customer.saved_changes?
-        flash[:notice] = 'プロフィールを更新しました'
         redirect_to customer_path(@customer)
       else
+        flash[:alert] = 'プロフィールを更新できませんでした'
         redirect_to customer_path(@customer)
       end
     else
