@@ -1,32 +1,41 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="/"><%= image_tag 'logo-image.png', size: "98x38" %></a>
-      <ul class="navbar-nav ml-auto">
       <% if admin_signed_in? %>
-        <li class="nav-item mr-3">
-          <%= link_to '男性会員一覧', admin_men_path, class: 'btn btn-outline-dark' %>
-        </li>
-        <li class="nav-item mr-3">
-          <%= link_to '女性会員一覧', admin_women_path, class: 'btn btn-outline-dark' %>
-        </li>
-        <li class="nav-item mr-3">
-          <%= link_to 'コミュニティ一覧', admin_communities_path, class: 'btn btn-outline-dark' %>
-        </li>
-        <li class="nav-item mr-3">
-          <%= link_to '自衛官申請一覧', admin_army_requests_path, class: 'btn btn-outline-dark' %>
-        </li>
-        <li class="nav-item mr-3">
-          <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-dark' %>
-        </li>
+        <a class="navbar-brand" href="/admin/top"><%= image_tag 'logo-image.png', size: "98x38" %></a>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mr-3">
+            <%= link_to '男性会員一覧', admin_men_path, class: 'btn btn-outline-dark' %>
+          </li>
+          <li class="nav-item mr-3">
+            <%= link_to '女性会員一覧', admin_women_path, class: 'btn btn-outline-dark' %>
+          </li>
+          <li class="nav-item mr-3">
+            <%= link_to 'コミュニティ一覧', admin_communities_path, class: 'btn btn-outline-dark' %>
+          </li>
+          <li class="nav-item mr-3">
+            <%= link_to '自衛官申請一覧', admin_army_requests_path, class: 'btn btn-outline-dark' %>
+          </li>
+          <li class="nav-item mr-3">
+            <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-dark' %>
+          </li>
+        </ul>
       <% elsif customer_signed_in? %>
-        <li class="nav-item mr-3">
-          <%= link_to ' ', destroy_customer_session_path, method: :delete, class: 'bi bi-box-arrow-right fa-lg fa-fw text-dark' %>
-        </li>
+        <%= link_to customer_path(current_customer), class: 'navbar-brand' do %>
+          <%= image_tag 'logo-image.png', size: "98x38" %>
+        <% end %>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mr-3">
+            <%= link_to ' ', destroy_customer_session_path, method: :delete, class: 'bi bi-box-arrow-right fa-lg fa-fw text-dark' %>
+          </li>
+        </ul>
       <% else %>
-        <li class="nav-item mr-3">
-          <%= link_to 'アカウントをお持ちの方はこちら', new_customer_session_path, class: 'text-dark' %>
-        </li>
+        <a class="navbar-brand" href="/"><%= image_tag 'logo-image.png', size: "98x38" %></a>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <small><%= link_to 'アカウントをお持ちの方はこちら', new_customer_session_path, class: 'text-muted' %></small>
+          </li>
+        </ul>
       <% end %>
-      </ul>
+    </ul>
   </nav>
 </div>

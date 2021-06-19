@@ -27,7 +27,7 @@
           <% if chat.customer == current_customer %>
             <li class="my-3 pr-2 text-right">
               <small class="text-muted"><%= chat.created_at.strftime("%-H:%M") %></small>
-              <div class="chat-current-customer d-inline-block shadow p-2 text-light text-left"><%= chat.message %></div>
+              <div class="chat-current-customer d-inline-block shadow p-2 text-light text-left"><%= safe_join(chat.message.split("\n"), tag(:br)) %></div>
             </li>
           <% else %>
             <li class="my-3 pl-2">
@@ -52,7 +52,7 @@
         <%= form_with model: @chat, class: 'd-flex' do |f| %>
           <%= f.hidden_field :room_id %>
           <div class="col-6 ml-auto mb-0 form-group">
-            <%= f.text_field :message, class: "form-control rounded-pill shadow-sm bg-white" %>
+            <%= f.text_area :message, rows: 1, class: "chat-textarea form-control rounded-pill shadow-sm bg-white" %>
           </div>
           <div class="col-auto text-right">
             <%= button_tag type: 'submit', class: "btn btn-outline-info shadow-sm rounded-circle" do %>

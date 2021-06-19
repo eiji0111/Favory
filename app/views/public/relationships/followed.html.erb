@@ -1,46 +1,47 @@
-<div class="container">
-  <div class="row pt-5">
-    <div class="col-12 pb-5">
-      <%= link_to 'お気に入り', followed_path, class: 'btn btn-primary btn-sm rounded-pill' %>
-      <%= link_to 'お気に入りしてくれた人', follower_path, class: 'btn btn-primary btn-sm rounded-pill' %>
-      <%= link_to 'マッチング済', matchers_path, class: 'btn btn-primary btn-sm rounded-pill' %>
+<div class="container py-5">
+  <nav>
+    <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">
+      <a class="h6 nav-item nav-link active text-dark" id="nav-favo-tab" data-toggle="tab" href="#nav-favo" role="tab" aria-controls="nav-favo" aria-selected="true">
+        <span class="d-none d-md-inline-block">ふぁぼした人</span> <i class="bi bi-heart-fill text-danger"></i>
+      </a>
+      <a class="h6 nav-item nav-link text-dark" id="nav-favarited-tab" data-toggle="tab" href="#nav-favorited" role="tab" aria-controls="nav-love" aria-selected="false">
+        <span class="d-none d-md-inline-block">ふぁぼされた人</span> <i class="bi bi-heart text-danger"></i>
+      </a>
+      <a class="h6 nav-item nav-link text-dark" id="nav-match-tab" data-toggle="tab" href="#nav-match" role="tab" aria-controls="nav-introduction" aria-selected="false">
+        <span class="d-none d-md-inline-block">マッチング</span> <i class="bi bi-heart-half text-danger"></i>
+      </a>
     </div>
-    <% if @followeds.blank? %>
-      <div class="col text-center">
-        <h6 class="d-md-none">
-          お気に入りしているユーザーはいません。<br>
-          気になるユーザーをお気に入りしてみよう！
-        </h6>
-        <h3 class="d-none d-md-block">
-          お気に入りしているユーザーはいません。<br>
-          気になるユーザーをお気に入りしてみよう！
-        </h3>
-      </div>
-    <% end %>
-    <% @followeds.each do |followed| %>
-      <div class="col-6 col-md-3 col-lg-2 text-center mb-4">
-        <%= link_to customer_path(followed) do %>
-          <%= attachment_image_tag followed, :profile_image, size: '150x150', format: "jpeg",
-              fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
-        <% end %>
-        <p class="mb-0">
-          <%= followed.age %>歳 
-          <% if followed.address != "秘密" %>
-            <%= followed.address %>
-          <% end %>
-        </p>
-        <p>
-          <% if (Time.zone.now.prev_day(3)..Time.zone.now).cover?(followed.created_at) %>
-            <span class="new-tag">new</span>
-          <% end %>
-          <%= followed.nickname %>
-        </p>
-      </div>
-    <% end %>
-  </div>
-  <div class="row">
-    <div class="col d-flex justify-content-center">
-      <%= paginate @followeds %>
+  </nav>
+  <div class="tab-content pt-4" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-favo" role="tabpanel" aria-labelledby="nav-favo-tab">
+      <% if @followeds.blank? %>
+        <div class="col py-3">
+          ふぁぼしたユーザーはいません。<br>
+          気になるユーザーをふぁぼしてみよう！
+        </div>
+      <% else %>
+        <%= render 'public/customers/index', objects: @followeds %>
+      <% end %>
+    </div>
+    <div class="tab-pane fade" id="nav-favorited" role="tabpanel" aria-labelledby="nav-favorited-tab">
+      <% if @followers.blank? %>
+        <div class="col py-3">
+          ふぁぼされていません。<br>
+          プロフィールを編集してみよう！
+        </div>
+      <% else %>
+        <%= render 'public/customers/index', objects: @followers %>
+      <% end %>
+    </div>
+    <div class="tab-pane fade" id="nav-match" role="tabpanel" aria-labelledby="nav-match-tab">
+      <% if @matchers.blank? %>
+        <div class="col py-3">
+          マッチングしたユーザーはいません。<br>
+          積極的にふぁぼしてみよう！
+        </div>
+      <% else %>
+        <%= render 'public/customers/index', objects: @matchers %>
+      <% end %>
     </div>
   </div>
 </div>

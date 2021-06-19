@@ -11,7 +11,7 @@ class Public::CustomersController < ApplicationController
   def women
     @q = Customer.valid_women(params[:q])
     @q.sorts = 'updated_at desc' if @q.sorts.empty?
-    @customers = @q.result(distinct: true).includes(:follower_customer).page(params[:page]).per(24)
+    @customers = @q.result(distinct: true).includes(:follower_customer).page(params[:page]).per(36)
   end
   
   def show

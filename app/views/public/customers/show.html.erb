@@ -103,7 +103,7 @@
       <% else %>
         <ul class="pl-0">
           <li class="col-12 col-md-8 mx-auto mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-warning shadow">自己紹介</span>
-            <p class="pt-3"><%= @customer.introduction %></p>
+            <div class="col py-3"><%= safe_join(@customer.introduction.split("\n"), tag(:br)) %></div>
           </li>
         </ul>
       <% end %>
