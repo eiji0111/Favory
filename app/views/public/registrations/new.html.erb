@@ -1,3 +1,4 @@
+<% provide(:title, "新規登録") %>
 <div class="container">
   <div class="row py-5 d-flex flex-column">
     <div class="col-11 col-md-8 col-lg-6 mx-auto mb-3 p-3 p-md-5 border border rounded-lg shadow bg-white">
@@ -14,7 +15,8 @@
           <div class="invalid-feedback col-11 col-md-8 mx-auto">メールアドレスを入力して下さい</div>
           <div class="form-group text-center pt-4">
             <%= f.date_select :birthday, { use_month_numbers: true,start_year: 1971,
-                end_year: (Time.now.year - 10), default: Date.new(1996, 1, 1)} , { class: 'select-form form-control d-inline-block w-auto shadow rounded-pill bg-white' } %>
+                end_year: (Time.now.year - 10), default: Date.new(1996, 1, 1)},
+                { class: 'select-form form-control d-inline-block w-auto shadow rounded-pill bg-white' } %>
           </div>
           <div class="form-group col-11 col-md-8 mx-auto pt-2 text-center">
             <div class="btn-group btn-group-toggle " data-toggle="buttons">

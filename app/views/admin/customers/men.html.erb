@@ -1,3 +1,4 @@
+<% provide(:title, "男性会員一覧（管理者）") %>
 <div class="container">
   <div class="row">
     <nav class="col-12 col-md-3 bg-light sidebar py-3 mb-3 rounded">
@@ -55,7 +56,7 @@
               <td class="align-middle">
                 <%= link_to admin_customer_path(customer) do %>
                   <%= attachment_image_tag customer, :profile_image, size: '50x50', format: "jpeg",
-                      fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded-circle' %>
+                      fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded' %>
                   <p><%= customer.name %></p>
                 <% end %>
               </td>

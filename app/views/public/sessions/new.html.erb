@@ -1,14 +1,12 @@
+<% provide(:title, "ログイン") %>
 <div class="container">
   <div class="row py-5 d-flex flex-column">
     <div class="col-11 col-md-8 col-lg-6 mx-auto mb-3 p-3 p-md-5 border border rounded-lg shadow bg-white">
       <div class="col text-center text-info"><h3>ログイン</h3></div>
-      <div class="col form-group pt-3">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name),
-            html: { class: "needs-validation", novalidate: :novalidate }) do |f| %>
-          <%= f.email_field :email, placeholder: 'メールアドレス', class: 'col-10 col-md-7 mt-4 mx-auto form-control shadow bg-white rounded-pill', required: :required %>
-          <div class="invalid-feedback col-11 col-md-8 mx-auto">正しいメールアドレスを入力して下さい</div>
-          <%= f.password_field :password, placeholder: 'パスワード', class: 'col-10 col-md-7 mt-4 mx-auto form-control shadow bg-white rounded-pill', required: :required %>
-          <div class="invalid-feedback col-10 col-md-7 mx-auto">正しいパスワードを入力して下さい</div>
+      <div class="form-group pt-3">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= f.email_field :email, placeholder: 'メールアドレス', class: 'col-10 mt-4 mx-auto form-control shadow bg-white rounded-pill', required: :required %>
+          <%= f.password_field :password, placeholder: 'パスワード', class: 'col-10 mt-4 mx-auto form-control shadow bg-white rounded-pill', required: :required %>
           <div class="col text-center">
             <%= f.submit 'ログイン', class: 'btn btn-outline-info rounded-pill shadow mt-3' %>
           </div>

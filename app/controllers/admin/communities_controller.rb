@@ -1,4 +1,6 @@
 class Admin::CommunitiesController < ApplicationController
+  
+  
   def index
     @communities = Community.page(params[:page])
   end

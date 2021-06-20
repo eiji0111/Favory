@@ -22,18 +22,6 @@
         <% else %>
           <%= link_to '', followed_path, class: 'col bi bi-heart fa-lg text-dark' %>
         <% end %>
-        <%= link_to notifications_path do %>
-          <% if unchecked_notifications.any? %>
-            <span class="fa-stack fa-sm">
-              <i class="bi bi-bell fa-stack-2x text-dark" style="font-size: 1.5em;"></i>    
-              <i class="bi bi-circle-fill fa-stack-1x n-circle"></i>
-            </span>
-          <% elsif current_page?(notifications_path) %>
-            <i class="col bi bi-bell-fill fa-lg text-dark"></i>
-          <% else %>
-            <i class="col bi bi-bell fa-lg text-dark"></i>
-          <% end %>
-        <% end %>
         <% if current_page?(customer_path(current_customer)) %>
           <%= link_to '', customer_path(current_customer), class: "col bi bi-house-fill fa-lg text-dark" %>
         <% else %>

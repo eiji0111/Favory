@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top-image {
-  height: 100vh;
-  background-image: image-url('top-image.jpg');
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+// .top-image {
+//   height: 100vh;
+//   background-image: image-url('top-image.jpg');
+//   background-position: top center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
 
 /* ボタングラデーション */
 .btn-gradient {
@@ -16,4 +16,10 @@
   &:hover {
     background-image: linear-gradient(120deg, #f5576c 0%, #f093fb 100%);
   }
+}
+
+.slide img {
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
 }
