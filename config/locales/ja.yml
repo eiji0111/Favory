@@ -27,8 +27,8 @@ ja:
     enums:
       customer:
         sex:
-          man: '男性'
-          woman: '女性'
+          man:
+          woman:
   views:
     pagination:
       first: <i class="fas fa-angle-double-left"></i>
