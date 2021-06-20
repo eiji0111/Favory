@@ -21,10 +21,10 @@
           <div class="form-group col-11 col-md-8 mx-auto pt-2 text-center">
             <div class="btn-group btn-group-toggle " data-toggle="buttons">
               <label class="btn btn-outline-info active rounded-pill shadow mr-3">
-                <%= f.radio_button :sex, 0, {checked: true} %> 男　性
+                <%= f.radio_button :sex, :man, {checked: true} %> 男　性
               </label>
               <label class="btn btn-outline-danger rounded-pill shadow">
-                <%= f.radio_button :sex, 1, {} %> 女　性
+                <%= f.radio_button :sex, :woman, {} %> 女　性
               </label>
             </div>
           </div>

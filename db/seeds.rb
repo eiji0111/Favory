@@ -38,4 +38,3 @@ end
     current_sign_in_at: Time.zone.now,
   )
 end
-
