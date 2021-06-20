@@ -1,35 +1,48 @@
-<div class="jumbotron jumbotron-fluid top-image">
-  <div class="container">
-    <div class="row">
-      <div class="col py-5">
-        <h1 class="d-md-none">Favoryで</h1>
-        <h2 class="d-md-none">運命の出会いを...</h2>
-        <h1 class="d-none d-md-block display-4">Favoryで</h1>
-        <h1 class="d-none d-md-block display-4">運命の出会いを...</h1>
-        <%= link_to '今すぐはじめる', new_customer_registration_path, onfocus: "this.blur();",
-            class: 'btn btn-lg btn-gradient shadow text-white my-3 rounded-pill' %>
-      </div>
+<div class="container">
+  <div class="row py-5">
+    <div class="col-4 col-md-6 text-center">
+      <%= image_tag 'top-image05.jpg', class: 'shadow rounded' %>
+    </div>
+    <div class="col-8 col-md-6 text-left pt-3">
+      <h2 class="d-md-none text-white">あなたと</h2>
+      <h2 class="d-md-none text-white">国を守ります。</h2>
+      <h1 class="d-none d-md-block d-lg-none ml-5">あなたと</h1>
+      <h1 class="d-none d-md-block d-lg-none ml-5">国を守ります。</h1>
+      <h5 class="d-none d-md-block d-lg-none ml-5">自衛官 × マッチングアプリ</h5>
+      <h1 class="d-none d-lg-block display-4 ml-5">あなたと</h1>
+      <h1 class="d-none d-lg-block display-4 ml-5">国を守ります。</h1>
+      <h3 class="d-none d-lg-block ml-5">自衛官 × マッチングアプリ</h3>
+      <%= link_to '今すぐはじめる', new_customer_registration_path, onfocus: "this.blur();",
+          class: 'btn btn-lg btn-gradient shadow text-white my-3 ml-md-5 rounded-pill' %>
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row py-5">
     <div class="col-12 text-center">
-      <h2>Favory ファボリー とは</h2>
+      <h3>Favory ファボリー とは</h3>
     </div>
     <div class="col-12 py-3 text-center">
-      <p>
-        お気に入り（favorite）<br>
-        と<br>
-        ある物体の集まり（-ry）<br>
+      <h5>
+        Favorite（お気に入り）とMilitry（ミリタリー）<br>
         を組み合わせた言葉です。<br>
-        自分の選んだお気に入りの中から<br>
-        運命の一人と出会えることを期待しています。
-      </p>
+        Favoryを使えば、全国各地の素敵な現役自衛官と<br>
+        出会うことができます。
+      </h5>
     </div>
   </div>
 </div>
-<div class="container">
+<div class="slide">
+  <div><%= image_tag 'top-image01.jpg' %></div>
+  <div><%= image_tag 'top-image03.jpg' %></div>
+  <div><%= image_tag 'top-image04.jpg' %></div>
+  <div><%= image_tag 'top-image05.jpg' %></div>
+  <div><%= image_tag 'top-image08.jpg' %></div>
+  <div><%= image_tag 'top-image09.jpg' %></div>
+  <div><%= image_tag 'top-image10.jpg' %></div>
+  <div><%= image_tag 'top-image11.jpg' %></div>
+</div>
+<div class="container py-5">
   <div class="row text-center">
     <div class="col-12 py-3">
       <h2>使い方は簡単3STEP</h2>

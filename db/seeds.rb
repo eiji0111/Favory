@@ -7,7 +7,7 @@ Admin.create!(
   Customer.create!(
     name: Faker::Name.name,
     nickname: Faker::Name.name,
-    email: "test#{n + 1}@gmail.com",
+    email: "test#{n + 1}@test.com",
     birthday: Date.new(1998, 12, 24),
     sex: 0,
     password: "aaaaaa",

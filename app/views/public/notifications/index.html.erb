@@ -1,12 +1,14 @@
 <div class="container">
-  <div class="row py-5">
-    <div class="col-12 col-md-10 col-lg-8 mx-auto py-3">
-      <% if @notifications.exists? %>
+  <div class="row py-5 d-flex justify-content-center">
+    <div class="jscroll scroll-list">
+        <% if @notifications.exists? %>
           <%= render @notifications %>
-          <%= paginate @notifications %>
-      <% else %>
-        <p class="text-center">通知はありません</p>
-      <% end %>
+          <div class="jscroll-pagination">
+            <%= paginate @notifications %>
+          </div>
+        <% else %>
+          <p class="text-center">通知はありません</p>
+        <% end %>
     </div>
   </div>
 </div>

@@ -1,38 +1,57 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg navbar-light">
       <% if admin_signed_in? %>
         <a class="navbar-brand" href="/admin/top"><%= image_tag 'logo-image.png', size: "98x38" %></a>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mr-3">
-            <%= link_to '男性会員一覧', admin_men_path, class: 'btn btn-outline-dark' %>
-          </li>
-          <li class="nav-item mr-3">
-            <%= link_to '女性会員一覧', admin_women_path, class: 'btn btn-outline-dark' %>
-          </li>
-          <li class="nav-item mr-3">
-            <%= link_to 'コミュニティ一覧', admin_communities_path, class: 'btn btn-outline-dark' %>
-          </li>
-          <li class="nav-item mr-3">
-            <%= link_to '自衛官申請一覧', admin_army_requests_path, class: 'btn btn-outline-dark' %>
-          </li>
-          <li class="nav-item mr-3">
-            <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-dark' %>
-          </li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto text-right">
+            <li class="nav-item mr-3">
+              <%= link_to '男性会員一覧', admin_men_path, class: 'btn btn-outline-dark' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to '女性会員一覧', admin_women_path, class: 'btn btn-outline-dark' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to 'コミュニティ一覧', admin_communities_path, class: 'btn btn-outline-dark' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to '自衛官申請一覧', admin_army_requests_path, class: 'btn btn-outline-dark' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-dark' %>
+            </li>
+          </ul>
+        </div>
       <% elsif customer_signed_in? %>
         <%= link_to customer_path(current_customer), class: 'navbar-brand' do %>
           <%= image_tag 'logo-image.png', size: "98x38" %>
         <% end %>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mr-3">
-            <%= link_to ' ', destroy_customer_session_path, method: :delete, class: 'bi bi-box-arrow-right fa-lg fa-fw text-dark' %>
+        <ul class="navbar-nav ml-auto d-flex flex-row">
+          <li class="nav-item">
+            <%= link_to notifications_path do %>
+              <% if unchecked_notifications.any? %>
+                <span class="fa-stack fa-sm">
+                  <i class="bi bi-bell fa-stack-2x text-dark" style="font-size: 1.5em;"></i>    
+                  <i class="bi bi-circle-fill fa-stack-1x n-circle"></i>
+                </span>
+              <% elsif current_page?(notifications_path) %>
+                <i class="col bi bi-bell-fill fa-lg text-dark"></i>
+              <% else %>
+                <i class="col bi bi-bell fa-lg text-dark"></i>
+              <% end %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to ' ', destroy_customer_session_path, method: :delete, class: 'col bi bi-box-arrow-right fa-lg text-dark' %>
           </li>
         </ul>
       <% else %>
         <a class="navbar-brand" href="/"><%= image_tag 'logo-image.png', size: "98x38" %></a>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <small><%= link_to 'アカウントをお持ちの方はこちら', new_customer_session_path, class: 'text-muted' %></small>
+          <li class="nav-item text-muted">
+            <small>アカウントをお持ちの方は<%= link_to 'こちら', new_customer_session_path, class: 'text-info' %></small>
           </li>
         </ul>
       <% end %>

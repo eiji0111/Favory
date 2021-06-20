@@ -14,7 +14,7 @@
               <span class="new-tag">new</span>
             <% end %>
             <%= customer.age %>歳 
-            <% if customer.address != "秘密" %>
+            <% if customer.address != "未設定" %>
               <%= customer.address %>
             <% end %>
           </p>
@@ -26,13 +26,10 @@
             <i class="bi bi-clock"></i> <span style="font-size: 12px;"><%= time_ago_in_words(customer.current_sign_in_at) %>前</span>
           </p>
         </div>
-        <div class="row">
-          <div class="col-auto mx-auto">
-            <%= paginate @customers %>
-          </div>
-        </div>
       <% end %>
     </div>
+    <div class="jscroll-pagination">
+      <%= paginate @customers %>
+    </div>
   </div>
-
 </div>

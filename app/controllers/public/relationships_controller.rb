@@ -12,18 +12,17 @@ class Public::RelationshipsController < ApplicationController
     current_customer.unfollow(params[:id])
   end
   
-  # お気に入り一覧
   def followed
-    @followeds = current_customer.following_customer.page(params[:page])
+    @followeds = current_customer.following_customer.page(params[:page]) # お気に入り一覧
+    @followers = current_customer.follower_customer.page(params[:page]) # お気に入りされた一覧
+    @matchers = current_customer.matchers.page(params[:page]) # マッチング成立
   end
   
   # お気に入りされた一覧
   def follower
-    @followers = current_customer.follower_customer.page(params[:page])
   end
   
   # 互いにお気に入りしている
   def matchers
-    @matchers = current_customer.matchers.page(params[:page])
   end
 end

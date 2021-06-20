@@ -15,6 +15,7 @@ class Admin::CustomersController < ApplicationController
   end
   
   def show
+    @communities = Community.where(owner_nickname: @customer.nickname)
   end
   
   def edit

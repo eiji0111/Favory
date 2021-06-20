@@ -79,3 +79,9 @@ footer {
   color: #ff4d4d;
 }
 
+/* セレクトフォーム矢印削除 */
+.select-form {
+  -webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
+  -moz-appearance: none; /* ベンダープレフィックス(Firefox用) */
+  appearance: none; /* 標準のスタイルを無効にする */
+}
