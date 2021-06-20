@@ -1,6 +1,7 @@
 class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
-  before_action :set_customer, only: [:show, :edit, :update]
+  before_action :set_customer, only: [:show, :edit, :update, :unsubscribe, :withdraw]
+  before_action :correct_customer, only: [:edit, :update, :unsubscribe, :withdraw]
   
   def men
     @q = Customer.valid_men(params[:q])
@@ -26,8 +27,7 @@ class Public::CustomersController < ApplicationController
       if @customer.saved_changes?
         redirect_to customer_path(@customer)
       else
-        flash[:alert] = 'プロフィールを更新できませんでした'
-        redirect_to customer_path(@customer)
+        redirect_to customer_path(@customer), alert: 'プロフィールを更新できませんでした'
       end
     else
       render :edit
@@ -35,17 +35,19 @@ class Public::CustomersController < ApplicationController
   end
   
   def unsubscribe
-    @customer = Customer.find_by(id: params[:id])
   end
   
   def withdraw
-    @customer = Customer.find_by(id: params[:id])
     @customer.update(is_valid: false)
     reset_session
     redirect_to root_path
   end
   
   private
+  
+  def correct_customer
+    redirect_to customer_path(current_customer), alert: '権限がありません' if @customer != current_customer
+  end
   
   def set_customer
     @customer = Customer.find(params[:id])

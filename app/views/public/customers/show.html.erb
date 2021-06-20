@@ -28,8 +28,12 @@
         <% end %>
       </div>
       <div class="col pt-2">
-        <p class="d-inline-block mb-0">ふぁぼ <strong><%= @customer.following_customer.count %></strong>人</p>&emsp;
-        <p class="d-inline-block mb-0">ふぁぼされた <strong id="follow_count"><%= render partial: "follow_count", locals: { customer: @customer } %></strong>人</p>
+        <p class="d-inline-block mb-0">
+            ふぁぼ <strong><%= @customer.following_customer.count %></strong>人
+        </p>&emsp;
+        <p class="d-inline-block mb-0">
+          ふぁぼされた <strong id="follow_count"><%= render partial: "follow_count", locals: { customer: @customer } %></strong>人
+        </p>
       </div>
       <% if @customer == current_customer %>
         <% if !@customer.army_flag? %>

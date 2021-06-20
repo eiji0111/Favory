@@ -126,6 +126,7 @@ class Customer < ApplicationRecord
     (Date.today.strftime('%Y%m%d').to_i - birthday.strftime('%Y%m%d').to_i) / 10000
   end
   
+  # 通知を作成（お気に入り）
   def create_notification_follow!(current_customer)
     temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_customer.id, id, 'follow'])
     if temp.blank?
