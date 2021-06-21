@@ -1,4 +1,5 @@
 <% provide(:title, "会員編集（管理者）") %>
+<% formlayout = 'form-control shadow rounded bg-white mt-2' %>
 <div class="container" style="max-width: 900px;">
   <%= form_with model: @customer, url: admin_customer_path(@customer), local: true do |f| %>
     <div class="row py-5">
@@ -10,36 +11,45 @@
           <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
               fallback: "no-image-woman.jpg", onClick: "$('.image-field').click()", class: 'customer-image edit-customer-image shadow rounded-circle' %>
         <% end %>
+        <div class="col py-2">
+          <i class="bi bi-camera fa-lg" onclick="$('.image-field').click()"></i>
+          <i class="bi bi-arrow-repeat fa-lg"></i>
+        </div>
         <%= f.attachment_field :profile_image,  class: "image-field d-none form-control-file-sm py-2" %>
       </div>
       <div class="col-6">
         <div class="col">
           <%= f.label :nickname, class: 'mb-0' %>
-          <%= f.text_field :nickname, class: 'form-control shadow rounded-pill' %>
+          <%= f.text_field :nickname, class: formlayout %>
         </div>
         <div class="col pt-2">
           <p class="d-inline-block mb-0">ふぁぼ <strong><%= @customer.following_customer.count %></strong>人</p>&emsp;
           <p class="d-inline-block mb-0">ふぁぼされた <strong id="follow_count"><%= render partial: "public/customers/follow_count", locals: { customer: @customer } %></strong>人</p>
         </div>
+        <div class="form-group col mt-2">
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-success btn-sm rounded-pill shadow mr-3">
+              <%= f.radio_button :is_valid, true %> 有 効
+            </label>
+            <label class="btn btn-outline-secondary btn-sm rounded-pill shadow">
+              <%= f.radio_button :is_valid, false %> 無 効
+            </label>
+          </div>
+        </div>
+        <div class="form-group col mt-2">
+          <div class="btn-group btn-group-toggle" data-toggle="buttons" aria-pressed="true" autocomplete="off">
+            <label class="btn btn-outline-info btn-sm rounded-pill shadow mr-3">
+              <%= f.radio_button :sex, 'man' %> 男 性
+            </label>
+            <label class="btn btn-outline-danger btn-sm rounded-pill shadow">
+              <%= f.radio_button :sex, 'woman' %> 女 性
+            </label>
+          </div>
+        </div>
       </div>
       <div class="col-sm-6 ml-auto">
         ひとこと
-        <%= f.text_field :one_thing, class: "form-control shadow rounded-pill" %>
-      </div>
-    </div>
-    <div class="row text-center pb-3">
-      <div class="col-6">
-        会員ステータス：
-        <%= f.radio_button :is_valid, true %>
-        <%= label :is_valid, "有効" %>
-        <%= f.radio_button :is_valid, false %>
-        <%= label :is_valid, "無効" %>
-      </div>
-      <div class="col-6">
-        <%= f.radio_button :sex, 'man' %>
-        <%= label :sex, "男性" %>
-        <%= f.radio_button :sex, 'woman' %>
-        <%= label :sex, "女性" %>
+        <%= f.text_field :one_thing, class: formlayout %>
       </div>
     </div>
     <nav>
@@ -60,55 +70,55 @@
         <ul class="row pl-0">
           <div class="col-6">
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">名　前</span>
-              <%= f.text_field :name, class: "form-control shadow rounded-pill mt-2" %>
+              <%= f.text_field :name, class: formlayout %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">生年月日</span><br>
               <%= f.date_select :birthday, { use_month_numbers: true,start_year: 1971,
                 end_year: (Time.now.year - 10), default: Date.new(1996, 1, 1)},
-                { class: 'form-control shadow rounded-pill d-inline-block w-auto mt-2 shadow rounded-pill bg-white' } %>
+                { class: 'form-control d-inline-block w-auto mt-2 shadow rounded bg-white' } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">居住地</span>
-              <%= f.select :address, Customer.addresses.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :address, Customer.addresses.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">出身地</span>
-              <%= f.select :birthplace, Customer.birthplaces.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :birthplace, Customer.birthplaces.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">勤務地</span>
-              <%= f.select :work_location, Customer.work_locations.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :work_location, Customer.work_locations.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">仕　事</span>
-              <%= f.text_field :jobs, class: "form-control shadow rounded-pill mt-2" %></li>
+              <%= f.text_field :jobs, class: formlayout %></li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">年　収</span>
-              <%= f.select :annual_income, Customer.annual_incomes.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :annual_income, Customer.annual_incomes.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">身　長</span>
-              <%= f.select :height, (135..215).to_a, { include_blank: '未設定' }, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :height, (135..215).to_a, { include_blank: '未設定' }, { class: formlayout } %>
             </li>
           </div>
           <div class="col-6">
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">体　型</span>
-              <%= f.select :body_shape, Customer.body_shapes.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :body_shape, Customer.body_shapes.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">血液型</span>
-              <%= f.select :blood_type, Customer.blood_types.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :blood_type, Customer.blood_types.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">性　格</span>
-              <%= f.select :personality, Customer.personalities.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :personality, Customer.personalities.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">休　日</span>
-              <%= f.select :holiday, Customer.holidays.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :holiday, Customer.holidays.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">私有車</span>
-              <%= f.select :car, Customer.cars.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :car, Customer.cars.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">趣　味</span>
-              <%= f.text_field :hobby, class: "form-control shadow rounded-pill mt-2" %>
+              <%= f.text_field :hobby, class: formlayout %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">煙　草</span>
-              <%= f.select :cigarettes, Customer.cigarettes.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :cigarettes, Customer.cigarettes.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">お　酒</span>
-              <%= f.select :alcohol, Customer.alcohols.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+              <%= f.select :alcohol, Customer.alcohols.keys, {}, { class: formlayout } %>
             </li>
           </div>
         </ul>
@@ -116,25 +126,25 @@
       <div class="tab-pane fade" id="nav-love" role="tabpanel" aria-labelledby="nav-love-tab">
         <ul class="col-6 pl-0">
           <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">同居人</span>
-            <%= f.select :housemate, Customer.housemates.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+            <%= f.select :housemate, Customer.housemates.keys, {}, { class: formlayout } %>
           </li>
           <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">結婚歴</span>
-            <%= f.select :marriage_history, Customer.marriage_histories.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+            <%= f.select :marriage_history, Customer.marriage_histories.keys, {}, { class: formlayout } %>
           </li>
           <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">子供の有無</span>
-            <%= f.select :children, Customer.children.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+            <%= f.select :children, Customer.children.keys, {}, { class: formlayout } %>
           </li>
           <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">結婚に対する意思</span>
-            <%= f.select :willingness_to_marry, Customer.willingness_to_marries.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+            <%= f.select :willingness_to_marry, Customer.willingness_to_marries.keys, {}, { class: formlayout } %>
           </li>
           <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">子供が欲しいか</span>
-            <%= f.select :want_kids, Customer.want_kids.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+            <%= f.select :want_kids, Customer.want_kids.keys, {}, { class: formlayout } %>
           </li>
           <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">出会うまでの希望</span>
-            <%= f.select :hope_encounter, Customer.hope_encounters.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+            <%= f.select :hope_encounter, Customer.hope_encounters.keys, {}, { class: formlayout } %>
           </li>
           <li class="mb-3"><span class="text-white px-3 py-1 rounded-pill bg-danger">初回デート費用</span>
-            <%= f.select :date_cost, Customer.date_costs.keys, {}, { class: 'form-control shadow rounded-pill mt-2' } %>
+            <%= f.select :date_cost, Customer.date_costs.keys, {}, { class: formlayout } %>
           </li>
         </ul>
       </div>
@@ -148,8 +158,8 @@
     </div>
   <div class="row text-center">
     <div class="col-12">
-      <%= f.submit '変更する', class: 'btn btn-outline-success btn-sm shadow rounded-pill' %>
-      <%= link_to '削除する', admin_customer_path(@customer), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-outline-danger btn-sm shadow rounded-pill' %>
+      <%= f.submit '変更する', class: 'btn btn-outline-success shadow rounded-pill mr-3' %>
+      <%= link_to '削除する', admin_customer_path(@customer), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-outline-danger shadow rounded-pill' %>
     </div>
   </div>
   <% end %>

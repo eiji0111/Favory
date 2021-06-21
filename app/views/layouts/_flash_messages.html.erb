@@ -1,5 +1,6 @@
 <% flash.each do |key, value| %>
-    <span class="d-inline-block alert alert-<%= bootstrap_alert(key) %> rounded">
+    <div class="d-inline-block alert alert-<%= bootstrap_alert(key) %> mx-5 rounded">
       <%= value %>
-    </span>
+      <button type="button" class="close" data-dismiss="alert"><i class="bi bi-x"></i></button>
+    </div>
 <% end %>
