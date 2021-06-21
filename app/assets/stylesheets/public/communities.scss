@@ -1,3 +1,20 @@
 // Place all the styles related to the public/communities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.masonry {
+  margin: 0 auto;
+}
+
+.item {
+  width: 200px;
+}
+
+.item img {
+  width: 100%;
+}

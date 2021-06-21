@@ -1,11 +1,20 @@
-<div class="container">
+<% provide(:title, "トップ") %>
+<div class="jumbotron jumbotron-fluid d-md-none text-center">
+  <%= image_tag 'top-image05.jpg', class: 'shadow rounded position-relative' %>
+  <div class="col position-absolute top-title">
+    <h2 class="d-md-none text-white">あなたと</h2>
+    <h2 class="d-md-none text-white">国を守ります。</h2>
+    <h4 class="d-md-none text-white">自衛官 × マッチングアプリ</h4>
+    <%= link_to '今すぐはじめる', new_customer_registration_path, onfocus: "this.blur();",
+        class: 'd-md-none btn btn-lg btn-gradient shadow text-white my-3 rounded-pill' %>
+  </div>
+</div>
+<div class="container d-none d-md-block">
   <div class="row py-5">
     <div class="col-4 col-md-6 text-center">
       <%= image_tag 'top-image05.jpg', class: 'shadow rounded' %>
     </div>
     <div class="col-8 col-md-6 text-left pt-3">
-      <h2 class="d-md-none text-white">あなたと</h2>
-      <h2 class="d-md-none text-white">国を守ります。</h2>
       <h1 class="d-none d-md-block d-lg-none ml-5">あなたと</h1>
       <h1 class="d-none d-md-block d-lg-none ml-5">国を守ります。</h1>
       <h5 class="d-none d-md-block d-lg-none ml-5">自衛官 × マッチングアプリ</h5>
@@ -13,7 +22,7 @@
       <h1 class="d-none d-lg-block display-4 ml-5">国を守ります。</h1>
       <h3 class="d-none d-lg-block ml-5">自衛官 × マッチングアプリ</h3>
       <%= link_to '今すぐはじめる', new_customer_registration_path, onfocus: "this.blur();",
-          class: 'btn btn-lg btn-gradient shadow text-white my-3 ml-md-5 rounded-pill' %>
+          class: 'd-none d-md-inline-block btn btn-lg btn-gradient shadow text-white my-3 ml-md-5 rounded-pill' %>
     </div>
   </div>
 </div>

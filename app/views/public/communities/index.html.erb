@@ -1,11 +1,12 @@
+<% provide(:title, "コミュニティ一覧") %>
 <div class="container">
   <div class="row py-5">
     <div class="col-12">
       <h1 class="border-bottom">COMMUNITY</h1>
       <p>コミュニティを通じて、共通の趣味や話題から気になる相手を探してみましょう！<br>自分でオリジナルのコミュニティを作成することもできます。</p>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-outline-info btn-lg rounded-pill" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
-        <i class="bi bi-pencil-square"> 新しくコミュニティを作る</i>
+      <button type="button" class="btn btn-outline-info shadow rounded-pill" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
+        <i class="bi bi-pencil-square mr-1"></i>新しくコミュニティを作る
       </button>
       <!-- Modal中身 -->
       <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
@@ -43,26 +44,23 @@
       </div>
     </div>
   </div>
-  <div class="row mt-3">
-    <div class="d-flex flex-wrap col-md-12 px-4">
-      <% @communities.each do |community| %>
-        <div class="col-10 col-md-4 col-lg-3 my-3">
-          <div class="card border shadow rounded">
-            <%= attachment_image_tag(community, :community_image, size: "150x150",
-                fallback: "no-image.png", style: 'object-fit: cover;', class: 'card-img-top') %>
-            <div class="card-body">
-              <h5 class="card-title">
-                <%= link_to community.name, community_path(community) %>
-              </h5>
-              <p class="card-text text-nowrap text-truncate"><%= community.introduction %></p>
-              <p><%= community.owner_nickname %></p>
-              <p class="text-center mb-0">
-                <%= link_to "参加する", community_path(community), class: 'btn btn-primary btn-sm rounded-pill' %>
-              </p>
+  <div class="row">
+    <div class="wrap">
+      <ul class="masonry js-masonry p-0">
+        <% @communities.each do |community| %>
+          <li class="item js-item text-center border shadow-sm rounded my-2">
+            <%= link_to community_path(community) do %>
+              <%= attachment_image_tag(community, :community_image, fallback: "people.svg", class: 'p-2') %>
+            <div class="col text-dark">
+              <%= community.name %>
             </div>
-          </div>
-        </div>
-      <% end %>
+            <div class="col text-right text-muted">
+              <i class="bi bi-chat-left mr-1"></i><%= community.community_posts.size %>
+            </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

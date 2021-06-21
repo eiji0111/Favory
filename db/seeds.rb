@@ -38,3 +38,12 @@ end
     current_sign_in_at: Time.zone.now,
   )
 end
+
+50.times do |n|
+  Community.create!(
+    name: "test#{n + 1}",
+    introduction: "テストコミュニティ",
+    owner_id: 1,
+    valid_status: 1,
+  )
+end

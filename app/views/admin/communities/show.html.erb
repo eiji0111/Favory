@@ -20,7 +20,7 @@
           </tr>
           <tr>
             <th scope="row">作成者</th>
-            <td><%= @community.owner_nickname %></td>
+            <td><%= Customer.find_by(id: @community.owner_id).nickname %></td>
           </tr>
           <tr>
             <th scope="row">ステータス</th>

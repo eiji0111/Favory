@@ -4,12 +4,8 @@
 .customer-image {
   object-fit: cover;
 }
-.edit-customer-image {
-  &:hover {
-    cursor: pointer;
-  }
-}
-.bi-camera {
+
+.cursor-hover {
   &:hover {
     cursor: pointer;
   }

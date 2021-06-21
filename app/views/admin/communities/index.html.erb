@@ -24,12 +24,13 @@
                 <% end %>
               </td>
               <td><%= community.introduction %></td>
-              <td><%= community.owner_nickname %></td>
+              <td><%= Customer.find_by(id: community.owner_id).nickname %></td>
               <td><%= community.valid_status %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
+      <%= paginate @communities %>
     </div>
   </div>
 </div>
