@@ -1,5 +1,5 @@
 <% provide(:title, "会員編集") %>
-<% formlayout = 'form-control shadow rounded-pill bg-white mt-2' %>
+<% formlayout = 'form-control shadow rounded bg-white mt-2' %>
 <div class="container" style="max-width: 900px;">
   <%= form_with model: @customer, local: true do |f| %>
     <div class="row py-5">
@@ -16,7 +16,7 @@
       <div class="col-6">
         <div class="col">
           <%= f.label :nickname, class: 'mb-0' %>
-          <%= f.text_field :nickname, class: 'form-control shadow rounded-pill' %>
+          <%= f.text_field :nickname, class: 'form-control shadow rounded' %>
         </div>
         <div class="col pt-2">
           <p class="d-inline-block mb-0">ふぁぼ <strong><%= @customer.following_customer.count %></strong>人</p>&emsp;
@@ -25,7 +25,7 @@
       </div>
       <div class="col-sm-6 ml-auto">
         ひとこと
-        <%= f.text_field :one_thing, class: "form-control shadow rounded-pill" %>
+        <%= f.text_field :one_thing, class: "form-control shadow rounded" %>
         <div class="text-center mx-auto pt-3">
           <%= f.submit '変更する', class: 'btn btn-outline-success btn-sm shadow rounded-pill' %>
         </div>
@@ -50,13 +50,13 @@
           <div class="col-6">
             <% if current_customer == @customer %>
               <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">名　前</span>
-                <%= f.text_field :name, class: "form-control shadow rounded-pill mt-2 bg-white" %>
+                <%= f.text_field :name, class: "form-control shadow rounded mt-2 bg-white" %>
               </li>
             <% end %>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">生年月日</span><br>
               <%= f.date_select :birthday, { use_month_numbers: true,start_year: 1971,
                 end_year: (Time.now.year - 10), default: Date.new(1996, 1, 1)},
-                { class: 'form-control shadow rounded-pill d-inline-block w-auto mt-2 shadow rounded-pill bg-white' } %>
+                { class: 'form-control d-inline-block w-auto mt-2 shadow rounded bg-white' } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">居住地</span>
               <%= f.select :address, Customer.addresses.keys, {}, { class: formlayout } %>
@@ -68,7 +68,7 @@
               <%= f.select :work_location, Customer.work_locations.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">仕　事</span>
-              <%= f.text_field :jobs, class: "form-control shadow rounded-pill mt-2" %></li>
+              <%= f.text_field :jobs, class: "form-control shadow rounded mt-2" %></li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">年　収</span>
               <%= f.select :annual_income, Customer.annual_incomes.keys, {}, { class: formlayout } %>
             </li>
@@ -90,10 +90,10 @@
               <%= f.select :holiday, Customer.holidays.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">私有車</span>
-              <%= f.select :car, Customer.cars.keys, {}, { class: 'form-control shadow rounded-pil bg-whitel mt-2' } %>
+              <%= f.select :car, Customer.cars.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">趣　味</span>
-              <%= f.text_field :hobby, class: "form-control shadow rounded-pill mt-2" %>
+              <%= f.text_field :hobby, class: "form-control shadow rounded mt-2" %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">煙　草</span>
               <%= f.select :cigarettes, Customer.cigarettes.keys, {}, { class: formlayout } %>
