@@ -2,12 +2,14 @@
   <div class="row text-center">
     <% objects.each do |object| %>
       <div class="col">
-        <% if object.sex == 'man' %>
-          <%= attachment_image_tag object, :profile_image, size: "150x150", format: "jpeg",
-              fallback: "no-image-man.jpg", class: 'customer-image shadow rounded' %>
-        <% else %>
-          <%= attachment_image_tag object, :profile_image, size: "150x150", format: "jpeg",
-              fallback: "no-image-woman.jpg", class: 'customer-image shadow rounded-circle' %>
+        <%= link_to customer_path(object) do %>
+          <% if object.sex == 'man' %>
+            <%= attachment_image_tag object, :profile_image, size: "150x150", format: "jpeg",
+                fallback: "no-image-man.jpg", class: 'customer-image shadow rounded' %>
+          <% else %>
+            <%= attachment_image_tag object, :profile_image, size: "150x150", format: "jpeg",
+                fallback: "no-image-woman.jpg", class: 'customer-image shadow rounded-circle' %>
+          <% end %>
         <% end %>
         <p class="mb-0">
             <% if (Time.zone.now.prev_day(1)..Time.zone.now).cover?(object.created_at) %>

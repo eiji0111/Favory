@@ -3,7 +3,7 @@
     <div class="col-12 text-center">
       <h3>自衛官認証申請フォーム</h3>
     </div>
-    <div class="col-10 col-md-8 mx-auto">
+    <div class="col-10 col-md-6 col-lg-5 mx-auto">
       <%= form_with model: @army_request, local: true do |f| %>
         <%= f.hidden_field :customer_id, value: current_customer.id %>
         <div class="form-group">
@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
           <%= f.label :base, '駐屯地・基地名' %>
-          <%= f.text_field :base, class: "form-control" %>
+          <%= f.text_field :base, class: "form-control", required: :required %>
         </div>
         <div class="form-group">
           <%= f.label :army_class, '階級' %>
@@ -20,11 +20,11 @@
         </div>
         <div class="form-group">
           <%= f.label :occupation, '職種' %>
-          <%= f.text_field :occupation, class: "form-control" %>
+          <%= f.text_field :occupation, class: "form-control", required: :required %>
         </div>
         <div class="form-group">
           <%= f.label :identification_number, '認識番号' %>
-          <%= f.text_field :identification_number, class: "form-control" %>
+          <%= f.text_field :identification_number, class: "form-control", required: :required %>
         </div>
         <div class="form-group">
           <%= f.label :identification_image, '自衛官認証写真' %>
@@ -35,7 +35,9 @@
             あらかじめご了承ください。
           </p>
         </div>
-        <%= f.submit '申請する', class: 'btn btn-primary' %>
+        <div class="col text-center">
+          <%= f.submit '申請する', class: 'btn btn-outline-info shadow rounded-pill' %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -21,7 +21,7 @@
     <div class="col-6">
       <div class="col">
         <h5 class="d-inline-block"><%= @customer.nickname %></h5>
-          <%= link_to ' ', edit_admin_customer_path(@customer), class: 'ml-1 bi bi-gear fa-lg text-dark' %>
+          <%= link_to ' ', edit_admin_customer_path(@customer), 'data-turbolinks': false, class: 'ml-1 bi bi-gear fa-lg text-dark' %>
       </div>
       <div class="col pt-2">
         <p class="d-inline-block mb-0">

@@ -22,6 +22,9 @@ html {
   position: relative;
   min-height: 100%;
 }
+header {
+  opacity: .8;
+}
 body {
   margin-bottom: 100px;
 }
@@ -81,7 +84,7 @@ footer {
 
 /* セレクトフォーム矢印削除 */
 .select-form {
-  -webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
-  -moz-appearance: none; /* ベンダープレフィックス(Firefox用) */
-  appearance: none; /* 標準のスタイルを無効にする */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
