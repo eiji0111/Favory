@@ -1,15 +1,15 @@
 class Public::CommunitiesController < ApplicationController
   before_action :authenticate_customer!
-  before_action :ensure_correct_user, only: [:edit, :update]
+  before_action :ensure_correct_customer, only: [:edit, :update]
   
   def index
     @community = Community.new
-    @communities = Community.valid_all(params[:page])
+    @communities = Community.valid_all
   end
   
   def create
     @community = Community.new(community_params)
-    @community.owner_nickname = current_customer.nickname
+    @community.owner_id = current_customer.id
     if @community.save
       redirect_to communities_path, notice: '管理者が内容を確認・承認したのち、こちらに反映されます'
     else
@@ -28,7 +28,7 @@ class Public::CommunitiesController < ApplicationController
   
   def update
     if @community.update(community_params)
-      redirect_to communities_path, notice: 'コミュニティを更新しました'
+      redirect_to community_path(@community)
     else
       render "edit"
     end
@@ -39,9 +39,9 @@ class Public::CommunitiesController < ApplicationController
     params.require(:community).permit(:name, :introduction, :community_image)
   end
   
-  def ensure_correct_user
+  def ensure_correct_customer
     @community = Community.find(params[:id])
-    unless @community.owner_nickname == current_customer.nickname
+    unless @community.owner_id == current_customer.id
       redirect_to communities_path
     end
   end

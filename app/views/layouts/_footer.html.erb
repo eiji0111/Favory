@@ -13,9 +13,9 @@
           <%= link_to '', customer_women_path, class: 'col bi bi-circle fa-lg women-icon' %>
         <% end %>
         <% if current_page?(communities_path) %>
-          <%= link_to '', communities_path, 'data-turbolinks': false, class: 'col bi bi-people-fill fa-lg text-dark' %>
+          <%= link_to '', communities_path, class: 'col bi bi-people-fill fa-lg text-dark' %>
         <% else %>
-          <%= link_to '', communities_path, 'data-turbolinks': false, class: 'col bi bi-people fa-lg text-dark' %>
+          <%= link_to '', communities_path, class: 'col bi bi-people fa-lg text-dark' %>
         <% end %>
         <% if current_page?(followed_path) %>
           <%= link_to '', followed_path, class: 'col bi bi-heart-fill fa-lg text-dark' %>
@@ -35,9 +35,9 @@
     <div class="container py-3">
       <div class="row">
         <div class="col-12 d-flex align-items-center justify-content-center">
-          <%= link_to '会社情報', root_path, class: 'mr-2 text-muted' %>
-          <%= link_to 'プライバシー', root_path, class: 'mr-2 text-muted' %>
-          <%= link_to '利用規約', root_path, class: 'mr-2 text-muted' %>
+          <%= link_to '会社情報', root_path, 'data-turbolinks': false, class: 'mr-2 text-muted' %>
+          <%= link_to 'プライバシー', root_path, 'data-turbolinks': false, class: 'mr-2 text-muted' %>
+          <%= link_to '利用規約', root_path, 'data-turbolinks': false, class: 'mr-2 text-muted' %>
           <%= link_to 'お問い合わせ', new_contact_path, class: 'text-muted' %>
         </div>
         <div class="col-12 text-center"><small>&copy; Favory, Inc, Made by Mori</small></div>
