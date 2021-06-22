@@ -1,0 +1,1087 @@
+
+[STEP1] ユーザログイン前のテスト
+  トップ画面のテスト
+    表示内容の確認
+[31m      UPLが正しい (FAILED - 1)[0m
+[31m      アカウントをお持ちの方はこちら（ログイン）リンクが表示される: 「こちら」のみリンクである (FAILED - 2)[0m
+[31m      今すぐはじめる（新規登録）リンクが表示される (FAILED - 3)[0m
+[31m      お問い合わせリンクが表示される (FAILED - 4)[0m
+  お問い合わせ画面のテスト
+    お問い合わせフォーム表示内容の確認
+[31m      URLが正しい (FAILED - 5)[0m
+[31m      「お問い合わせ」と表示される (FAILED - 6)[0m
+[31m      お名前フォームが表示される (FAILED - 7)[0m
+[31m      メールアドレスフォームが表示される (FAILED - 8)[0m
+[31m      お問い合わせ内容フォームが表示される (FAILED - 9)[0m
+[31m      確認画面へボタンが表示される (FAILED - 10)[0m
+    お問い合わせ確認画面表示内容の確認
+[31m      URLが正しい (FAILED - 11)[0m
+[31m      「以下の内容でよろしいですか？」と表示される (FAILED - 12)[0m
+[31m      お名前が表示される (FAILED - 13)[0m
+[31m      メールアドレスが表示される (FAILED - 14)[0m
+[31m      お問い合わせ内容が表示される (FAILED - 15)[0m
+[31m      修正するボタンが表示される (FAILED - 16)[0m
+[31m      送信するボタンが表示される (FAILED - 17)[0m
+
+Failures:
+
+  1) [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 UPLが正しい
+     [31mGot 0 failures and 2 other errors:[0m
+
+     1.1) [31mFailure/Error: [0mvisit root_path[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+          [36m# ./spec/system/01_before_login_spec.rb:6:in `block (3 levels) in <top (required)>'[0m
+
+     1.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  2) [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 アカウントをお持ちの方はこちら（ログイン）リンクが表示される: 「こちら」のみリンクである
+     [31mGot 0 failures and 2 other errors:[0m
+
+     2.1) [31mFailure/Error: [0mvisit root_path[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+          [36m# ./spec/system/01_before_login_spec.rb:6:in `block (3 levels) in <top (required)>'[0m
+
+     2.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  3) [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 今すぐはじめる（新規登録）リンクが表示される
+     [31mGot 0 failures and 2 other errors:[0m
+
+     3.1) [31mFailure/Error: [0mvisit root_path[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+          [36m# ./spec/system/01_before_login_spec.rb:6:in `block (3 levels) in <top (required)>'[0m
+
+     3.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  4) [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 お問い合わせリンクが表示される
+     [31mGot 0 failures and 2 other errors:[0m
+
+     4.1) [31mFailure/Error: [0mvisit root_path[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+          [36m# ./spec/system/01_before_login_spec.rb:6:in `block (3 levels) in <top (required)>'[0m
+
+     4.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  5) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 URLが正しい
+     [31mGot 0 failures and 2 other errors:[0m
+
+     5.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+          [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+     5.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  6) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 「お問い合わせ」と表示される
+     [31mGot 0 failures and 2 other errors:[0m
+
+     6.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+          [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+     6.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  7) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 お名前フォームが表示される
+     [31mGot 0 failures and 2 other errors:[0m
+
+     7.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+          [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+     7.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  8) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 メールアドレスフォームが表示される
+     [31mGot 0 failures and 2 other errors:[0m
+
+     8.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+          [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+     8.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  9) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 お問い合わせ内容フォームが表示される
+     [31mGot 0 failures and 2 other errors:[0m
+
+     9.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+          [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+     9.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+          [31m[0m
+          [31mNoMethodError:[0m
+          [31m  undefined method `strip' for nil:NilClass[0m
+          [31m[0m
+          [31m[0m
+          [31m[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+          [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  10) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 確認画面へボタンが表示される
+      [31mGot 0 failures and 2 other errors:[0m
+
+      10.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+            [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+      10.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  11) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 URLが正しい
+      [31mGot 0 failures and 2 other errors:[0m
+
+      11.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+            [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+      11.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  12) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 「以下の内容でよろしいですか？」と表示される
+      [31mGot 0 failures and 2 other errors:[0m
+
+      12.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+            [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+      12.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  13) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 お名前が表示される
+      [31mGot 0 failures and 2 other errors:[0m
+
+      13.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+            [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+      13.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  14) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 メールアドレスが表示される
+      [31mGot 0 failures and 2 other errors:[0m
+
+      14.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+            [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+      14.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  15) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 お問い合わせ内容が表示される
+      [31mGot 0 failures and 2 other errors:[0m
+
+      15.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+            [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+      15.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  16) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 修正するボタンが表示される
+      [31mGot 0 failures and 2 other errors:[0m
+
+      16.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+            [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+      16.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+  17) [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 送信するボタンが表示される
+      [31mGot 0 failures and 2 other errors:[0m
+
+      17.1) [31mFailure/Error: [0mvisit [31m[1;31m'[0m[31m/contacts/new[1;31m'[0m[31m[0m[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:104:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:278:in `visit'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/dsl.rb:58:in `block (2 levels) in <module:DSL>'[0m
+            [36m# ./spec/system/01_before_login_spec.rb:27:in `block (3 levels) in <top (required)>'[0m
+
+      17.2) [31mFailure/Error: [0m[1;34;4mSystem[0m.call([31m[1;31m"[0m[31m#{executable}[0m[31m --product-version[1;31m"[0m[31m[0m).strip[0m
+            [31m[0m
+            [31mNoMethodError:[0m
+            [31m  undefined method `strip' for nil:NilClass[0m
+            [31m[0m
+            [31m[0m
+            [31m[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:145:in `chrome_on_linux'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:45:in `chrome_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:109:in `release_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:31:in `latest_version'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:155:in `correct_binary?'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/common.rb:93:in `update'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/webdrivers-3.9.4/lib/webdrivers/chromedriver.rb:177:in `block in <main>'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:133:in `binary_path'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:94:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/service.rb:41:in `chrome'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:299:in `service_url'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/chrome/driver.rb:40:in `initialize'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `new'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver/common/driver.rb:46:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/selenium-webdriver-3.142.7/lib/selenium/webdriver.rb:88:in `for'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:83:in `browser'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/selenium/driver.rb:156:in `save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `block in save_screenshot'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `tap'[0m
+            [36m# /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/capybara-3.35.3/lib/capybara/session.rb:735:in `save_screenshot'[0m
+
+Finished in 0.31463 seconds (files took 4.97 seconds to load)
+[31m17 examples, 17 failures[0m
+
+Failed examples:
+
+[31mrspec ./spec/system/01_before_login_spec.rb:10[0m [36m# [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 UPLが正しい[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:13[0m [36m# [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 アカウントをお持ちの方はこちら（ログイン）リンクが表示される: 「こちら」のみリンクである[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:16[0m [36m# [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 今すぐはじめる（新規登録）リンクが表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:19[0m [36m# [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 お問い合わせリンクが表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:31[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:34[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 「お問い合わせ」と表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:37[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 お名前フォームが表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:40[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 メールアドレスフォームが表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:43[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 お問い合わせ内容フォームが表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:46[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせフォーム表示内容の確認 確認画面へボタンが表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:59[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:62[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 「以下の内容でよろしいですか？」と表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:65[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 お名前が表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:68[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 メールアドレスが表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:71[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 お問い合わせ内容が表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:74[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 修正するボタンが表示される[0m
+[31mrspec ./spec/system/01_before_login_spec.rb:77[0m [36m# [STEP1] ユーザログイン前のテスト お問い合わせ画面のテスト お問い合わせ確認画面表示内容の確認 送信するボタンが表示される[0m
+
