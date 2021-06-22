@@ -1,8 +1,8 @@
 <% provide(:title, "コミュニティ一覧") %>
 <div class="container">
   <div class="row py-5">
-    <div class="col-12">
-      <h1 class="border-bottom">COMMUNITY</h1>
+    <div class="col-12 text-center">
+      <h1 class="d-inline-block border-bottom">Community</h1>
       <p>コミュニティを通じて、共通の趣味や話題から気になる相手を探してみましょう！<br>自分でオリジナルのコミュニティを作成することもできます。</p>
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-outline-info shadow rounded-pill" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
@@ -44,23 +44,23 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="wrap">
-      <ul class="masonry js-masonry p-0">
-        <% @communities.each do |community| %>
-          <li class="item js-item text-center border shadow-sm rounded my-2">
-            <%= link_to community_path(community) do %>
-              <%= attachment_image_tag(community, :community_image, fallback: "people.svg", class: 'p-2') %>
-            <div class="col text-dark">
-              <%= community.name %>
-            </div>
-            <div class="col text-right text-muted">
-              <i class="bi bi-chat-left mr-1"></i><%= community.community_posts.size %>
-            </div>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+</div>
+<div class="container">
+  <div class="wrap">
+    <ul class="masonry js-masonry p-0">
+      <% @communities.each do |community| %>
+        <li class="item js-item text-center border shadow-sm rounded my-2 mx-1">
+          <%= link_to community_path(community) do %>
+            <%= attachment_image_tag(community, :community_image, fallback: "people.svg", class: 'p-2') %>
+          <div class="col text-dark">
+            <small><%= community.name %></small>
+          </div>
+          <div class="col text-right text-muted">
+            <i class="bi bi-chat-left mr-1"></i><%= community.community_posts.size %>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
