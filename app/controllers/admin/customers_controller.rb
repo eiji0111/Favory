@@ -1,7 +1,7 @@
 class Admin::CustomersController < ApplicationController
   before_action :authenticate_admin!
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
-  
+
   def men
     @q = Customer.where(sex: 0).ransack(params[:q])
     @q.sorts = 'created_at asc' if @q.sorts.empty?
@@ -15,7 +15,7 @@ class Admin::CustomersController < ApplicationController
   end
   
   def show
-    @communities = Community.where(owner_nickname: @customer.nickname)
+    @communities = Community.where(owner_id: @customer.id).order(updated_at: :desc)
   end
   
   def edit
