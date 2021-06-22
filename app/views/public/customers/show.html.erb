@@ -4,7 +4,7 @@
     <div class="col-6 text-center">
       <% if @customer.sex == 'man' %>
         <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
-            fallback: "no-image-man.jpg", class: 'customer-image shadow rounded-circle' %>
+            fallback: "no-image-man.jpg", class: 'customer-image shadow rounded' %>
       <% else %>
         <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
             fallback: "no-image-woman.jpg", class: 'customer-image shadow rounded-circle' %>
@@ -129,7 +129,7 @@
           <% if community.valid_status == "許可" %>
             <%= link_to community_path(community) do %>
               <%= attachment_image_tag(community, :community_image, size: "150x150",
-                  fallback: "no-image.png", style: 'object-fit: cover;', class: 'mr-2 shadow rounded') %>
+                  fallback: "people.svg", style: 'object-fit: cover;', class: 'mr-2 shadow rounded') %>
             <% end %>
           <% end %>
         <% end %>
