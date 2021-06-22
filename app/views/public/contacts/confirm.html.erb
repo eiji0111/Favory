@@ -1,7 +1,8 @@
+<% provide(:title, "お問い合わせ確認") %>
 <div class="container">
-  <div class="row my-5 d-flex flex-column">
-    <div class="col-10 col-md-8 col-lg-5 mx-auto p-3 p-md-5 border border-dark rounded-lg shadow">
-      <div class="col text-center"><h3>お問い合わせ</h3></div>
+  <div class="row py-5 d-flex flex-column">
+    <div class="col-11 col-md-8 col-lg-6 mx-auto mb-3 p-3 p-md-4 border border rounded-lg shadow bg-white">
+      <div class="col text-center text-info"><h3>お問い合わせ</h3></div>
       <div class="col text-center"><p>以下の内容でよろしいですか？</p></div>
       <div class="col form-group">
         <h6 class="mb-0">名前</h6>
@@ -11,18 +12,12 @@
         <h6 class="mb-0">お問い合わせ内容</h6>
         <p><%= @contact.content %></p>
         <div class="col d-flex justify-content-around">
-          <!--<//%= form_with model: @contact, url: back_contact_path, local: true do |f| %>-->
-          <!--  <//%= f.hidden_field :name %>-->
-          <!--  <//%= f.hidden_field :email %>-->
-          <!--  <//%= f.hidden_field :content %>-->
-          <!--  <//%= f.submit '修正する', class: 'btn btn-secondary rounded-pill' %>-->
-          <!--<//% end %>-->
           <%= form_with model: @contact, local: true do |f| %>
             <%= f.hidden_field :name %>
             <%= f.hidden_field :email %>
             <%= f.hidden_field :content %>
-            <%= f.submit '修正する', name: 'back', class: 'btn btn-primary rounded-pill' %>
-            <%= f.submit '送信する', class: 'btn btn-primary rounded-pill' %>
+            <%= f.submit '修正する', name: 'back', class: 'btn btn-outline-secondary shadow rounded-pill' %>
+            <%= f.submit '送信する', class: 'btn btn-outline-info shadow rounded-pill' %>
           <% end %>
         </div>
       </div>
