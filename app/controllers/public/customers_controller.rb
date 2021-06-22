@@ -16,7 +16,7 @@ class Public::CustomersController < ApplicationController
   end
   
   def show
-    @communities = Community.where(owner_id: @customer.id)
+    @communities = Community.where(owner_id: @customer.id).order(updated_at: :desc)
   end
   
   def edit

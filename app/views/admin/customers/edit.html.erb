@@ -6,7 +6,7 @@
       <div class="col-6 text-center">
         <% if @customer.sex == 'man' %>
           <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
-              fallback: "no-image-man.jpg", onClick: "$('.image-field').click()", class: 'customer-image edit-customer-image shadow rounded-circle' %>
+              fallback: "no-image-man.jpg", onClick: "$('.image-field').click()", class: 'customer-image edit-customer-image shadow rounded' %>
         <% else %>
           <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
               fallback: "no-image-woman.jpg", onClick: "$('.image-field').click()", class: 'customer-image edit-customer-image shadow rounded-circle' %>
