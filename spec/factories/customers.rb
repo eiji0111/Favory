@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :customer do
-    email { 'test1@example.com' }
+    email { Faker::Internet.email }
     password { 'password' }
-    name { 'テストユーザー' }
-    nickname { 'テストニックネーム' }
+    name { Faker::Lorem.characters(number: 10) }
+    nickname { Faker::Lorem.characters(number: 10) }
     birthday { Date.new(1995, 1, 11) }
   end
 end

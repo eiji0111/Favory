@@ -127,13 +127,13 @@ describe '[STEP1] ユーザログイン前のテスト', type: :system do
     
     context '新規登録成功のテスト' do
       before do
-        fill_in 'customer[name]', with: 'テストユーザー'
-        fill_in 'customer[nickname]', with: 'てすとゆーざー'
+        fill_in 'customer[name]', with: Faker::Lorem.characters(number: 10)
+        fill_in 'customer[nickname]', with: Faker::Lorem.characters(number: 10)
         select '1995', from: 'customer_birthday_1i'
         select '1', from: 'customer_birthday_2i'
         select '11', from: 'customer_birthday_3i'
         choose 'customer_sex_woman'
-        fill_in 'customer[email]', with: 'test1@example.com'
+        fill_in 'customer[email]', with: Faker::Internet.email
         fill_in 'customer[password]', with: 'password'
       end
 
@@ -217,19 +217,19 @@ describe '[STEP1] ユーザログイン前のテスト', type: :system do
     end
     
     context 'フッターの表示を確認' do
-      it '男性会員一覧アイコンが表示される' do
+      it '男性会員一覧（四角）アイコンが表示される' do
         expect(page).to have_link nil, href: customer_men_path
       end
-      it '女性会員一覧アイコンが表示される' do
+      it '女性会員一覧（丸）アイコンが表示される' do
         expect(page).to have_link nil, href: customer_women_path
       end
       it 'コミュニティアイコンが表示される' do
         expect(page).to have_link nil, href: communities_path
       end
-      it 'お気に入り一覧アイコンが表示される' do
+      it 'お気に入り一覧（ハート）アイコンが表示される' do
         expect(page).to have_link nil, href: followed_path
       end
-      it 'マイページアイコンが表示される' do
+      it 'マイページ（家）アイコンが表示される' do
         expect(page).to have_link nil, href: customer_path(customer.id)
       end
     end
