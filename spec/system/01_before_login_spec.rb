@@ -7,7 +7,7 @@ describe '[STEP1] ユーザログイン前のテスト', type: :system do
     end
     
     context '表示内容の確認' do
-      it 'UPLが正しい' do
+      it 'URLが正しい' do
         expect(current_path).to eq '/'
       end
       it 'アカウントをお持ちの方はこちら（ログイン）リンクが表示される: 「こちら」のみリンクである' do
