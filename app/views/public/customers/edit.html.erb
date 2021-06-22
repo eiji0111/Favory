@@ -6,13 +6,13 @@
       <div class="col-6 text-center">
         <% if @customer.sex == 'man' %>
           <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
-              fallback: "no-image-man.jpg", onclick: "$('.image-field').click()", class: 'customer-image edit-customer-image shadow rounded-circle' %>
+              fallback: "no-image-man.jpg", onclick: "$('.image-field').click()", class: 'customer-image cursor-hover shadow rounded-circle' %>
         <% else %>
           <%= attachment_image_tag @customer, :profile_image, size: "160x160", format: "jpeg",
-              fallback: "no-image-woman.jpg", onclick: "$('.image-field').click()", class: 'customer-image edit-customer-image shadow rounded-circle' %>
+              fallback: "no-image-woman.jpg", onclick: "$('.image-field').click()", class: 'customer-image cursor-hover shadow rounded-circle' %>
         <% end %>
         <div class="col py-2">
-          <i class="bi bi-camera fa-lg" onclick="$('.image-field').click()"></i>
+          <i class="bi bi-camera fa-lg cursor-hover" onclick="$('.image-field').click()"></i>
           <i class="bi bi-arrow-repeat fa-lg"></i>
         </div>
         <%= f.attachment_field :profile_image,  class: "image-field d-none form-control-file-sm py-2" %>
@@ -20,7 +20,7 @@
       <div class="col-6">
         <div class="col">
           <%= f.label :nickname, class: 'mb-0' %>
-          <%= f.text_field :nickname, class: formlayout %>
+          <%= f.text_field :nickname, class: formlayout, required: :required %>
         </div>
         <div class="col pt-4">
           <p class="d-inline-block mb-0">ふぁぼ <strong><%= @customer.following_customer.count %></strong>人</p>&emsp;
@@ -51,7 +51,7 @@
           <div class="col-6">
             <% if current_customer == @customer %>
               <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">名　前</span>
-                <%= f.text_field :name, class: formlayout %>
+                <%= f.text_field :name, class: formlayout, required: :required %>
               </li>
             <% end %>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">生年月日</span><br>

@@ -42,7 +42,7 @@
                   <% end %>
                 <% end %>
               </div>
-              <div class="chat-opponent-customer d-inline-block shadow p-2 bg-white"><%= chat.message %></div>
+              <div class="chat-opponent-customer d-inline-block shadow p-2 bg-white"><%= safe_join(chat.message.split("\n"), tag(:br)) %></div>
               <small class="text-muted"><%= chat.created_at.strftime("%-H:%M") %></small>
             </li>
           <% end%>

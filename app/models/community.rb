@@ -4,7 +4,7 @@ class Community < ApplicationRecord
   has_many :community_posts
   has_many :customers, through: :community_customers
   
-  scope :valid_all, -> (params) { where(valid_status: 1).page(params).order(updated_at: :desc) }
+  scope :valid_all, -> { where(valid_status: 1).order(updated_at: :desc).includes(:community_posts) }
   
   validates :name, presence: true
   validates :introduction, presence: true

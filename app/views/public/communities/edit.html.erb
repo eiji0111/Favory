@@ -1,2 +1,27 @@
-<h1>Public::Communities#edit</h1>
-<p>Find me in app/views/public/communities/edit.html.erb</p>
+<% provide(:title, "コミュニティ編集") %>
+<div class="container">
+  <%= form_with model: @community, local: true do |f| %>
+    <div class="row py-5">
+      <div class="col-10 mx-auto d-md-flex">
+        <div class="col-12 col-md-6 text-center">
+          <%= attachment_image_tag(@community, :community_image,
+              fallback: "people.svg", style: 'width: 200px; object-fit: cover;', onclick: "$('.image-field').click()", class: 'img-fluid cursor-hover rounded shadow') %>
+          <div class="col py-2">
+            <i class="bi bi-camera fa-lg cursor-hover" onclick="$('.image-field').click()"></i>
+            <i class="bi bi-arrow-repeat fa-lg"></i>
+            <%= f.attachment_field :community_image,  class: "image-field d-none form-control-file-sm py-2" %>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 pt-3">
+          <h4 class="border-bottom d-inline-block">コミュニティ名</h4>
+          <p><%= f.text_field :name, class: 'form-control', required: :required %></p>
+          <h4 class="border-bottom d-inline-block">概要</h4>
+          <p><%= f.text_area :introduction, class: 'form-control', required: :required %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col text-center">
+      <%= f.submit '変更', class: 'btn btn-outline-success rounded-pill shadow' %>
+    </div>
+  <% end %>
+</div>
