@@ -1,6 +1,7 @@
+<% provide(:title, "コミュニティ一覧（管理者）") %>
 <div class="container">
-  <div class="row">
-    <div class="col-12">
+  <div class="row p-5">
+    <div class="col-12 text-center mb-3">
       <h3>コミュニティ一覧</h3>
     </div>
     <div class="col-12">
@@ -10,7 +11,6 @@
             <th scope="col">コミュニティID</th>
             <th scope="col">コミュニティ名</th>
             <th scope="col">コミュニティ概要</th>
-            <th scope="col">作成者</th>
             <th scope="col">ステータス</th>
           </tr>
         </thead>
@@ -24,13 +24,14 @@
                 <% end %>
               </td>
               <td><%= community.introduction %></td>
-              <td><%= Customer.find_by(id: community.owner_id).nickname %></td>
               <td><%= community.valid_status %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
-      <%= paginate @communities %>
+      <div class="col-12 d-flex justify-content-center">
+        <%= paginate @communities %>
+      </div>
     </div>
   </div>
 </div>

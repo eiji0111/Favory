@@ -5,13 +5,13 @@ class Admin::CustomersController < ApplicationController
   def men
     @q = Customer.where(sex: 0).ransack(params[:q])
     @q.sorts = 'created_at asc' if @q.sorts.empty?
-    @customers = @q.result(distinct: true).page(params[:page]).per(10)
+    @customers = @q.result(distinct: true).page(params[:page])
   end
   
   def women
     @q = Customer.where(sex: 1).ransack(params[:q])
     @q.sorts = 'created_at asc' if @q.sorts.empty?
-    @customers = @q.result(distinct: true).page(params[:page]).per(10)
+    @customers = @q.result(distinct: true).page(params[:page])
   end
   
   def show
