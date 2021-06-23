@@ -1,11 +1,11 @@
+<% provide(:title, "コミュニティ詳細（管理者）") %>
 <div class="container">
-  <div class="row">
-    <div class="col-12">
+  <div class="row p-5">
+    <div class="col-12 text-center mb-3">
       <h3>コミュニティ詳細</h3>
     </div>
     <div class="col-10 col-md-4 mx-auto mx-md-0">
-      <%= attachment_image_tag(@community, :community_image,
-          fallback: "no-image.png", class: 'img-fluid') %>
+      <%= attachment_image_tag(@community, :community_image, size: "260x260", fallback: "people.svg") %>
     </div>
     <div class="col-12 col-md-8">
       <table class="table">
@@ -20,7 +20,7 @@
           </tr>
           <tr>
             <th scope="row">作成者</th>
-            <td><%= Customer.find_by(id: @community.owner_id).nickname %></td>
+            <td><%= @customer.nickname %></td>
           </tr>
           <tr>
             <th scope="row">ステータス</th>
@@ -30,7 +30,7 @@
       </table>
     </div>
     <div class="col-3 mx-auto">
-      <%= link_to '編集する', edit_admin_community_path(@community), class: 'btn btn-primary' %>
+      <%= link_to '編集する', edit_admin_community_path(@community), class: 'btn btn-outline-info rounded-pill' %>
     </div>
   </div>
 </div>

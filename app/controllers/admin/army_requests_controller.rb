@@ -2,7 +2,7 @@ class Admin::ArmyRequestsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @army_requests = ArmyRequest.all
+    @army_requests = ArmyRequest.page(params[:page])
   end
 
   def show

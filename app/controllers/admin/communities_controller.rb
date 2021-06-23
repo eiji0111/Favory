@@ -1,20 +1,19 @@
 class Admin::CommunitiesController < ApplicationController
-  
+  before_action :authenticate_admin!
+  before_action :set_community, only: [:show, :edit, :update, :destroy]
   
   def index
     @communities = Community.page(params[:page])
   end
 
   def show
-    @community = Community.find(params[:id])
+    @customer = Customer.find_by(id: @community.owner_id)
   end
 
   def edit
-    @community = Community.find(params[:id])
   end
   
   def update
-    @community = Community.find(params[:id])
     if @community.update(community_params)
       redirect_to admin_community_path(@community), notice: 'コミュニティ情報を変更しました'
     else
@@ -23,7 +22,6 @@ class Admin::CommunitiesController < ApplicationController
   end
   
   def destroy
-    @community = Community.find(params[:id])
     if @community.destroy
       redirect_to admin_communities_path, notice: 'コミュニティを削除しました'
     else
@@ -32,6 +30,10 @@ class Admin::CommunitiesController < ApplicationController
   end
   
   private
+  
+  def set_community
+    @community = Community.find(params[:id])
+  end
   
   def community_params
     params.require(:community).permit(:name, :introduction, :community_image, :owner_id, :valid_status)
