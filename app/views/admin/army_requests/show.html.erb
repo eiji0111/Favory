@@ -1,23 +1,35 @@
+<% provide(:title, "自衛官申請") %>
 <div class="container">
-  <div class="row">
-    <div class="col-12"><h3><%= @army_request.customer.name %>さんの自衛官申請詳細</h3></div>
-    <div class="col-10 mx-auto">
-      <%= @army_request.customer.name %>
-      <%= @army_request.army_type %>
-      <%= @army_request.base %>
-      <%= @army_request.identification_number %>
-      <%= attachment_image_tag @army_request, :identification_image, size: "300x300", format: "jpeg",
-          fallback: "no-image.png", style: 'object-fit: cover;', class: 'rounded' %>
-    </div>
-    <%= form_with model: @customer, url: admin_army_request_path(@customer), local: true do |f| %>
-      <div class="col">自衛官認証</div>
-      <div class="form-group">
-        <%= f.radio_button :army_flag, :false %>
-        <%= f.label :army_flag, '未承認', value: false %>
-        <%= f.radio_button :army_flag, :true %>
-        <%= f.label :army_flag, '承認', value: true %>
+  <div class="row p-5">
+    <div class="col-12 text-center mb-5"><h4><%= @army_request.customer.name %>さん<br>自衛官申請</h4></div>
+    <div class="col-12 col-md-6 text-center mb-3">
+      <%= attachment_image_tag @army_request, :identification_image, size: "260x260", format: "jpeg",
+          fallback: "no-image.png", style: 'object-fit: cover;', class: 'shadow rounded' %>
+      <div class="col text-center mt-3">
+      <%= form_with model: @customer, url: admin_army_request_path(@customer), local: true do |f| %>
+        <div class="form-group">
+          <%= f.radio_button :army_flag, :false %>
+          <%= f.label :army_flag, '未承認', value: false %>
+          <%= f.radio_button :army_flag, :true %>
+          <%= f.label :army_flag, '承認', value: true %>
+        </div>
+        <%= f.submit '変 更', class: 'btn btn-outline-success rounded-pill' %>
+      <% end %>
       </div>
-      <%= f.submit '変更', class: 'btn btn-primary' %>
-    <% end %>
+    </div>
+    <div class="col-12 col-md-6">
+      <span class="text-white px-2 py-1 rounded-pill bg-info shadow">名 前</span>
+      <p class="mt-2"><%= @army_request.customer.name %></p>
+      <span class="text-white px-2 py-1 rounded-pill bg-info shadow">陸・海・空</span>
+      <p class="mt-2"><%= @army_request.army_type %></p>
+      <span class="text-white px-2 py-1 rounded-pill bg-info shadow">駐屯地・基地</span>
+      <p class="mt-2"><%= @army_request.base %></p>
+      <span class="text-white px-2 py-1 rounded-pill bg-info shadow">階 級</span>
+      <p class="mt-2"><%= @army_request.army_class %></p>
+      <span class="text-white px-2 py-1 rounded-pill bg-info shadow">職 種</span>
+      <p class="mt-2"><%= @army_request.occupation %></p>
+      <span class="text-white px-2 py-1 rounded-pill bg-info shadow">認識番号</span>
+      <p class="mt-2"><%= @army_request.identification_number %></p>
+    </div>
   </div>
 </div>
