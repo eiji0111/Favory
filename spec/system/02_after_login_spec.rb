@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 describe '[STEP2] ユーザログイン後のテスト', type: :system do
-  let(:customer) { create(:customer) }
-  let!(:community) { create(:community, owner_id: customer.id) }
+  let!(:customer) { create(:customer) }
+  let!(:another_man_customer) { create(:customer) }
+  let!(:another_woman_customer) { create(:customer, sex: 1) }
+  let!(:community) { create(:community, owner_id: customer.id, valid_status: 1) }
   
   before do
     visit new_customer_session_path
@@ -49,6 +51,83 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       it '家アイコンを押すと、マイページ画面に遷移する' do
         all('footer a').last.click
         is_expected.to eq '/customers/' + customer.id.to_s
+      end
+    end
+  end
+  
+  describe '会員一覧のテスト' do
+    before do
+      visit customer_men_path
+    end
+    
+    context '男性会員一覧画面表示内容の確認' do
+      it '絞り込みボタンが表示されている' do
+        expect(page).to have_button '絞り込み'
+      end
+    end
+    
+    context '男性会員詳細画面表示内容の確認' do
+      before do
+        click_link href: customer_path(another_man_customer.id)
+      end
+      
+      it 'URLが正しい' do
+        expect(current_path).to eq '/customers/' + another_man_customer.id.to_s
+      end
+      it '会員名が表示されている' do
+        expect(page).to have_content another_man_customer.nickname
+      end
+    end
+    
+    context 'お気に入りに成功する', js: true do
+      before do
+        click_link href: customer_path(another_man_customer.id)
+        click_button 'button'
+      end
+      
+      it 'ふぁぼされた人のカウントが１増える' do
+        expect(page).to have_content 'ふぁぼされた 1人'
+      end
+    end
+  end
+  
+  describe 'コミュニティのテスト' do
+    before do
+      visit communities_path
+    end
+    
+    context 'コミュニティ一覧画面表示内容の確認' do
+      it 'コミュニティ名が表示されている' do
+        expect(page).to have_content community.name
+      end
+    end
+    
+    context 'コミュニティ詳細画面表示内容の確認' do
+      before do
+        click_link href: community_path(community.id)
+      end
+      
+      it 'URLが正しい' do
+        expect(current_path).to eq '/communities/' + community.id.to_s
+      end
+      it 'コミュニティ名が表示されている' do
+        expect(page).to have_content community.name
+      end
+      it 'コミュニティの概要が表示されている' do
+        expect(page).to have_content community.introduction
+      end
+    end
+    
+    context 'コミュニティ詳細画面でコメントに成功する（Ajax）', js: true do
+      before do
+        click_link href: community_path(community.id)
+        find('#community_post_btn').click
+        fill_in 'community_post[content]', with: 'テスト投稿'
+        click_button '投稿'
+      end
+      
+      it '投稿内容が正しく表示される' do
+        expect(page).to have_content 'テスト投稿'
       end
     end
   end
