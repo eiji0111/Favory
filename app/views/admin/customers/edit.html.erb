@@ -70,7 +70,10 @@
         <ul class="row pl-0">
           <div class="col-6">
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">名　前</span>
-              <%= f.text_field :name, class: formlayout %>
+              <%= f.text_field :name, class: formlayout, required: :required %>
+            </li>
+            <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">アドレス</span>
+              <%= f.email_field :email, class: formlayout, required: :required %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">生年月日</span><br>
               <%= f.date_select :birthday, { use_month_numbers: true,start_year: 1971,
@@ -87,7 +90,7 @@
               <%= f.select :work_location, Customer.work_locations.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">仕　事</span>
-              <%= f.text_field :jobs, class: formlayout %></li>
+              <%= f.text_field :jobs, class: formlayout, required: :required %></li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">年　収</span>
               <%= f.select :annual_income, Customer.annual_incomes.keys, {}, { class: formlayout } %>
             </li>
@@ -112,7 +115,7 @@
               <%= f.select :car, Customer.cars.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">趣　味</span>
-              <%= f.text_field :hobby, class: formlayout %>
+              <%= f.text_field :hobby, class: formlayout, required: :required %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">煙　草</span>
               <%= f.select :cigarettes, Customer.cigarettes.keys, {}, { class: formlayout } %>
