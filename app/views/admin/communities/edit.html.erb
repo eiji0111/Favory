@@ -21,7 +21,8 @@
       </div>
     </div>
     <div class="col text-center">
-      <%= f.submit '変更', class: 'btn btn-outline-success rounded-pill shadow' %>
+      <%= f.submit '変更する', class: 'btn btn-outline-success rounded-pill shadow mr-2' %>
+      <%= link_to '削除する', admin_community_path(@community), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-outline-danger shadow rounded-pill' %>
     </div>
   <% end %>
 </div>
