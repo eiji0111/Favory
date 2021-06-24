@@ -2,8 +2,13 @@
 <% visited = notification.visited %>
 <div class="rounded-pill py-2 my-3 border shadow">
     <%= link_to customer_path(visitor) do %>
-      <%= attachment_image_tag visitor, :profile_image,size: "35x35", format: "jpeg",
-          fallback: "no-image.jpg", style: 'object-fit: cover;', class: 'ml-3 rounded-circle' %>
+      <% if visitor.sex == 'man' %>
+        <%= attachment_image_tag visitor, :profile_image, size: "35x35", format: "jpeg",
+            fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'ml-3 rounded shadow-sm' %>
+      <% else %>
+        <%= attachment_image_tag visitor, :profile_image, size: "35x35", format: "jpeg",
+            fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'ml-3 rounded-circle shadow-sm' %>
+      <% end %>
     <% end %>
     <small><%= time_ago_in_words(notification.created_at).upcase %>前</small>
   <div class="col">

@@ -4,10 +4,11 @@ class ArmyRequest < ApplicationRecord
   
   attachment :identification_image
   validates :army_type, presence: true
-  validates :base, presence: true
+  validates :base, length: { maximum: 20, minimum: 2 }, presence: true
   validates :army_class, presence: true
-  validates :occupation, presence: true
-  validates :identification_number, presence: true
+  validates :occupation, length: { maximum: 20, minimum: 2 }, presence: true
+  validates :identification_number, length: { maximum: 20, minimum: 8 }, presence: true
+  validates :identification_image, presence: true
   
   enum army_type: { "陸自": 0, "海自": 1, "空自": 2 }
   enum army_class: {

@@ -11,7 +11,7 @@
         <% if @community.owner_id == current_customer.id %>
           <%= link_to ' ', edit_community_path(@community), class: 'ml-1 bi bi-gear fa-lg text-dark' %>
         <% end %>
-        <p><%= @community.name %></p>
+        <p><%= safe_join(@community.name.split("\n"), tag(:br)) %></p>
         <h4 class="border-bottom d-inline-block">概要</h4>
         <p><%= @community.introduction %></p>
       </div>

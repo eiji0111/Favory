@@ -23,7 +23,7 @@ class Customer < ApplicationRecord
 
   attachment :profile_image
   validates :name, length: { maximum: 20, minimum: 2 }, presence: true
-  validates :nickname, presence: true
+  validates :nickname, length: { maximum: 20, minimum: 2 }, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A\S+@\S+\.\S+\z/ }
   validates :sex, presence: true
 
