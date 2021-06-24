@@ -1,4 +1,4 @@
 class CommunityCustomer < ApplicationRecord
-  belongs_to :community
-  belongs_to :customer
+  belongs_to :community, optional: true
+  belongs_to :customer, optional: true
 end

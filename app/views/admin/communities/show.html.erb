@@ -5,7 +5,7 @@
       <h3>コミュニティ詳細</h3>
     </div>
     <div class="col-10 col-md-4 mx-auto mx-md-0">
-      <%= attachment_image_tag(@community, :community_image, size: "260x260", fallback: "people.svg") %>
+      <%= attachment_image_tag(@community, :community_image, size: "260x260", fallback: "people.svg", style: 'object-fit: cover;', class: 'shadow rounded') %>
     </div>
     <div class="col-12 col-md-8">
       <table class="table">
