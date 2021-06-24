@@ -1,3 +1,87 @@
 <% provide(:title, "トップ（管理者）") %>
-<h1>Admin::Homes#top</h1>
-<p>Find me in app/views/admin/homes/top.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        
+      </div>
+    </nav>
+    <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="col-12 my-3"><h3>Dash board</h3></div>
+      <div class="row">
+        <div class="col mx-1 border rounded shadow-sm text-center">
+          <div class="row d-flex justify-content-center align-items-center border-bottom rounded-top men-card-color">
+            <div class="col"><i class="bi bi-square fa-4x men-icon text-light"></i></div>
+            <div class="col text-right text-light">
+              <h2 class="mb-0"><%= @men_customers.count %></h2>
+              <p class="mb-0">男性会員</p>
+            </div>
+          </div>
+          <%= link_to admin_men_path do %>
+            <div class="col my-2 text-right text-muted">
+              <span>一覧を見る</span>
+              <i class="bi bi-arrow-right-circle"></i>
+            </div>
+          <% end %>
+        </div>
+        <div class="col mx-1 border rounded shadow-sm text-center">
+          <div class="row d-flex justify-content-center align-items-center border-bottom rounded-top women-card-color">
+            <div class="col"><i class="bi bi-circle fa-4x text-light"></i></div>
+            <div class="col text-right text-light">
+              <h2 class="mb-0"><%= @women_customers.count %></h2>
+              <p class="mb-0">女性会員</p>
+            </div>
+          </div>
+          <%= link_to admin_women_path do %>
+            <div class="col my-2 text-right text-muted">
+              <span>一覧を見る</span>
+              <i class="bi bi-arrow-right-circle"></i>
+            </div>
+          <% end %>
+        </div>
+        <div class="col mx-1 border rounded shadow-sm text-center">
+          <div class="row d-flex justify-content-center align-items-center border-bottom rounded-top bg-success">
+            <div class="col"><i class="bi bi-people fa-4x text-light"></i></div>
+            <div class="col text-right text-light">
+              <h2 class="mb-0"><%= @communities.count %></h2>
+              <p class="mb-0">コミュニティ</p>
+            </div>
+          </div>
+          <%= link_to admin_communities_path do %>
+            <div class="col my-2 text-right text-muted">
+              <span>一覧を見る</span>
+              <i class="bi bi-arrow-right-circle"></i>
+            </div>
+          <% end %>
+        </div>
+        <div class="col mx-1 border rounded shadow-sm text-center">
+          <div class="row d-flex justify-content-center align-items-center border-bottom rounded-top bg-secondary">
+            <div class="col"><i class="bi bi-card-checklist fa-4x text-light"></i></div>
+            <div class="col text-right text-light">
+              <h2 class="mb-0"><%= @army_requests.count %></h2>
+              <p class="mb-0">自衛官申請</p>
+            </div>
+          </div>
+          <%= link_to admin_army_requests_path do %>
+            <div class="col my-2 text-right text-muted">
+              <span>一覧を見る</span>
+              <i class="bi bi-arrow-right-circle"></i>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col py-3 border rounded shadow-sm text-center">
+          <label><i class="bi bi-graph-up mr-2"></i>日別男性・女性会員登録者数</label>
+          <div class="graph">
+            <%= line_chart [
+              { name: "男性", data: @men_customers_count },
+              { name: "女性", data: @women_customers_count }
+              ], loading: "Loading...", colors: ["#59d5e6", "#FF82B2"]
+            %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
