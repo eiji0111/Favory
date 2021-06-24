@@ -27,8 +27,6 @@ Rails.application.routes.draw do
     patch 'customers/:id/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
     put 'customers/withdraw/:id' => 'customers#withdraw'
     get 'customers/followed' => 'relationships#followed', as: 'followed' # お気に入り一覧
-    get 'customers/follower' => 'relationships#follower', as: 'follower' # お気に入りされた一覧
-    get 'customers/matchers' => 'relationships#matchers', as: 'matchers' # 互いにお気に入りしている一覧
     post 'follow/:id' => 'relationships#follow', as: 'follow' # お気に入りする
     delete 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す
     get 'chat/:id' => 'chats#show', as: 'chat'
@@ -42,7 +40,7 @@ Rails.application.routes.draw do
     resources :chats, only: [:create]
     resources :contacts, only: [:new, :create]
     resources :communities, except: [:new, :destroy]
-    resources :community_posts, only: [:create]
+    resources :community_posts, only: [:create, :destroy]
     resources :army_requests, only: [:new, :create]
     resources :notifications, only: [:index]
   end

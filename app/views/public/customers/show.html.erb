@@ -74,7 +74,8 @@
       <ul class="row pl-0">
         <div class="col-6">
           <% if current_customer == @customer %>
-            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">名　前</span><%= @customer.name %></li>
+            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">名　前</span><%= @customer.name %><br><small>（非公開）</small></li>
+            <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">アドレス</span><%= @customer.email %><br><small>（非公開）</small></li>
           <% end %>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">年　齢</span><%= @customer.age %>歳</li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">居住地</span><%= @customer.address %></li>

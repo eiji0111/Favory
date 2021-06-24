@@ -53,6 +53,9 @@
               <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">名　前</span>
                 <%= f.text_field :name, class: formlayout, required: :required %>
               </li>
+              <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">アドレス</span>
+                <%= f.email_field :email, class: formlayout, required: :required %>
+              </li>
             <% end %>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">生年月日</span><br>
               <%= f.date_select :birthday, { use_month_numbers: true,start_year: 1971,

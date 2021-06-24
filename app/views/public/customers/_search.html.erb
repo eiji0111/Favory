@@ -6,7 +6,7 @@
     </button>
   </div>
 </div>
-<nav class="col-10 col-md-5 col-lg-4 bg-light sidebar py-3 my-3 mx-auto mx-md-0 rounded collapse" id="collapseSearch">
+<nav class="col-10 col-md-5 col-lg-4 bg-white sidebar py-3 my-3 mx-auto mx-md-0 shadow-sm border rounded collapse" id="collapseSearch">
   <%= search_form_for q, url: url_type do |f| %>
   <div class="row">
     <div class="col-6 mb-3">
@@ -15,16 +15,25 @@
                             { onchange: 'this.form.submit()'}, class: 'form-control form-control-sm') %>
     </div>
     <div class="col-12 fas fa-search mb-1"> 詳細検索</div>
-    <div class="col-8 mb-3">
+    <div class="col-8">
       <%= f.label :nickname_cont, 'ニックネーム' %>
       <%= f.search_field :nickname_cont, class: 'form-control form-control-sm' %>
       <%= f.label :address_eq, "居住地" %>
       <%= f.select :address_eq, Customer.addresses.map{|k, v|[k, v]}, {prompt: "選択してください"}, class: 'form-control form-control-sm' %>
     </div>
-    <div class="col-4 mb-3">
+    <div class="col-4">
       <%= f.label :birthday_to_age_gteq, "年齢", class: 'col-form-label' %>
       <%= f.number_field :birthday_to_age_gteq, class: 'form-control form-control-sm' %>以上
       <%= f.number_field :birthday_to_age_lt, class: 'form-control form-control-sm' %>未満
+    </div>
+    <div class="col">
+      <p class="m-0">自衛官認証</p>
+      <%= f.radio_button :army_flag_eq, '', checked: true %>
+      <%= f.label :army_flag_eq, "指定しない", value: '', class: 'mr-2' %>
+      <%= f.radio_button :army_flag_eq, true %>
+      <%= f.label :army_flag_eq, "あり", value: true, class: 'mr-2' %>
+      <%= f.radio_button :army_flag_eq, false %>
+      <%= f.label :army_flag_eq, "なし", value: false, class: 'mr-2' %>
     </div>
   </div>
   <div class="col text-center">

@@ -8,6 +8,7 @@
       <button type="button" class="btn btn-outline-info shadow rounded-pill" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
         <i class="bi bi-pencil-square mr-1"></i>新しくコミュニティを作る
       </button>
+    </div>
       <!-- Modal中身 -->
       <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -19,7 +20,6 @@
               </button>
             </div>
             <%= form_with model: @community, local: true do |f| %>
-              <div class="js-message-errors"></div>
               <div class="modal-body">
                 <div class="col form-group">
                   <%= f.label :community_image, "コミュニティ画像" %>
@@ -27,22 +27,21 @@
                 </div>
                 <div class="col form-group">
                   <%= f.label :name, "コミュニティ名" %>
-                  <%= f.text_field :name, class: "form-control" %>
+                  <%= f.text_field :name, class: "form-control", required: :required %>
                 </div>
                 <div class="col form-group">
                   <%= f.label :introduction, "コミュニティの概要" %>
-                  <%= f.text_area :introduction, class: "form-control" %>
+                  <%= f.text_area :introduction, class: "form-control", required: :required %>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
                 <%= f.submit "作成", class: 'btn btn-primary' %>
               </div>
             <% end %>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
 <div class="container">
@@ -53,7 +52,7 @@
           <%= link_to community_path(community) do %>
             <%= attachment_image_tag(community, :community_image, fallback: "people.svg", class: 'p-2') %>
           <div class="col text-dark">
-            <small><%= community.name %></small>
+            <small><%= safe_join(community.name.split("\n"), tag(:br)) %></small>
           </div>
           <div class="col text-right text-muted">
             <i class="bi bi-chat-left mr-1"></i><%= community.community_posts.size %>

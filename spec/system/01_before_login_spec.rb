@@ -145,6 +145,25 @@ describe '[STEP1] ユーザログイン前のテスト', type: :system do
         expect(current_path).to eq '/customers/' + Customer.last.id.to_s
       end
     end
+    
+    context '新規登録失敗のテスト（お名前・ニックネームが２文字未満の場合）' do
+      before do
+        fill_in 'customer[name]', with: Faker::Lorem.characters(number: 1)
+        fill_in 'customer[nickname]', with: Faker::Lorem.characters(number: 1)
+        select '1995', from: 'customer_birthday_1i'
+        select '1', from: 'customer_birthday_2i'
+        select '11', from: 'customer_birthday_3i'
+        choose 'customer_sex_woman'
+        fill_in 'customer[email]', with: Faker::Internet.email
+        fill_in 'customer[password]', with: 'password'
+      end
+
+      it '新規登録画面に遷移し、エラーメッセージを表示する' do
+        click_button '新規登録'
+        expect(page).to have_content 'お名前は2文字以上で入力してください'
+        expect(page).to have_content 'ニックネームは2文字以上で入力してください'
+      end
+    end
   end
   
   describe 'ユーザログイン' do

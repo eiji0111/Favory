@@ -1,42 +1,8 @@
 <% provide(:title, "男性会員一覧（管理者）") %>
 <div class="container">
   <div class="row">
-    <nav class="col-12 col-md-3 bg-light sidebar py-3 mb-3 rounded">
-      <div class="sidebar-sticky">
-        <%= search_form_for @q, url: admin_men_path do |f| %>
-        <div class="col mb-3">
-          <%= f.label :sorts, ' 並び替え', class: 'fas fa-search' %>
-          <%= f.select( :sorts, { '並び替え': 'id asc', '新着順': 'created_at desc', '年齢順（若い順）': 'birthday desc' },
-                                { onchange: 'this.form.submit()'}, class: 'form-control form-control-sm') %>
-        </div>
-        <div class="col-12 fas fa-search mb-1"> 詳細検索</div>
-        <div class="col mb-3">
-          <%= f.label :id, "ID" %>
-          <%= f.search_field :id_eq, class: 'form-control form-control-sm' %>
-        </div>
-        <div class="col mb-3">
-          <%= f.label :name, "名前" %>
-          <%= f.search_field :name_cont, class: 'form-control form-control-sm' %>
-        </div>
-        <div class="col mb-3">
-          <%= f.label :nickname_cont, 'ニックネーム' %>
-          <%= f.search_field :nickname_cont, class: 'form-control form-control-sm' %>
-        </div>
-        <div class="col mb-3">
-          <%= f.label :address_eq, "居住地" %>
-          <%= f.select :address_eq, Customer.addresses.map{|k, v|[k, v]}, {prompt: "選択してください"}, class: 'form-control form-control-sm' %>
-        </div>
-        <div class="col mb-3">
-          <%= f.label :birthday_to_age_gteq, "年齢", class: 'col-form-label' %>
-          <%= f.number_field :birthday_to_age_gteq, class: 'form-control form-control-sm' %>以上
-          <%= f.number_field :birthday_to_age_lt, class: 'form-control form-control-sm' %>未満
-        </div>
-        <div class="col text-center">
-          <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill' %>
-        </div>
-        <% end %>
-      </div>
-    </nav>
+    <% @url_type = admin_men_path %>
+    <%= render partial: 'search', locals: { q: @q, url_type: @url_type } %>
     <div class="col-md-9 ml-sm-auto col-lg-9 px-4">
       <table class="table table-hover">
         <thead>
