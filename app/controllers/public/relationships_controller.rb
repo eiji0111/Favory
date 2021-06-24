@@ -17,12 +17,4 @@ class Public::RelationshipsController < ApplicationController
     @followers = current_customer.follower_customer.page(params[:page]) # お気に入りされた一覧
     @matchers = current_customer.matchers.page(params[:page]) # マッチング成立
   end
-  
-  # お気に入りされた一覧
-  def follower
-  end
-  
-  # 互いにお気に入りしている
-  def matchers
-  end
 end

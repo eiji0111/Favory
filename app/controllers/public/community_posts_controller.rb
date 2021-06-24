@@ -11,6 +11,13 @@ class Public::CommunityPostsController < ApplicationController
       end
     end
   end
+  
+  def destroy
+    @community_post = CommunityPost.find_by(id: params[:id])
+    @community_post.destroy
+    @community_posts = CommunityPost.recent(@community_post.community).page(params[:page]).per(10)
+    render :create
+  end
 
   private
   
