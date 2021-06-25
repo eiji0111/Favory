@@ -10,10 +10,14 @@ class Public::CommunitiesController < ApplicationController
   def create
     @community = Community.new(community_params)
     @community.owner_id = current_customer.id
-    if @community.save
-      redirect_to communities_path, notice: '管理者が内容を確認・承認したのち、こちらに反映されます'
-    else
-      redirect_to communities_path, alert: '正しく保存されませんでした'
+    respond_to do |format|
+      if @community.save
+        @communities = Community.valid_all
+        flash.now[:notice] = '管理者が内容を確認・承認したのち、こちらに反映されます'
+        format.js
+      else
+        format.js { render :errors }
+      end
     end
   end
 

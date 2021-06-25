@@ -2,46 +2,28 @@
 <div class="container">
   <div class="row py-5">
     <div class="col-12 text-center">
+      <div class="js-flash_messages"></div>
       <h1 class="d-inline-block border-bottom">Community</h1>
       <p>コミュニティを通じて、共通の趣味や話題から気になる相手を探してみましょう！<br>自分でオリジナルのコミュニティを作成することもできます。</p>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-outline-info shadow rounded-pill" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
+      <button type="button" onclick="clickRemoveAlert()" class="btn btn-outline-info shadow rounded-pill" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
         <i class="bi bi-pencil-square mr-1"></i>新しくコミュニティを作る
       </button>
     </div>
-      <!-- Modal中身 -->
-      <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="ModalCenterTitle">新規作成</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <%= form_with model: @community, local: true do |f| %>
-              <div class="modal-body">
-                <div class="col form-group">
-                  <%= f.label :community_image, "コミュニティ画像" %>
-                  <%= f.attachment_field :community_image, class: "form-control-file" %>
-                </div>
-                <div class="col form-group">
-                  <%= f.label :name, "コミュニティ名" %>
-                  <%= f.text_field :name, class: "form-control", required: :required %>
-                </div>
-                <div class="col form-group">
-                  <%= f.label :introduction, "コミュニティの概要" %>
-                  <%= f.text_area :introduction, class: "form-control", required: :required %>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                <%= f.submit "作成", class: 'btn btn-primary' %>
-              </div>
-            <% end %>
+    <!-- Modal中身 -->
+    <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalCenterTitle">新規作成</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
+          <%= render partial: 'community_form', locals: { community: @community } %>
         </div>
       </div>
+    </div>
   </div>
 </div>
 <div class="container">
