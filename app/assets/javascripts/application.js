@@ -60,6 +60,7 @@ $(document).on('turbolinks:load',function scrollToEnd() {
 
 function clickRemoveAlert() {
   $('.js-message-errors').empty();
+  $('.js-flash_messages').empty();
 }
 
 /* トップページ横スクロール */

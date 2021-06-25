@@ -1,0 +1,6 @@
+$('.js-flash_messages').replaceWith("<%= j(render partial: 'layouts/flash_messages') %>");
+$('input[type=file]').val("")
+$('input[type=text]').val("")
+$('textarea').val("")
+$('#ModalCenter').modal("hide");
+$('.js-message-errors').empty();

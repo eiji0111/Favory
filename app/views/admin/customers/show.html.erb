@@ -11,6 +11,8 @@
       <% end %>
       <% if @customer.army_flag? %>
         <div class="col pt-1"><i class="bi bi-check-circle text-success mr-1"></i>自衛官認証済</div>
+      <% else %>
+        <div class="col pt-1"><i class="bi bi-check-circle text-muted mr-1"></i>自衛官認証未承認</div>
       <% end %>
       <% if @customer.is_valid? %>
         <p>会員ステータス <span class="text-success">有効</span></p>
@@ -62,6 +64,7 @@
       <ul class="row pl-0">
         <div class="col-6">
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">名　前</span><%= @customer.name %></li>
+          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">アドレス</span><%= @customer.email %></li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">年　齢</span><%= @customer.age %>歳</li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">居住地</span><%= @customer.address %></li>
           <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">出身地</span><%= @customer.birthplace %></li>
