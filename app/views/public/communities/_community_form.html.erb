@@ -1,0 +1,22 @@
+<%= form_with model: community do |f| %>
+  <div class="modal-body">
+    <div class="js-message-errors"></div>
+    <div class="col form-group">
+      <%= f.label :community_image, "コミュニティ画像" %>
+      <%= f.attachment_field :community_image, class: "form-control-file" %>
+    </div>
+    <div class="col form-group">
+      <%= f.label :name, "コミュニティ名" %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="col form-group">
+      <%= f.label :introduction, "コミュニティの概要" %>
+      <%= f.text_area :introduction, class: "form-control" %>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+    <%= f.submit "作成", class: 'btn btn-primary community_new_btn' %>
+  </div>
+<% end %>
+    

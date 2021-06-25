@@ -8,15 +8,15 @@ class Customer < ApplicationRecord
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :following_customer, through: :active_relationships, source: :followed
   has_many :follower_customer, through: :passive_relationships, source: :follower
-  has_many :customer_rooms
   has_many :chats
+  has_many :customer_rooms
   has_many :rooms, through: :customer_rooms
-  has_many :community_customers, foreign_key: :customer_id, dependent: :destroy
-  has_many :community_posts, foreign_key: :customer_id, dependent: :destroy
-  has_many :communities, through: :community_customers, foreign_key: :customer_id, dependent: :destroy
+  has_many :communities, through: :community_customers
+  has_many :community_customers, dependent: :destroy
+  has_many :community_posts, dependent: :destroy
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
-  has_one :army_request
+  has_many :army_requests
   
   scope :valid_men, -> (params) { where(sex: 0, is_valid: true).ransack(params) }
   scope :valid_women, -> (params) { where(sex: 1, is_valid: true).ransack(params) }
