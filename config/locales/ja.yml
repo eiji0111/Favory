@@ -17,6 +17,9 @@ ja:
         address: "居住地"
         password: "パスワード"
         password_confirmation: "パスワード(確認用)"
+      community:
+        name: "コミュニティ名"
+        introduction: "コミュニティの概要"
       community_post:
         content: "内容"
       admin:

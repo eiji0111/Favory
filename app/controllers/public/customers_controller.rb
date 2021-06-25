@@ -24,13 +24,9 @@ class Public::CustomersController < ApplicationController
   
   def update
     if @customer.update(customer_params)
-      if @customer.saved_changes?
-        redirect_to customer_path(@customer)
-      else
-        redirect_to customer_path(@customer), alert: 'プロフィールを更新できませんでした'
-      end
+      redirect_to customer_path(@customer)
     else
-      render :edit
+      redirect_to request.referer, alert: 'プロフィールを更新できませんでした'
     end
   end
   
@@ -55,7 +51,7 @@ class Public::CustomersController < ApplicationController
   
   def customer_params
     params.require(:customer).permit(
-      :name, :nickname, :profile_image, :one_thing, :introduction, :birthday, :address, :birthplace,
+      :name, :email,:nickname, :profile_image, :one_thing, :introduction, :birthday, :address, :birthplace,
       :work_location, :jobs, :annual_income, :height, :body_shape, :blood_type, :personality,
       :holiday, :car, :hobby, :cigarettes, :alcohol, :housemate, :marriage_history, :children,
       :willingness_to_marry, :want_kids, :hope_encounter, :date_cost
