@@ -13,7 +13,8 @@ class Public::CommunitiesController < ApplicationController
     @community.owner_id = current_customer.id
     respond_to do |format|
       if @community.save
-        @communities = Community.valid_all
+        @q = Community.valid_all(params[:q])
+        @communities = @q.result(distinct: true).order("community_posts.created_at DESC")
         flash.now[:notice] = '管理者が内容を確認・承認したのち、こちらに反映されます'
         format.js
       else
