@@ -26,7 +26,7 @@ class Admin::CustomersController < ApplicationController
       flash[:notice] = '会員情報を更新しました'
       redirect_to admin_customer_path(@customer)
     else
-      render :edit
+      redirect_to request.referer, alert: '会員情報を更新できませんでした'
     end
   end
   
@@ -55,8 +55,11 @@ class Admin::CustomersController < ApplicationController
   end
   
   def customer_params
-    params.require(:customer).permit(:name, :profile_image, :nickname, :birthday, :sex, :address,
-                                     :is_valid, :hobby, :jobs, :annual_income, :marriage_history,
-                                     :children, :personality, :one_thing)
+    params.require(:customer).permit(
+      :name, :email,:nickname, :sex, :is_valid, :profile_image, :one_thing, :introduction,
+      :birthday, :address, :birthplace, :work_location, :jobs, :annual_income, :height,
+      :body_shape, :blood_type, :personality, :holiday, :car, :hobby, :cigarettes, :alcohol,
+      :housemate, :marriage_history, :children, :willingness_to_marry, :want_kids, :hope_encounter, :date_cost
+    )
   end
 end

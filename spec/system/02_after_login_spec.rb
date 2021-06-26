@@ -307,6 +307,49 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
     end
   end
   
+  describe '退会機能のテスト' do
+    before do
+      click_link nil, href: edit_customer_path(customer.id)
+      click_link '退会をご希望の方はこちら'
+    end
+    
+    context '退会画面表示内容の確認' do
+      it '退会しないリンクが表示される' do
+        expect(page).to have_link '退会しない'
+      end
+      it '退会するリンクが表示される' do
+        expect(page).to have_link '退会する'
+      end
+    end
+    
+    context 'リンク内容の確認' do
+      it '退会しないリンクを押下するとマイページに遷移する' do
+        click_link '退会しない'
+        expect(current_path).to eq '/customers/' + customer.id.to_s
+      end
+      it '退会するリンクが押下すると確認メッセージが表示される', js: true do
+        click_link '退会する'
+        expect(page.driver.browser.switch_to.alert.text).to eq "本当に退会しますか？"
+        page.driver.browser.switch_to.alert.dismiss
+      end
+    end
+    
+    context '退会成功のテスト: 退会後再ログイン不可になる', js:true do
+      before do
+        click_link '退会する'
+        page.driver.browser.switch_to.alert.accept
+        click_link 'こちら'
+      end
+      
+      it 'ログインできず、エラーメッセージを表示させる' do
+        fill_in 'customer[email]', with: customer.email
+        fill_in 'customer[password]', with: customer.password
+        click_button 'ログイン'
+        expect(page).to have_content 'お客様は退会済みです。申し訳ございませんが、別のメールアドレスをお使いください。'
+      end
+    end
+  end
+  
   describe '会員一覧のテスト' do
     before do
       visit customer_men_path
