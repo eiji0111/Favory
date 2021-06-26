@@ -4,7 +4,8 @@ class Public::CommunitiesController < ApplicationController
   
   def index
     @community = Community.new
-    @communities = Community.valid_all
+    @q = Community.valid_all(params[:q])
+    @communities = @q.result(distinct: true).order("community_posts.created_at DESC")
   end
   
   def create

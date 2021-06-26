@@ -23,6 +23,7 @@
         </div>
       </div>
       <ul id="scroll-inner" class="chat-area p-0 bg-light">
+        <%= paginate @chats %>
         <% @chats.each do |chat| %>
           <% if chat.customer == current_customer %>
             <li class="my-3 pr-2 text-right">
@@ -51,14 +52,11 @@
       <div class="border-top py-3">
         <%= form_with model: @chat, class: 'd-flex' do |f| %>
           <%= f.hidden_field :room_id %>
-          <div class="col ml-auto mb-0 form-group">
-            <%= f.text_area :message, rows: 1, class: "chat-textarea form-control rounded-pill shadow-sm bg-white" %>
-          </div>
-          <div class="col-auto text-right">
-            <%= button_tag type: 'submit', class: "btn btn-outline-info shadow-sm rounded-circle" do %>
-              <i class="far fa-paper-plane"></i>
-            <% end %>
-          </div>
+          <%= f.text_area :message, rows: 1, class: "chat-textarea form-control rounded-pill shadow-sm bg-white mr-1" %>
+          <%= button_tag type: 'submit', class: "btn btn-outline-info shadow-sm rounded-circle mr-1" do %>
+            <i class="far fa-paper-plane"></i>
+          <% end %>
+          <%= link_to ' ', 'javascript:void(0);', onclick: "window.location.reload();", class: "btn btn-outline-info shadow-sm rounded-circle bi bi-arrow-clockwise"  %> 
         <% end %>
       </div>
     </div>
