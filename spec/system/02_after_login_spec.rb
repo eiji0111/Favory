@@ -379,6 +379,21 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
     end
     
+    context 'コミュニティ検索をすることができる' do
+      
+      let(:new_community) { create(:community, owner_id: customer.id, valid_status: 1) }
+      
+      before do
+        fill_in 'q[name_cont]', with: new_community.name
+        click_button ' 検 索 '
+      end
+      
+      it '検索したコミュニティが表示されている' do
+        expect(page).to have_content new_community.name
+        expect(page).to have_link href: community_path(new_community.id)
+      end
+    end
+    
     context 'コミュニティ詳細画面表示内容の確認' do
       before do
         click_link href: community_path(community.id)
@@ -392,6 +407,30 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
       it 'コミュニティの概要が表示されている' do
         expect(page).to have_content community.introduction
+      end
+    end
+    
+    context 'コミュニティ更新成功のテスト' do
+      before do
+        click_link href: community_path(community.id)
+        click_link nil, href: edit_community_path(community.id)
+        @community_old_community_image = community.community_image
+        @community_old_name = community.name
+        @community_old_introduction = community.introduction
+        attach_file 'community[community_image]', "#{Rails.root}/spec/fixtures/image/test.jpg"
+        fill_in 'community[name]', with: Faker::Lorem.characters(number: 10)
+        fill_in 'community[introduction]', with: Faker::Lorem.characters(number: 10)
+        click_button '変更'
+      end
+      
+      it 'コミュニティ画像が正しく更新される' do
+        expect(community.reload.community_image).not_to eq @community_old_community_image
+      end
+      it 'コミュニティ名が正しく更新される' do
+        expect(community.reload.name).not_to eq @community_old_name
+      end
+      it 'コミュニティ概要が正しく更新される' do
+        expect(community.reload.introduction).not_to eq @community_old_introduction
       end
     end
     
