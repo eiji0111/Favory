@@ -44,13 +44,21 @@
         <div class="col pt-3"><%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-success btn-sm shadow rounded-pill far fa-comments' %></div>
       <% end %>
       <div class="col d-none pt-3 d-sm-block">
-        ひとこと<br>
-        <%= @customer.one_thing %>
+        ひとこと
+        <% if @customer.one_thing.blank? %>
+          <p>よろしくお願いします</p>
+        <% else %>
+          <p><%= @customer.one_thing %></p>
+        <% end %>
       </div>
     </div>
     <div class="col-11 mx-auto pt-3 d-sm-none">
-      ひとこと<br>
-      <%= @customer.one_thing %>
+      ひとこと
+      <% if @customer.one_thing.blank? %>
+        <p>よろしくお願いします</p>
+      <% else %>
+        <p><%= @customer.one_thing %></p>
+      <% end %>
     </div>
   </div>
   <nav>

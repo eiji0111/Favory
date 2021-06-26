@@ -16,7 +16,7 @@ class Public::ChatsController < ApplicationController
       @room = customer_rooms.room
     end
 
-    @chats = @room.chats.includes([:customer])
+    @chats = @room.chats.includes([:customer]).page(params[:page])
     @chat = Chat.new(room_id: @room.id)
   end
   
