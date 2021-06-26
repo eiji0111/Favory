@@ -365,7 +365,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
     end
     
-    context 'コミュニティの新規作成に成功する' do
+    context 'コミュニティの新規作成に成功する', js: true do
       before do
         click_button "新しくコミュニティを作る"
         attach_file 'community[community_image]', "#{Rails.root}/spec/fixtures/image/test.jpg"
@@ -374,8 +374,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
         click_button '作成'
       end
       
-      it 'コミュニティ一覧画面に遷移し、作成完了のメッセージが表示される' do
-        expect(current_path).to eq '/communities'
+      it '作成完了のメッセージが表示される' do
         expect(page).to have_content '管理者が内容を確認・承認したのち、こちらに反映されます'
       end
     end
