@@ -6,18 +6,10 @@
       <h1 class="d-inline-block border-bottom">Community</h1>
       <p>コミュニティを通じて、共通の趣味や話題から気になる相手を探してみましょう！<br>自分でオリジナルのコミュニティを作成することもできます。</p>
       <!-- Button trigger modal -->
-      <button type="button" onclick="clickRemoveAlert()" class="btn btn-outline-info shadow rounded-pill" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
+      <button type="button" onclick="clickRemoveAlert()" class="btn btn-outline-info shadow-sm rounded-pill" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
         <i class="bi bi-pencil-square mr-1"></i>新しくコミュニティを作る
       </button>
     </div>
-    <%= search_form_for @q, url: communities_path do |f| %>
-      <div class="row">
-        <div class="col">
-          <%= f.search_field :name_cont, placeholder: 'コミュニティ名', class: 'form-control form-control-sm' %>
-        </div>
-        <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill' %>
-      </div>
-    <% end %>
     <!-- Modal中身 -->
     <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -35,6 +27,16 @@
   </div>
 </div>
 <div class="container">
+    <%= search_form_for @q, url: communities_path do |f| %>
+      <div class="row d-flex justify-content-center mb-3">
+        <div class="col-auto p-0 mr-2">
+          <%= f.search_field :name_cont, placeholder: "\uf002 キーワードを入力", class: 'font-awesome fa form-control form-control-sm rounded-pill shadow-sm' %>
+        </div>
+        <div class="col-auto p-0">
+          <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill shadow-sm' %>
+        </div>
+      </div>
+    <% end %>
   <div class="wrap">
     <ul class="masonry js-masonry p-0">
       <% @communities.each do |community| %>
