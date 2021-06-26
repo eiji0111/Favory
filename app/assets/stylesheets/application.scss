@@ -88,3 +88,11 @@ footer {
   -moz-appearance: none;
   appearance: none;
 }
+
+/* フォームのアイコン表示 */
+input.font-awesome {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  text-decoration: inherit;
+}
