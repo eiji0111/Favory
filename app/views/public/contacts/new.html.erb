@@ -4,6 +4,7 @@
     <div class="col-11 col-md-8 col-lg-6 mx-auto mb-3 p-3 p-md-4 border border rounded-lg shadow bg-white">
       <div class="col text-center text-info"><h3>お問い合わせ</h3></div>
       <div class="col form-group pt-3">
+        <%= render 'layouts/validation_errors', instance: @contact %>
         <%= form_with model: @contact, url: confirm_contact_path, local: true do |f| %>
           <%= f.text_field :name, placeholder: 'お名前', class: 'col-10 col-md-7 mt-4 mx-auto form-control shadow-sm rounded-pill bg-white', required: :required %>
           <%= f.email_field :email, placeholder: 'メールアドレス', class: 'col-10 col-md-7 mt-4 mx-auto form-control shadow-sm rounded-pill bg-white', required: :required %>

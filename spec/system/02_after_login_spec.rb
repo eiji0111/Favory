@@ -237,8 +237,10 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
       
       it '更新に失敗し、エラーメッセージを表示させる' do
-        expect(current_path).to eq '/customers/' + customer.id.to_s + '/edit'
-        expect(page).to have_content 'プロフィールを更新できませんでした'
+        expect(current_path).to eq '/customers/' + customer.id.to_s
+        expect(page).to have_content 'お名前を入力してください'
+        expect(page).to have_content 'メールアドレスを入力してください'
+        expect(page).to have_content 'ニックネームを入力してください'
       end
     end
     
