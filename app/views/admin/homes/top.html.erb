@@ -1,17 +1,13 @@
 <% provide(:title, "トップ（管理者）") %>
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar border shadow-sm">
-      <div class="sidebar-sticky">
-        
-      </div>
-    </nav>
+    <%= render 'admin/shared/sidebar' %>
     <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="col-12 my-3"><h3>Dash board</h3></div>
       <div class="row">
         <div class="col mx-1 border rounded shadow-sm text-center">
           <div class="row d-flex justify-content-center align-items-center border-bottom rounded-top men-card-color">
-            <div class="col"><i class="bi bi-square fa-4x men-icon text-light"></i></div>
+            <div class="col"><i class="bi bi-square fa-4x text-light"></i></div>
             <div class="col text-right text-light">
               <h2 class="mb-0"><%= @men_customers.count %></h2>
               <p class="mb-0">男性会員</p>

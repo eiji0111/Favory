@@ -61,34 +61,34 @@ describe '管理者側テスト', type: :system do
     
     context '表示内容の確認' do
       it '男性会員一覧リンクが表示されている' do
-        expect(page).to have_link '男性会員一覧'
+        expect(page).to have_link '男性会員'
       end
       it '女性会員一覧リンクが表示されている' do
-        expect(page).to have_link '女性会員一覧'
+        expect(page).to have_link '女性会員'
       end
       it 'コミュニティ一覧リンクが表示されている' do
-        expect(page).to have_link 'コミュニティ一覧'
+        expect(page).to have_link 'コミュニティ'
       end
       it '自衛官申請一覧リンクが表示されている' do
-        expect(page).to have_link '自衛官申請一覧'
+        expect(page).to have_link '自衛官申請'
       end
     end
     
     context 'リンク内容の確認' do
       it '男性会員一覧リンクを押下すると男性会員一覧ページに遷移する' do
-        click_link '男性会員一覧'
+        click_link '男性会員'
         expect(current_path).to eq '/admin/customers/men'
       end
       it '女性会員一覧を押下すると女性会員一覧ページに遷移する' do
-        click_link '女性会員一覧'
+        click_link '女性会員'
         expect(current_path).to eq '/admin/customers/women'
       end
       it 'コミュニティ一覧を押下するとコミュニティ一覧ページに遷移する' do
-        click_link 'コミュニティ一覧'
+        click_link 'コミュニティ'
         expect(current_path).to eq '/admin/communities'
       end
       it '自衛官申請一覧を押下すると自衛官申請一覧ページに遷移する' do
-        click_link '自衛官申請一覧'
+        click_link '自衛官申請'
         expect(current_path).to eq '/admin/army_requests'
       end
     end
@@ -363,6 +363,174 @@ describe '管理者側テスト', type: :system do
       it '更新に失敗し、エラーメッセージを表示させる' do
         expect(current_path).to eq '/admin/customers/' + customer.id.to_s + '/edit'
         expect(page).to have_content '会員情報を更新できませんでした'
+      end
+    end
+  end
+  
+  describe 'コミュニティ一覧のテスト' do
+    let!(:community) { create(:community, owner_id: customer.id) }
+    
+    before do
+      visit new_admin_session_path
+      fill_in 'admin[email]', with: admin.email
+      fill_in 'admin[password]', with: admin.password
+      click_button 'ログイン'
+      visit admin_communities_path
+    end
+    
+    context '表示内容の確認' do
+      it 'コミュニティIDが表示されている' do
+        expect(page).to have_content community.id
+      end
+      it 'コミュニティ名が表示されている' do
+        expect(page).to have_content community.name
+      end
+      it 'コミュニティ概要が表示されている' do
+        expect(page).to have_content community.introduction
+      end
+      it 'コミュニティステータスが表示されている' do
+        expect(page).to have_content '申請待ち'
+      end
+    end
+  end
+  
+  describe 'コミュニティ詳細画面のテスト' do
+    let!(:community) { create(:community, owner_id: customer.id) }
+    
+    before do
+      visit new_admin_session_path
+      fill_in 'admin[email]', with: admin.email
+      fill_in 'admin[password]', with: admin.password
+      click_button 'ログイン'
+      visit admin_community_path(community.id)
+    end
+    
+    context '表示内容の確認' do
+      it 'コミュニティ名が表示されている' do
+        expect(page).to have_content community.name
+      end
+      it 'コミュニティ概要が表示されている' do
+        expect(page).to have_content community.introduction
+      end
+      it 'コミュニティ作成者が表示されている' do
+        expect(page).to have_content customer.nickname
+      end
+      it 'コミュニティステータスが表示されている' do
+        expect(page).to have_content '申請待ち'
+      end
+    end
+    
+    context 'コミュニティ情報更新成功のテスト' do
+      before do
+        click_link '編集する'
+        @community_old_name = community.name
+        @community_old_introduction = community.introduction
+        @community_old_valid_status = community.valid_status
+        fill_in 'community[name]', with: Faker::Lorem.characters(number: 10)
+        fill_in 'community[introduction]', with: Faker::Lorem.characters(number: 10)
+        choose 'community_valid_status_許可'
+        click_button '変更する'
+      end
+      
+      it 'コミュニティ名が正しく更新される' do
+        expect(community.reload.name).not_to eq @community_old_name
+      end
+      it 'コミュニティ概要が正しく更新される' do
+        expect(community.reload.introduction).not_to eq @community_old_introduction
+      end
+      it 'コミュニティステータスが正しく更新される' do
+        expect(community.reload.valid_status).not_to eq @community_old_valid_status
+      end
+    end
+    
+    context 'コミュニティ情報更新失敗のテスト' do
+      before do
+        click_link '編集する'
+        fill_in 'community[name]', with: ''
+        fill_in 'community[introduction]', with: ''
+        click_button '変更する'
+      end
+      
+      it '更新に失敗し、エラーメッセージを表示させる' do
+        expect(current_path).to eq '/admin/communities/' + community.id.to_s
+        expect(page).to have_content 'コミュニティ名を入力してください'
+        expect(page).to have_content 'コミュニティ名は2文字以上で入力してください'
+        expect(page).to have_content 'コミュニティの概要を入力してください'
+        expect(page).to have_content 'コミュニティの概要は10文字以上で入力してください'
+      end
+    end
+  end
+  
+  describe '自衛官申請一覧のテスト' do
+    let!(:army_request) { create(:army_request) }
+    
+    before do
+      visit new_admin_session_path
+      fill_in 'admin[email]', with: admin.email
+      fill_in 'admin[password]', with: admin.password
+      click_button 'ログイン'
+      visit admin_army_requests_path
+    end
+    
+    context '表示内容の確認' do
+      it '申請IDが表示されている' do
+        expect(page).to have_content army_request.id
+      end
+      it '申請会員のIDが表示されている' do
+        expect(page).to have_content army_request.customer.id
+      end
+      it '申請会員名が表示されている' do
+        expect(page).to have_content army_request.customer.name
+      end
+      it '申請日が表示されている' do
+        expect(page).to have_content army_request.created_at.strftime("%Y年%-m月%-d日 %H:%M")
+      end
+      it '申請ステータスが表示されている' do
+        expect(page).to have_content '未承認'
+      end
+    end
+  end
+  
+  describe '自衛官申請詳細画面のテスト' do
+    let!(:army_request) { create(:army_request) }
+    
+    before do
+      visit new_admin_session_path
+      fill_in 'admin[email]', with: admin.email
+      fill_in 'admin[password]', with: admin.password
+      click_button 'ログイン'
+      visit admin_army_request_path(army_request.id)
+    end
+    
+    context '表示内容の確認' do
+      it '申請名が表示されている' do
+        expect(page).to have_content army_request.customer.name
+      end
+      it '陸・海・空が表示されている' do
+        expect(page).to have_content army_request.army_type
+      end
+      it '駐屯地・基地名が表示されている' do
+        expect(page).to have_content army_request.base
+      end
+      it '階級が表示されている' do
+        expect(page).to have_content army_request.army_class
+      end
+      it '職種が表示されている' do
+        expect(page).to have_content army_request.occupation
+      end
+      it '認識番号が表示されている' do
+        expect(page).to have_content army_request.identification_number
+      end
+    end
+    
+    context '自衛官申請情報更新成功のテスト' do
+      before do
+        choose 'customer_army_flag_true'
+        click_button '変 更'
+      end
+      
+      it '自衛官ステータスが正しく更新される' do
+        expect(page).to have_content '承認'
       end
     end
   end

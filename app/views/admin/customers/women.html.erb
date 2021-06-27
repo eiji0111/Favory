@@ -1,10 +1,16 @@
 <% provide(:title, "女性会員一覧（管理者）") %>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <% @url_type = admin_women_path %>
-    <%= render partial: 'search', locals: { q: @q, url_type: @url_type } %>
-    <div class="col-md-9 ml-sm-auto col-lg-9 px-4">
-      <table class="table table-hover">
+    <%= render 'admin/shared/sidebar' %>
+    <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="col-12 my-3"><h3>女性会員一覧</h3></div>
+      <button class="btn btn-outline-info rounded-pill mb-3" type="button" data-toggle="collapse" data-target="#collapseSearch"
+              aria-expanded="false" aria-controls="collapseSearch" onfocus="this.blur();">
+        <i class="bi bi-search"></i> 絞り込み
+      </button>
+      <% @url_type = admin_women_path %>
+      <%= render partial: 'search', locals: { q: @q, url_type: @url_type } %>
+      <table class="table table-hover rounded shadow-sm">
         <thead>
           <tr>
             <th scope="col">会員ID</th>
