@@ -45,7 +45,7 @@
 ### ✏️ 詳細設計
 [アプリケーション詳細設計書](https://docs.google.com/spreadsheets/d/1P9pCN-uQozIHk6WfIcSBDYDVEJx3eQmFeilxlpnXswQ/edit#gid=0)
 
-## 使用技術
+## 🛠 使用技術
 - Ruby 2.6.3
 - Ruby on Rails 5.2.6
 - MySQL 5.7.22
@@ -57,7 +57,7 @@
   - RDS
   - Route53
 
-## アプリ機能
+## 🛠 アプリ機能
 - deviseを用いたユーザー認証機能(会員・管理者)
 - 検索・ソート機能(Ransack)
 - フォロー機能(ajax)
