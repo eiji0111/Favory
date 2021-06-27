@@ -1,7 +1,7 @@
 ![favory_logo01](https://user-images.githubusercontent.com/78339908/123537890-d8e10f00-d76c-11eb-99cb-f5c1d64d2658.jpg)
 
 # 🌸 Favory ファボリー 自衛官×マッチングアプリ
-### トップページ
+### トップページ URL https://favory.jp
 ![favory_top](https://user-images.githubusercontent.com/78339908/123540845-008ba380-d77c-11eb-95e7-b8d30865e06c.jpg)
 
 「**Favoryファボリー**」とは、  
@@ -73,6 +73,7 @@
 - 通知機能
 - お問い合わせ機能
   - メール送信(Action Mailer)
+- ページング機能(kaminari)
 - 無限スクロール(jscroll)
 - 画像アップロード機能(refile)
 - 画像整列(Masonry)
