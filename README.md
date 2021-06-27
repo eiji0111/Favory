@@ -56,6 +56,9 @@
   - EC2
   - RDS
   - Route53
+- RSpec(System Spec)
+  - capybara
+  - webdrivers
 
 ## 🛠 アプリ機能
 - ユーザー認証機能(devise)
