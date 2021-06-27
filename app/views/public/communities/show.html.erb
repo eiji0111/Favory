@@ -1,50 +1,78 @@
 <% provide(:title, "コミュニティ詳細") %>
-<div class="container">
-  <div class="row py-5">
-    <div class="col-10 mx-auto d-md-flex">
-      <div class="col-12 col-md-6 text-center">
-        <%= attachment_image_tag(@community, :community_image,
-            fallback: "people.svg", style: 'width: 200px; object-fit: cover;', class: 'img-fluid rounded shadow') %>
-      </div>
-      <div class="col-12 col-md-6 pt-3">
-        <h4 class="border-bottom d-inline-block">コミュニティ名</h4>
-        <% if @community.owner_id == current_customer.id %>
-          <%= link_to ' ', edit_community_path(@community), class: 'ml-1 bi bi-gear fa-lg text-dark' %>
-        <% end %>
-        <p><%= @community.name %></p>
-        <h4 class="border-bottom d-inline-block">概要</h4>
-        <p><%= @community.introduction %></p>
-      </div>
-    </div>
-    <div class="col-12 py-5">
-      <div class="col-12 col-md-11 col-lg-9 mx-auto py-2 text-right">
-        <!-- Button trigger modal -->
-        <button id="community_post_btn" onclick="clickRemoveAlert()" type="button" class="btn btn-outline-info btn-lg rounded-circle" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
-          <i class="far fa-paper-plane"></i>
-        </button>
-      </div>
-      <!-- Modal中身 -->
-      <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="ModalCenterTitle">新規投稿</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar pl-0">
+      <div class="sidebar-sticky p-3 rounded border shadow-sm community-scroll">
+        <small>人気のコミュニティ</small>
+        <% @communities.each do |community| %>
+          <%= link_to community_path(community) do %>
+            <div class="col text-left btn btn-white mb-3 py-2 border rounded shadow-sm ">
+              <%= attachment_image_tag(community, :community_image, size: "50x50",
+                fallback: "people.svg", style: 'object-fit: cover;', class: 'rounded shadow-sm mr-2') %>
+                <i class="bi bi-chat-left mr-1"></i><%= community.community_posts.size %><br>
+              <small class="text-dark d-none d-lg-block"><%= community.name %></small>
             </div>
-            <%= render partial: 'community_post_form', locals: { community_post: @community_post, community: @community } %>
+          <% end %>
+        <% end %>
+      </div>
+    </nav>
+    <div class="col-md-10 mx-sm-auto px-4">
+      <div class="row py-3">
+        <div class="col-12 col-md-6 text-center">
+          <%= attachment_image_tag(@community, :community_image,
+              fallback: "people.svg", style: 'width: 200px; object-fit: cover;', class: 'img-fluid rounded shadow') %>
+        </div>
+        <div class="col-12 col-md-6 pt-3">
+          <h4 class="border-bottom d-inline-block">コミュニティ名</h4>
+          <% if @community.owner_id == current_customer.id %>
+            <%= link_to ' ', edit_community_path(@community), class: 'ml-1 bi bi-gear fa-lg text-dark' %>
+          <% end %>
+          <p><%= @community.name %></p>
+          <h4 class="border-bottom d-inline-block">概要</h4>
+          <p><%= @community.introduction %></p>
+        </div>
+      </div>
+      <div class="col-12 py-5">
+        <div class="col-12 col-md-11 col-lg-9 mx-auto py-2 text-right">
+          <!-- Button trigger modal -->
+          <button id="community_post_btn" onclick="clickRemoveAlert()" type="button" class="btn btn-outline-info btn-lg rounded-circle" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
+            <i class="far fa-paper-plane"></i>
+          </button>
+        </div>
+        <!-- Modal中身 -->
+        <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalCenterTitle">新規投稿</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <%= render partial: 'community_post_form', locals: { community_post: @community_post, community: @community } %>
+            </div>
+          </div>
+        </div>
+        <div id="community_post" class="jscroll scroll-list">
+          <% if @community_posts.blank? %>
+            <p class="text-center">まだ投稿がありません</p>
+          <% end %>
+          <%= render 'list', community_posts: @community_posts %>
+          <div class="jscroll-pagination">
+            <%= paginate @community_posts %>
           </div>
         </div>
       </div>
-      <div id="community_post" class="jscroll scroll-list">
-        <% if @community_posts.blank? %>
-          <p class="text-center">まだ投稿がありません</p>
+      <p class="d-md-none">人気のコミュニティ</p>
+      <div class="d-md-none d-flex flex-nowrap overflow-auto py-3">
+        <% @communities.each do |community| %>
+          <% if community.valid_status == "許可" %>
+            <%= link_to community_path(community) do %>
+              <%= attachment_image_tag(community, :community_image, size: "150x150",
+                  fallback: "people.svg", style: 'object-fit: cover;', class: 'mr-2 shadow rounded') %>
+            <% end %>
+          <% end %>
         <% end %>
-        <%= render 'list', community_posts: @community_posts %>
-        <div class="jscroll-pagination">
-          <%= paginate @community_posts %>
-        </div>
       </div>
     </div>
   </div>

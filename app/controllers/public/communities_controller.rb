@@ -25,6 +25,7 @@ class Public::CommunitiesController < ApplicationController
 
   def show
     @community = Community.find(params[:id])
+    @communities = Community.includes(:community_posts).order("community_posts.created_at DESC").limit(50)
     @community_post = CommunityPost.new
     @community_posts = CommunityPost.recent(@community).page(params[:page]).per(15)
   end
