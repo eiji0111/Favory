@@ -27,7 +27,9 @@
           <% if chat.customer == current_customer %>
             <li class="my-3 pr-2 text-right">
               <small class="text-muted"><%= chat.created_at.strftime("%-H:%M") %></small>
-              <div class="chat-current-customer d-inline-block shadow p-2 text-light text-left"><%= safe_join(chat.message.split("\n"), tag(:br)) %></div>
+              <div class="chat-current-customer d-inline-block shadow p-2 text-light text-left">
+                <%= safe_join(chat.message.split("\n"), tag(:br)) %>
+              </div>
             </li>
           <% else %>
             <li class="my-3 pl-2">
