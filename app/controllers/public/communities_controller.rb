@@ -36,7 +36,7 @@ class Public::CommunitiesController < ApplicationController
     if @community.update(community_params)
       redirect_to community_path(@community)
     else
-      render "edit"
+      render :edit
     end
   end
   

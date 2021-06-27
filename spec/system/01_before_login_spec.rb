@@ -51,8 +51,8 @@ describe '[STEP1] ユーザログイン前のテスト', type: :system do
     context 'お問い合わせ確認画面のテスト' do
       before do
         fill_in 'contact[name]', with: 'テストユーザー'
-        fill_in 'contact[email]', with: 'test1@example.com'
-        fill_in 'contact[content]', with: 'ユーザー間のトラブル解決について'
+        fill_in 'contact[email]', with: 'test@example.com'
+        fill_in 'contact[content]', with: 'ユーザー間のトラブルについて解決していただきたいです。'
         click_button '確認画面へ'
       end
 
@@ -63,18 +63,18 @@ describe '[STEP1] ユーザログイン前のテスト', type: :system do
         expect(page).to have_content 'テストユーザー'
       end
       it 'メールアドレスが表示される' do
-        expect(page).to have_content 'test1@example.com'
+        expect(page).to have_content 'test@example.com'
       end
       it 'お問い合わせ内容が表示される' do
-        expect(page).to have_content 'ユーザー間のトラブル解決について'
+        expect(page).to have_content 'ユーザー間のトラブルについて解決していただきたいです。'
       end
     end
     
     context 'お問い合わせ送信のテスト' do
       before do
-        fill_in 'contact[name]', with: 'テストユーザー'
-        fill_in 'contact[email]', with: 'test1@example.com'
-        fill_in 'contact[content]', with: 'ユーザー間のトラブル解決について'
+        fill_in 'contact[name]', with: Faker::Lorem.characters(number: 10)
+        fill_in 'contact[email]', with: Faker::Internet.email
+        fill_in 'contact[content]', with: Faker::Lorem.characters(number: 20)
         click_button '確認画面へ'
         click_button '送信する'
       end

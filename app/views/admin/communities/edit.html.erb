@@ -13,10 +13,20 @@
           </div>
         </div>
         <div class="col-12 col-md-6 pt-3">
+          <%= render 'layouts/validation_errors', instance: @community %>
           <h4 class="border-bottom d-inline-block">コミュニティ名</h4>
           <p><%= f.text_field :name, class: 'form-control' %></p>
           <h4 class="border-bottom d-inline-block">概要</h4>
           <p><%= f.text_area :introduction, class: 'form-control' %></p>
+          <h4 class="border-bottom d-inline-block">コミュニティステータス</h4>
+          <p>
+            <%= f.radio_button :valid_status, '申請待ち' %>
+            <%= f.label :valid_status, '申請待ち', value: '申請待ち' %>
+            <%= f.radio_button :valid_status, '許可' %>
+            <%= f.label :valid_status, '許可', value: '許可' %>
+            <%= f.radio_button :valid_status, '却下' %>
+            <%= f.label :valid_status, '却下', value: '却下' %>
+          </p>
         </div>
       </div>
     </div>

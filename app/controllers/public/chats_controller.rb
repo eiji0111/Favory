@@ -29,12 +29,6 @@ class Public::ChatsController < ApplicationController
     @room.create_notification_chat!(current_customer, @chat.id, @another_customer_room)
   end
   
-  def destroy
-    @chat = current_customer.chats.find(params[:id])
-    @chat.destroy
-    redirect_to request.referer
-  end
-  
   private
   
   def chat_params
