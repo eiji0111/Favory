@@ -26,7 +26,7 @@ class Public::CustomersController < ApplicationController
     if @customer.update(customer_params)
       redirect_to customer_path(@customer)
     else
-      redirect_to request.referer, alert: 'プロフィールを更新できませんでした'
+      render :edit
     end
   end
   
