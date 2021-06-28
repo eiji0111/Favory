@@ -1,11 +1,11 @@
 class Public::ChatsController < ApplicationController
   before_action :authenticate_customer!
-  
-  
+
   def show
-    @customer = Customer.find(params[:id])
-    rooms = current_customer.customer_rooms.pluck(:room_id)
-    customer_rooms = CustomerRoom.find_by(customer_id: @customer.id, room_id: rooms)
+      @customer = Customer.find(params[:id])
+      rooms = current_customer.customer_rooms.pluck(:room_id)
+      customer_rooms = CustomerRoom.find_by(customer_id: @customer.id, room_id: rooms)
+      
 
     if customer_rooms.nil?
       @room = Room.new
