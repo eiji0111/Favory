@@ -1,17 +1,24 @@
-<div class="container mt-5">
-  <h2>パスワードをお忘れですか？</h2>
-  <div class="row">
-    <div class="col-8">
-      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<% provide(:title, "パスワードをお忘れですか？") %>
+<div class="container">
+  <div class="row py-5 d-flex flex-column">
+    <div class="col-11 col-md-8 col-lg-6 mx-auto mb-3 p-3 p-md-5  text-center border border rounded-lg shadow bg-white">
       <%= render "public/shared/error_messages", resource: resource %>
-      <div class="form-group">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      <div class="col my-3"><h5>パスワードをお忘れですか？</h5></div>
+      <div class="form-group pt-3">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <small>アプリ内で使用している<br>メールアドレスを入力してください</small>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス', class: 'col-10 col-sm-7 mx-auto mt-2 form-control shadow-sm bg-white rounded-pill', required: :required %>
+          <div class="col">
+            <%= f.submit "パスワード再設定メールを送る", class: 'btn btn-outline-info rounded-pill shadow-sm mt-3' %>
+          </div>
+        <% end %>
       </div>
-      <div class="actions">
-        <%= f.submit "パスワード再設定メールを送る", class: "btn btn-outline-primary" %>
+      <div class="col text-muted pt-3">
+        <small>アカウントをお持ちの方は<%= link_to 'こちら', new_customer_session_path, class: 'text-info' %></small>
       </div>
-      <% end %>
+      <div class="col text-muted pt-3">
+        <small>アカウントをお持ちでない方は<%= link_to 'こちら', new_customer_registration_path, class: 'text-info' %></small>
+      </div>
     </div>
   </div>
 </div>
