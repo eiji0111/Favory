@@ -8,6 +8,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto text-right">
             <li class="nav-item mr-3">
+              <%= link_to '男性会員一覧', admin_men_path, class: 'btn btn-outline-dark' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to '女性会員一覧', admin_women_path, class: 'btn btn-outline-dark' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to 'コミュニティ一覧', admin_communities_path, class: 'btn btn-outline-dark' %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to '自衛官申請一覧', admin_army_requests_path, class: 'btn btn-outline-dark' %>
+            </li>
+            <li class="nav-item mr-3">
               <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-dark' %>
             </li>
           </ul>
