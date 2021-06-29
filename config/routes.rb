@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   
   scope module: :public do
     root 'homes#top'
+    get 'homes/teams_of_use' => 'homes#teams_of_use', as: 'teams_of_use' # 利用規約
+    get 'homes/privacy_policy' => 'homes#privacy_policy', as: 'privacy_policy' # プライバシーポリシー
     get 'customers/men' => 'customers#men', as: 'customer_men' # 男性会員一覧
     get 'customers/women' => 'customers#women', as: 'customer_women' # 女性会員一覧
     get 'customers/unsubscribe/:id' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
