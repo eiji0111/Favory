@@ -1,7 +1,10 @@
 class Public::HomesController < ApplicationController
-  before_action :login_customer, only: [:top]
+  before_action :login_customer, only: [:top, :teams_of_use]
 
   def top
+  end
+  
+  def teams_of_use
   end
   
   private
