@@ -1,7 +1,7 @@
 ![favory_logo01](https://user-images.githubusercontent.com/78339908/123537890-d8e10f00-d76c-11eb-99cb-f5c1d64d2658.jpg)
 
 # 🌸 Favory ファボリー 自衛官×マッチングアプリ
-### トップページ URL https://favory.jp
+### サイトURLはこちら https://favory.jp
 ![favory_top](https://user-images.githubusercontent.com/78339908/123540845-008ba380-d77c-11eb-95e7-b8d30865e06c.jpg)
 
 「**Favoryファボリー**」とは、  
@@ -87,3 +87,8 @@ https://docs.google.com/spreadsheets/d/1nqrAB20gnEBvI_QPzxBkJDO9FE0FekSOV_cdJ2uo
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+### 📷 使用素材
+[ぱくたそ](https://www.pakutaso.com)さん  
+[icooon-mono](https://icooon-mono.com/)さん  
+[undraw.co](https://undraw.co/illustrations)さん
