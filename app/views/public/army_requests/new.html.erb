@@ -29,6 +29,9 @@
         <div class="form-group">
           <%= f.label :identification_image, '自衛官認証写真' %>
           <%= f.attachment_field :identification_image, class: "form-control-file" %>
+          <div class="identification-image">
+            <%= attachment_image_tag @army_request, :identification_image, fallback: "no-image01.jpg", class: "my-3 border rounded shadow-sm", size: "200x200" %>
+          </div>
           <p>
             ※自衛官身分証を持った状態の写真を添付してください。<br>
             写真がボケていたり、身分証の文字が判別しづらい写真では承認致しかねますので、<br>
