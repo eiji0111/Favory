@@ -50,6 +50,21 @@ $(window).on('scroll', function() {
   }
 });
 
+/* コミュニティ詳細のみ無限スクロールタイミング変更 */
+$(window).on('scroll', function() {
+  var scrollHeight = $(document).height();
+  var scrollPosition = $(window).height() + $(window).scrollTop();
+  if(document.URL.match(/communities\/+\d/)){
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+      $('.jscroll').jscroll({
+        loadingHtml: '<i class="fa fa-spinner fa-pulse"></i>',
+        contentSelector: '.scroll-list',
+        nextSelector: 'span.next:last a'
+      });
+    }
+  }
+});
+
 /* チャット時のみスクロール最下部で表示 */
 $(document).on('turbolinks:load',function scrollToEnd() {
   if(document.URL.match(/chat\/+\d/)){
