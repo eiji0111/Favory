@@ -113,3 +113,37 @@ $(document).on('turbolinks:load',function () {
     });
   });
 });
+
+/* 会員画像編集プレビュー */
+$(document).on('turbolinks:load',function(){
+  $('#customer_profile_image').on('change', function (e) {
+    // 既存の画像のurlの取得
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $(".profile_image").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入
+  });
+});
+/* コミュニティ画像編集プレビュー */
+$(document).on('turbolinks:load',function(){
+  $('#community_community_image').on('change', function (e) {
+    // 既存の画像のurlの取得
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $(".community_image").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入
+  });
+});
+/* 自衛官申請画像プレビュー */
+$(document).on('turbolinks:load',function(){
+  $('#army_request_identification_image').on('change', function (e) {
+    // 既存の画像のurlの取得
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $(".identification_image").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入
+  });
+});
