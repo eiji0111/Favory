@@ -90,7 +90,7 @@
               <%= f.select :work_location, Customer.work_locations.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">仕　事</span>
-              <%= f.text_field :jobs, class: formlayout, required: :required %></li>
+              <%= f.text_field :jobs, class: formlayout %></li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">年　収</span>
               <%= f.select :annual_income, Customer.annual_incomes.keys, {}, { class: formlayout } %>
             </li>
@@ -115,7 +115,7 @@
               <%= f.select :car, Customer.cars.keys, {}, { class: formlayout } %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">趣　味</span>
-              <%= f.text_field :hobby, class: formlayout, required: :required %>
+              <%= f.text_field :hobby, class: formlayout %>
             </li>
             <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">煙　草</span>
               <%= f.select :cigarettes, Customer.cigarettes.keys, {}, { class: formlayout } %>
