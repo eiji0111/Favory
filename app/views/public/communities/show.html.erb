@@ -17,7 +17,7 @@
       </div>
     </nav>
     <div class="col-md-10 mx-sm-auto px-4">
-      <div class="row py-3">
+      <div class="row pt-5">
         <div class="col-12 col-md-6 text-center">
           <%= attachment_image_tag(@community, :community_image,
               fallback: "people.svg", style: 'width: 200px; object-fit: cover;', class: 'img-fluid rounded shadow') %>
@@ -32,7 +32,7 @@
           <p><%= @community.introduction %></p>
         </div>
       </div>
-      <div class="col-12 py-5">
+      <div class="col-12 py-3">
         <div class="col-12 col-md-11 col-lg-9 mx-auto py-2 text-right">
           <!-- Button trigger modal -->
           <button id="community_post_btn" onclick="clickRemoveAlert()" type="button" class="btn btn-outline-info btn-lg rounded-circle" data-toggle="modal" data-target="#ModalCenter" onfocus="this.blur();">
