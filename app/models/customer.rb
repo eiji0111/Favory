@@ -16,7 +16,7 @@ class Customer < ApplicationRecord
   has_many :community_posts, dependent: :destroy
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
-  has_many :army_requests
+  has_many :army_requests, dependent: :destroy
   
   scope :valid_men, -> (params) { where(sex: 0, is_valid: true).ransack(params) }
   scope :valid_women, -> (params) { where(sex: 1, is_valid: true).ransack(params) }
