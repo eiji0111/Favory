@@ -40,7 +40,8 @@
 ## ✏️ 設計書
 
 ### ✏️ データベース設計
-[ER図](https://github.com/eiji0111/Favory/files/6727027/Favory_ER.pdf)
+ER図
+![Favory_ER図](https://user-images.githubusercontent.com/78339908/123882545-f5a26000-d981-11eb-9577-90071a88a183.jpg)
 
 [テーブル定義書](https://docs.google.com/spreadsheets/d/1GrihIfWc5oyqZkKEze6m6W_cvzH2DAX1/edit#gid=1739957604)
 
