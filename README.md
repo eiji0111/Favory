@@ -71,6 +71,7 @@ https://docs.google.com/spreadsheets/d/1nqrAB20gnEBvI_QPzxBkJDO9FE0FekSOV_cdJ2uo
   - 会員側
   - 管理者側
 - 検索・ソート機能(ransack)
+- タグ機能
 - フォロー機能(ajax)
 - コメント機能(ajax)
 - DM機能
@@ -81,6 +82,7 @@ https://docs.google.com/spreadsheets/d/1nqrAB20gnEBvI_QPzxBkJDO9FE0FekSOV_cdJ2uo
 - 無限スクロール(jscroll)
 - 画像アップロード機能(refile)
 - 画像整列(Masonry)
+- グラフ(chartkick)
 
 ## ⚙ 開発環境
 - OS：Linux(CentOS)
