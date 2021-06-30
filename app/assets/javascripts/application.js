@@ -20,22 +20,6 @@
 //= require chartkick
 //= require Chart.bundle
 
-/* フォームバリデーション */
-(function() {
-  window.addEventListener('turbolinks:load', function() {
-    var forms = document.getElementsByClassName('needs-validation');
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-
 /* 無限スクロール */
 /* global $ */
 $(window).on('scroll', function() {
@@ -131,7 +115,7 @@ $(document).on('turbolinks:load',function(){
     // 既存の画像のurlの取得
     var reader = new FileReader();
     reader.onload = function (e) {
-        $(".community_image").attr('src', e.target.result);
+        $(".community_new_image").attr('src', e.target.result);
     }
     reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入
   });

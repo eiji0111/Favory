@@ -5,10 +5,10 @@
       <div class="col-10 mx-auto d-md-flex">
         <div class="col-12 col-md-6 text-center">
           <%= attachment_image_tag(@community, :community_image,
-              fallback: "people.svg", style: 'width: 200px; object-fit: cover;', onclick: "$('.image-field').click()", class: 'img-fluid cursor-hover rounded shadow') %>
+              fallback: "people.svg", style: 'width: 200px; object-fit: cover;', onclick: "$('.image-field').click()", class: 'community_new_image img-fluid cursor-hover rounded shadow') %>
           <div class="col py-2">
             <i class="bi bi-camera fa-lg cursor-hover" onclick="$('.image-field').click()"></i>
-            <i class="bi bi-arrow-repeat fa-lg"></i>
+            <i class="bi bi-arrow-repeat fa-lg cursor-hover" onclick="$('.image-field').click()"></i>
             <%= f.attachment_field :community_image, class: "image-field d-none form-control-file-sm py-2" %>
           </div>
         </div>

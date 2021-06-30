@@ -5,7 +5,11 @@ class Public::CommunitiesController < ApplicationController
   def index
     @community = Community.new
     @q = Community.valid_all(params[:q])
-    @communities = @q.result(distinct: true).order("community_posts.created_at DESC")
+    @communities = @q.result(distinct: true).order(updated_at: :DESC)
+    @tag_list = ActsAsTaggableOn::Tag.all.order(created_at: :DESC)
+    if params[:tag_name]
+      @communities = Community.tagged_with("#{params[:tag_name]}").where(valid_status: 1).includes(:community_posts)
+    end
   end
   
   def create
@@ -43,7 +47,7 @@ class Public::CommunitiesController < ApplicationController
   
   private
   def community_params
-    params.require(:community).permit(:name, :introduction, :community_image)
+    params.require(:community).permit(:name, :introduction, :community_image, :tag_list)
   end
   
   def ensure_correct_customer

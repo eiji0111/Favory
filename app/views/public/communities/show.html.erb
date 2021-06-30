@@ -20,7 +20,8 @@
       <div class="row pt-5">
         <div class="col-12 col-md-6 text-center">
           <%= attachment_image_tag(@community, :community_image,
-              fallback: "people.svg", style: 'width: 200px; object-fit: cover;', class: 'img-fluid rounded shadow') %>
+              fallback: "people.svg", style: 'width: 200px; object-fit: cover;', class: 'img-fluid rounded shadow mb-2') %>
+          <p><%= render 'tag_list', tag_list: @community.tag_list %></p>
         </div>
         <div class="col-12 col-md-6 pt-3">
           <h4 class="border-bottom d-inline-block">コミュニティ名</h4>

@@ -12,8 +12,8 @@
               fallback: "no-image-woman.jpg", onClick: "$('.image-field').click()", class: 'customer-image edit-customer-image shadow rounded-circle' %>
         <% end %>
         <div class="col py-2">
-          <i class="bi bi-camera fa-lg" onclick="$('.image-field').click()"></i>
-          <i class="bi bi-arrow-repeat fa-lg"></i>
+          <i class="bi bi-camera fa-lg cursor-hover" onclick="$('.image-field').click()"></i>
+          <i class="bi bi-arrow-repeat fa-lg cursor-hover" onclick="$('.image-field').click()"></i>
         </div>
         <%= f.attachment_field :profile_image,  class: "image-field d-none form-control-file-sm py-2" %>
       </div>

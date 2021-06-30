@@ -26,6 +26,10 @@
             <th scope="row">ステータス</th>
             <td><%= @community.valid_status %></td>
           </tr>
+          <tr>
+            <th scope="row">タグ</th>
+            <td><%= render 'public/communities/tag_list', tag_list: @community.tag_list %></td>
+          </tr>
         </tbody>
       </table>
     </div>
