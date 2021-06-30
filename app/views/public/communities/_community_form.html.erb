@@ -3,15 +3,21 @@
     <div class="js-message-errors"></div>
     <div class="col form-group">
       <%= f.label :community_image, "コミュニティ画像" %>
-      <%= f.attachment_field :community_image, class: "form-control-file" %>
+      <%= f.attachment_field :community_image, class: "form-control-file mb-3" %>
+      <%= attachment_image_tag(@community, :community_image,
+          fallback: "people.svg", style: 'width: 150px; object-fit: cover;', class: 'community_new_image img-fluid rounded shadow-sm') %>
     </div>
     <div class="col form-group">
-      <%= f.label :name, "コミュニティ名" %>
-      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :name, "コミュニティ名 ※" %>
+      <%= f.text_field :name, placeholder: "例）ハリボーfam", class: "form-control" %>
     </div>
     <div class="col form-group">
-      <%= f.label :introduction, "コミュニティの概要" %>
-      <%= f.text_area :introduction, class: "form-control" %>
+      <%= f.label :introduction, "コミュニティの概要 ※" %>
+      <%= f.text_area :introduction, rows: 3, placeholder: "例）ハリボー好きのハリボー好きによるハリボー好きのためのコミュニティです！", class: "form-control" %>
+    </div>
+    <div class="col form-group">
+      <%= f.label :tag_list, "タグ付け（最大３つまで）" %>
+      <%= f.text_field :tag_list, value: community.tag_list.join(','), data: {role: "tagsinput"}, class: "form-control" %>
     </div>
   </div>
   <div class="modal-footer">

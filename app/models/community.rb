@@ -11,4 +11,6 @@ class Community < ApplicationRecord
   validates :introduction, presence: true, length: { minimum: 10 }
   
   enum valid_status: { "申請待ち": 0, "許可": 1, "却下": 2 }
+  
+  acts_as_taggable
 end
