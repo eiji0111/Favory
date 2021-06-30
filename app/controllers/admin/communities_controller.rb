@@ -36,6 +36,6 @@ class Admin::CommunitiesController < ApplicationController
   end
   
   def community_params
-    params.require(:community).permit(:name, :introduction, :community_image, :owner_id, :valid_status)
+    params.require(:community).permit(:name, :introduction, :community_image, :owner_id, :valid_status, :tag_list)
   end
 end
