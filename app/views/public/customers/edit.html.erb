@@ -50,7 +50,7 @@
       <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <ul class="row pl-0">
           <div class="col-6">
-            <% if current_customer == @customer %>
+            <% if (current_customer == @customer) && (@customer.id != 124) %>
               <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">名　前</span>
                 <%= f.text_field :name, class: formlayout, required: :required %>
               </li>
@@ -148,7 +148,9 @@
   <% end %>
   <div class="row mt-5">
     <div class="col text-right">
-      <%= link_to '退会をご希望の方はこちら', confirm_unsubscribe_path(@customer), class: 'text-muted' %>
+      <% if (current_customer == @customer) && (@customer.id != 124) %>
+        <%= link_to '退会をご希望の方はこちら', confirm_unsubscribe_path(@customer), class: 'text-muted' %>
+      <% end %>
     </div>
   </div>
 </div>

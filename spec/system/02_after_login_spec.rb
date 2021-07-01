@@ -336,7 +336,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       end
     end
     
-    context '退会成功のテスト: 退会後再ログイン不可になる', js:true do
+    context '退会成功のテスト: 退会後再ログイン不可になる', js: true do
       before do
         click_link '退会する'
         page.driver.browser.switch_to.alert.accept

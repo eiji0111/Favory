@@ -117,8 +117,7 @@ class Customer < ApplicationRecord
   
   # 互いにお気に入りしている状態
   def matchers
-    Customer.where(id: passive_relationships.select(:follower_id))
-     .where(id: active_relationships.select(:followed_id))
+    Customer.where(id: passive_relationships.select(:follower_id), id: active_relationships.select(:followed_id))
   end
   
   # 生年月日から年齢を計算
@@ -128,7 +127,7 @@ class Customer < ApplicationRecord
   
   # 通知を作成（お気に入り）
   def create_notification_follow!(current_customer)
-    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_customer.id, id, 'follow'])
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ", current_customer.id, id, 'follow'])
     if temp.blank?
       notification = current_customer.active_notifications.new(
         visited_id: id,
