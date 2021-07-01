@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     registrations: 'public/registrations',
     passwords: 'public/passwords',
   }
+  devise_scope :customer do
+    post 'customers/guest_sign_in' => 'public/sessions#guest_sign_in', as: 'guest_sign_in' # ゲストログイン
+  end
   
   scope module: :public do
     root 'homes#top'

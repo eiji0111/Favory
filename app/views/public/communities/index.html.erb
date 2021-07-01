@@ -43,7 +43,7 @@
     <% end %>
     <% @tag_list.each do |tag| %>
       <%= link_to communities_path(tag_name: tag.name) do %>
-        <h1 class="btn btn-outline-info btn-sm mr-2 rounded" style="white-space: nowrap;"><%= tag %></h1>
+        <h1 class="btn btn-info btn-sm mr-2 rounded" style="white-space: nowrap;"><%= tag %></h1>
       <% end %>
     <% end %>
   </div>
