@@ -32,6 +32,9 @@
         <div class="col text-center text-muted pt-3">
           <small>アカウントをお持ちの方は<%= link_to 'こちら', new_customer_session_path, class: 'text-info' %></small>
         </div>
+        <div class="col text-center pt-3">
+          <%= link_to 'ゲストログイン(閲覧用)', guest_sign_in_path, method: :post, class: 'btn btn-outline-info rounded-pill shadow-sm' %>
+        </div>
         <div class="col text-muted pt-3">
           <small><i class="bi bi-shield-check mr-2 text-success"></i>お名前・メールアドレスは本人、運営者以外にサイトの中で公開されることはありません。</small>
         </div>
