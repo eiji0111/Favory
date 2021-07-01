@@ -546,7 +546,7 @@ describe '管理者側テスト', type: :system do
 
     context 'ログアウト機能のテスト' do
       it '正しくログアウトできている: ログアウト後のリダイレクト先においてログアウトリンクが存在しない' do
-        expect(page).to_not have_link nil, href: destroy_admin_session_path
+        expect(page).not_to have_link nil, href: destroy_admin_session_path
       end
       it 'ログアウト後のリダイレクト先が、トップになっている' do
         expect(current_path).to eq '/admin/sign_in'

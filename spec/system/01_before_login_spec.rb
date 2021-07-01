@@ -267,7 +267,7 @@ describe '[STEP1] ユーザログイン前のテスト', type: :system do
 
     context 'ログアウト機能のテスト' do
       it '正しくログアウトできている: ログアウト後のリダイレクト先においてログアウトリンクが存在しない' do
-        expect(page).to_not have_link nil, href: destroy_customer_session_path
+        expect(page).not_to have_link nil, href: destroy_customer_session_path
       end
       it 'ログアウト後のリダイレクト先が、トップになっている' do
         expect(current_path).to eq '/'

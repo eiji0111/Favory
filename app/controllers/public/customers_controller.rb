@@ -51,7 +51,7 @@ class Public::CustomersController < ApplicationController
   
   def customer_params
     params.require(:customer).permit(
-      :name, :email,:nickname, :profile_image, :one_thing, :introduction, :birthday, :address, :birthplace,
+      :name, :email, :nickname, :profile_image, :one_thing, :introduction, :birthday, :address, :birthplace,
       :work_location, :jobs, :annual_income, :height, :body_shape, :blood_type, :personality,
       :holiday, :car, :hobby, :cigarettes, :alcohol, :housemate, :marriage_history, :children,
       :willingness_to_marry, :want_kids, :hope_encounter, :date_cost
