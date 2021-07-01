@@ -2,7 +2,8 @@ class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
   before_action :set_customer, only: [:show, :edit, :update, :unsubscribe, :withdraw]
   before_action :correct_customer, only: [:edit, :update, :unsubscribe, :withdraw]
-  
+  before_action :ensure_normal_customer, only: [:update, :withdraw]
+
   def men
     @q = Customer.valid_men(params[:q])
     @q.sorts = 'current_sign_in_at desc' if @q.sorts.empty?
@@ -56,5 +57,11 @@ class Public::CustomersController < ApplicationController
       :holiday, :car, :hobby, :cigarettes, :alcohol, :housemate, :marriage_history, :children,
       :willingness_to_marry, :want_kids, :hope_encounter, :date_cost
     )
+  end
+  
+  def ensure_normal_customer
+    if @customer.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ちょ、やめてください！ゲストユーザーは閲覧用ですよ！それはテストユーザーもしくは新規登録してお試しください。'
+    end
   end
 end

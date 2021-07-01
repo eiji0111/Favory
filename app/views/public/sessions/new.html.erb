@@ -24,6 +24,9 @@
       <div class="col text-center text-muted pt-3">
         <small>アカウントをお持ちでない方は<%= link_to 'こちら', new_customer_registration_path, class: 'text-info' %></small>
       </div>
+      <div class="col text-center pt-3">
+        <%= link_to 'ゲストログイン(閲覧用)', guest_sign_in_path, method: :post, class: 'btn btn-outline-info rounded-pill shadow-sm' %>
+      </div>
     </div>
   </div>
 </div>
