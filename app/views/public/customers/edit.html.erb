@@ -50,7 +50,7 @@
       <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <ul class="row pl-0">
           <div class="col-6">
-            <!--id: 124 テストユーザー, 125 ゲストユーザー-->
+            <!--id: 124 テストユーザー -->
             <% if (current_customer == @customer) && (@customer.id != 124) %>
               <li class="mb-3"><span class="text-white px-2 py-1 rounded-pill bg-info">名　前</span>
                 <%= f.text_field :name, class: formlayout, required: :required %>
