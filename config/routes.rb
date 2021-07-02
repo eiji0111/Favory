@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   
   scope module: :public do
     root 'homes#top'
+    get 'homes/company_profile' => 'homes#company_profile', as: 'company_profile' # 会社概要
     get 'homes/teams_of_use' => 'homes#teams_of_use', as: 'teams_of_use' # 利用規約
     get 'homes/privacy_policy' => 'homes#privacy_policy', as: 'privacy_policy' # プライバシーポリシー
     get 'customers/men' => 'customers#men', as: 'customer_men' # 男性会員一覧

@@ -35,7 +35,7 @@
     <div class="container py-3">
       <div class="row">
         <div class="col-12 d-flex align-items-center justify-content-center">
-          <%= link_to '会社情報', root_path, 'data-turbolinks': false, class: 'mr-2 text-muted' %>
+          <%= link_to '会社情報', company_profile_path, data: { turbolinks: false }, class: 'mr-2 text-muted' %>
           <%= link_to 'プライバシー', privacy_policy_path, class: 'mr-2 text-muted' %>
           <%= link_to '利用規約', teams_of_use_path, class: 'mr-2 text-muted' %>
           <%= link_to 'お問い合わせ', new_contact_path, class: 'text-muted' %>
