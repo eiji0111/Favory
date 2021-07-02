@@ -65,6 +65,8 @@ https://docs.google.com/spreadsheets/d/1nqrAB20gnEBvI_QPzxBkJDO9FE0FekSOV_cdJ2uo
 - RSpec(System Spec)
   - capybara
   - webdrivers
+- 外部API
+  - Google Maps API
 
 ## 🛠 アプリ機能
 - ユーザー認証機能(devise)
