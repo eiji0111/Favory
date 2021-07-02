@@ -131,3 +131,20 @@ $(document).on('turbolinks:load',function(){
     reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入
   });
 });
+
+/* Google Map */
+/* global google $ */
+function initMap(){
+  var marker;
+  var center = {lat: 35.681236, lng: 139.767125}
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: center,
+  zoom: 15,
+  mapTypeControl: false,
+  streetViewControl: false,
+  });
+  marker = new google.maps.Marker({
+    position: center,
+    map: map
+  });
+}
