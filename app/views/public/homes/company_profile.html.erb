@@ -1,0 +1,40 @@
+<% provide(:title, "会社概要") %>
+<div class="container">
+  <div class="row py-5">
+    <div class="col-12 text-center py-3"><h3><strong>会社概要</strong></h3></div>
+    <div class="col-auto mx-auto">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">商号</th>
+            <td>Favory株式会社<br>(Favory Corporation)</td>
+          </tr>
+          <tr>
+            <th scope="row">創立</th>
+            <td>2021年（令和03年）06月</td>
+          </tr>
+          <tr>
+            <th scope="row">資本金</th>
+            <td>◯億◯,◯◯◯万円<br>（2021年6月30日現在）</td>
+          </tr>
+          <tr>
+            <th scope="row">代表者</th>
+            <td>代表取締役 社長執行役員<br>山田太郎</td>
+          </tr>
+          <tr>
+            <th scope="row">本社所在地</th>
+            <td>
+              東京都千代田区丸の内１丁目
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2">
+              <div id='map'></div>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
