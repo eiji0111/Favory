@@ -17,6 +17,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require slick.min.js
 //= require chartkick
 //= require Chart.bundle
 

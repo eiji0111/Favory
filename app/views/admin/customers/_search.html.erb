@@ -8,11 +8,11 @@
     <div class="col-12 fas fa-search mb-1"> 詳細検索</div>
     <div class="row px-3">
       <div class="col-2">
-        <%= f.label :id, "ID", class: 'col-form-label' %>
+        <%= f.label :id_eq, "ID", class: 'col-form-label' %>
         <%= f.search_field :id_eq, class: 'form-control form-control-sm' %>
       </div>
       <div class="col-2">
-        <%= f.label :name, "名前", class: 'col-form-label' %>
+        <%= f.label :name_cont, "名前", class: 'col-form-label' %>
         <%= f.search_field :name_cont, class: 'form-control form-control-sm' %>
       </div>
       <div class="col-2">
