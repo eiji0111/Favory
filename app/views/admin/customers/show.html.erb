@@ -70,42 +70,43 @@
   <div class="tab-content py-5" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
       <ul class="row pl-0">
+        <% name_tag = 'text-white px-2 py-1 mr-3 rounded-pill shadow' %>
         <div class="col-6">
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">名　前</span><%= @customer.name %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">アドレス</span><%= @customer.email %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">年　齢</span><%= @customer.age %>歳</li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">居住地</span><%= @customer.address %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">出身地</span><%= @customer.birthplace %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">勤務地</span><%= @customer.work_location %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">仕　事</span><%= @customer.jobs.blank? ? '未設定' : @customer.jobs %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">年　収</span><%= @customer.annual_income %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">身　長</span><%= @customer.height.blank? ? '未設定' : @customer.height %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">体　型</span><%= @customer.body_shape %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">名　前</span><%= @customer.name %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">アドレス</span><%= @customer.email %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">年　齢</span><%= @customer.age %>歳</li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">居住地</span><%= @customer.address %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">出身地</span><%= @customer.birthplace %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">勤務地</span><%= @customer.work_location %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">仕　事</span><%= @customer.jobs.blank? ? '未設定' : @customer.jobs %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">年　収</span><%= @customer.annual_income %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">身　長</span><%= @customer.height.blank? ? '未設定' : @customer.height %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">体　型</span><%= @customer.body_shape %></li>
         </div>
         <div class="col-6">
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">血液型</span><%= @customer.blood_type %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">性　格</span><%= @customer.personality %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">休　日</span><%= @customer.holiday %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">私有車</span><%= @customer.car %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">趣　味</span><%= @customer.hobby.blank? ? '未設定' : @customer.hobby %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">煙　草</span><%= @customer.cigarettes %></li>
-          <li class="mb-3"><span class="text-white px-2 py-1 mr-3 rounded-pill bg-info shadow">お　酒</span><%= @customer.alcohol %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">血液型</span><%= @customer.blood_type %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">性　格</span><%= @customer.personality %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">休　日</span><%= @customer.holiday %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">私有車</span><%= @customer.car %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">趣　味</span><%= @customer.hobby.blank? ? '未設定' : @customer.hobby %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">煙　草</span><%= @customer.cigarettes %></li>
+          <li class="mb-3"><span class="<%= name_tag %> bg-info">お　酒</span><%= @customer.alcohol %></li>
         </div>
       </ul>
     </div>
     <div class="tab-pane fade" id="nav-love" role="tabpanel" aria-labelledby="nav-love-tab">
       <ul class="pl-0">
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">同居人</span><%= @customer.housemate %></li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">結婚歴</span><%= @customer.marriage_history %></li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">子供の有無</span><%= @customer.children %></li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">結婚に対する意思</span><%= @customer.willingness_to_marry %></li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">子供が欲しいか</span><%= @customer.want_kids %></li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">出会うまでの希望</span><%= @customer.hope_encounter %></li>
-        <li class="mb-3"><span class="text-white px-3 py-1 mr-3 rounded-pill bg-danger shadow">初回デート費用</span><%= @customer.date_cost %></li>
+        <li class="mb-3"><span class="<%= name_tag %> bg-danger">同居人</span><%= @customer.housemate %></li>
+        <li class="mb-3"><span class="<%= name_tag %> bg-danger">結婚歴</span><%= @customer.marriage_history %></li>
+        <li class="mb-3"><span class="<%= name_tag %> bg-danger">子供の有無</span><%= @customer.children %></li>
+        <li class="mb-3"><span class="<%= name_tag %> bg-danger">結婚に対する意思</span><%= @customer.willingness_to_marry %></li>
+        <li class="mb-3"><span class="<%= name_tag %> bg-danger">子供が欲しいか</span><%= @customer.want_kids %></li>
+        <li class="mb-3"><span class="<%= name_tag %> bg-danger">出会うまでの希望</span><%= @customer.hope_encounter %></li>
+        <li class="mb-3"><span class="<%= name_tag %> bg-danger">初回デート費用</span><%= @customer.date_cost %></li>
       </ul>
     </div>
     <div class="tab-pane fade" id="nav-introduction" role="tabpanel" aria-labelledby="nav-introduction-tab">
-      <span class="text-white px-3 py-1 rounded-pill bg-warning shadow">自己紹介</span>
+      <span class="<%= name_tag %> bg-warning">自己紹介</span>
       <% if @customer.introduction.blank? %>
         <p class="py-3">まだ自己紹介を作成していません。</p>
       <% else %>
@@ -117,7 +118,7 @@
       <% end %>
     </div>
     <div class="tab-pane fade" id="nav-community" role="tabpanel" aria-labelledby="nav-community-tab">
-      <span class="text-white px-3 py-1 rounded-pill bg-success shadow">コミュニティ</span>
+      <span class="<%= name_tag %> bg-success">コミュニティ</span>
       <% if @communities.blank? %>
         <p class="py-3">まだコミュニティを作成していません。</p>
       <% end %>
