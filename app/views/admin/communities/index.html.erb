@@ -4,6 +4,11 @@
     <%= render 'admin/shared/sidebar' %>
     <div class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="col-12 my-3"><h3>コミュニティ一覧</h3></div>
+      <button class="btn btn-outline-info rounded-pill mb-3" type="button" data-toggle="collapse" data-target="#collapseSearch"
+              aria-expanded="false" aria-controls="collapseSearch" onfocus="this.blur();">
+        <i class="bi bi-search"></i> 絞り込み
+      </button>
+      <%= render 'search', q: @q %>
       <table class="table table-hover rounded shadow-sm">
         <thead>
           <tr>

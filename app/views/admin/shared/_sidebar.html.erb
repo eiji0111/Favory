@@ -1,9 +1,10 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar border shadow-sm">
   <div class="sidebar-sticky py-2">
-    <%= link_to ' Dash board', admin_top_path, class: 'col text-left btn btn-white mb-3 py-2 border rounded shadow-sm bi bi-sliders fa-lg' %>
-    <%= link_to ' 男性会員', admin_men_path, class: 'col text-left btn btn-white mb-3 py-2 border rounded shadow-sm bi bi-square fa-lg' %>
-    <%= link_to ' 女性会員', admin_women_path, class: 'col text-left btn btn-white mb-3 py-2 border rounded shadow-sm bi bi-circle fa-lg' %>
-    <%= link_to ' コミュニティ', admin_communities_path, class: 'col text-left btn btn-white mb-3 py-2 border rounded shadow-sm bi-people fa-lg' %>
-    <%= link_to ' 自衛官申請', admin_army_requests_path, class: 'col text-left btn btn-white mb-3 py-2 border rounded shadow-sm bi bi-card-checklist fa-lg' %>
+    <% sidebar_layout = 'col text-left btn btn-white mb-3 py-2 border rounded shadow-sm fa-lg' %>
+    <%= link_to ' Dash board', admin_top_path, class: "#{sidebar_layout} bi bi-sliders" %>
+    <%= link_to ' 男性会員', admin_men_path, class: "#{sidebar_layout} bi bi-square" %>
+    <%= link_to ' 女性会員', admin_women_path, class: "#{sidebar_layout} bi bi-circle" %>
+    <%= link_to ' コミュニティ', admin_communities_path, class: "#{sidebar_layout} bi-people" %>
+    <%= link_to ' 自衛官申請', admin_army_requests_path, class: "#{sidebar_layout} bi bi-card-checklist" %>
   </div>
 </nav>

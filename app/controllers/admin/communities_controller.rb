@@ -3,7 +3,8 @@ class Admin::CommunitiesController < ApplicationController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
   
   def index
-    @communities = Community.order(created_at: :DESC).page(params[:page])
+    @q = Community.ransack(params[:q])
+    @communities = @q.result(distinct: true).order(created_at: :DESC).page(params[:page])
   end
 
   def show

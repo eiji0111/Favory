@@ -1,0 +1,22 @@
+<nav id="collapseSearch" class="mb-3 collapse">
+  <%= search_form_for q, url: admin_army_requests_path, class: 'py-2 border shadow-sm rounded' do |f| %>
+    <div class="row px-3">
+      <div class="col-2">
+        <%= f.label :customer_name_cont, "申請者名", class: 'col-form-label' %>
+        <%= f.search_field :customer_name_cont, class: 'form-control form-control-sm' %>
+      </div>
+      <div class="col">
+        <p class="m-0">ステータス</p>
+        <%= f.radio_button :customer_army_flag_eq, '', checked: true %>
+        <%= f.label :customer_army_flag_eq, "指定しない", value: '', class: 'm-0' %><br>
+        <%= f.radio_button :customer_army_flag_eq, true %>
+        <%= f.label :customer_army_flag_eq, "承認", value: true, class: 'mr-2' %>
+        <%= f.radio_button :customer_army_flag_eq, false %>
+        <%= f.label :customer_army_flag_eq, "未承認", value: false, class: 'mr-2' %>
+      </div>
+    </div>
+    <div class="col my-2 text-center">
+      <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill shadow-sm' %>
+    </div>
+  <% end %>
+</nav>

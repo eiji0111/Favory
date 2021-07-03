@@ -1,0 +1,28 @@
+<nav id="collapseSearch" class="mb-3 collapse">
+  <%= search_form_for q, url: admin_communities_path, class: 'py-2 border shadow-sm rounded' do |f| %>
+    <div class="row px-3">
+      <div class="col-2">
+        <%= f.label :name_cont, "コミュニティ名", class: 'col-form-label' %>
+        <%= f.search_field :name_cont, class: 'form-control form-control-sm' %>
+      </div>
+      <div class="col-2">
+        <%= f.label :introduction_cont, 'コミュニティ概要', class: 'col-form-label' %>
+        <%= f.search_field :introduction_cont, class: 'form-control form-control-sm' %>
+      </div>
+      <div class="col">
+        <p class="m-0">ステータス</p>
+        <%= f.radio_button :valid_status_eq, '', checked: true %>
+        <%= f.label :valid_status_eq, "指定しない", value: '', class: 'm-0' %><br>
+        <%= f.radio_button :valid_status_eq, 0 %>
+        <%= f.label :valid_status_eq, "申請待ち", value: 0, class: 'mr-2' %>
+        <%= f.radio_button :valid_status_eq, 1 %>
+        <%= f.label :valid_status_eq, "許可", value: 1, class: 'mr-2' %>
+        <%= f.radio_button :valid_status_eq, 2 %>
+        <%= f.label :valid_status_eq, "却下", value: 2, class: 'mr-2' %>
+      </div>
+    </div>
+    <div class="col my-2 text-center">
+      <%= f.submit " 検 索 ", class: 'btn btn-sm btn-outline-info rounded-pill shadow-sm' %>
+    </div>
+  <% end %>
+</nav>
