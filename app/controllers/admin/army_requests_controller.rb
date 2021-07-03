@@ -2,7 +2,8 @@ class Admin::ArmyRequestsController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @army_requests = ArmyRequest.page(params[:page])
+    @q = ArmyRequest.includes([:customer]).ransack(params[:q])
+    @army_requests = @q.result(distinct: true).order(created_at: :DESC).page(params[:page])
   end
 
   def show
