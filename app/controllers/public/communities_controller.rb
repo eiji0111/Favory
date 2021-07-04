@@ -4,11 +4,13 @@ class Public::CommunitiesController < ApplicationController
   
   def index
     @community = Community.new
+    
     @q = Community.valid_all(params[:q])
-    @communities = @q.result(distinct: true).order(updated_at: :DESC)
+    @communities = @q.result.includes(:community_posts).order("community_posts.created_at DESC")
+    
     @tag_list = ActsAsTaggableOn::Tag.all.order(created_at: :DESC)
-    if params[:tag_name]
-      @communities = Community.tagged_with("#{params[:tag_name]}").where(valid_status: 1).includes(:community_posts)
+    if params[:tag_name] # タグ検索時
+      @communities = @q.result.includes(:community_posts).order("community_posts.created_at DESC").tagged_with("#{params[:tag_name]}")
     end
   end
   

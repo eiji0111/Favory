@@ -4,8 +4,8 @@ class Community < ApplicationRecord
   has_many :community_customers, dependent: :destroy
   has_many :community_posts, dependent: :destroy
   
-  scope :valid_all, -> (params) { where(valid_status: 1).includes(:community_posts).ransack(params) }
-  
+  scope :valid_all, -> (params) { where(valid_status: 1).ransack(params) }
+
   attachment :community_image, destroy: false
   validates :name, presence: true, length: { maximum: 20, minimum: 2 }
   validates :introduction, presence: true, length: { minimum: 10 }

@@ -7,13 +7,13 @@ class Public::CustomersController < ApplicationController
   def men
     @q = Customer.valid_men(params[:q])
     @q.sorts = 'current_sign_in_at desc' if @q.sorts.empty?
-    @customers = @q.result(distinct: true).includes(:follower_customer).page(params[:page]).per(36)
+    @customers = @q.result.includes(:follower_customer).references(:follower_id).page(params[:page]).per(36)
   end
   
   def women
     @q = Customer.valid_women(params[:q])
     @q.sorts = 'current_sign_in_at desc' if @q.sorts.empty?
-    @customers = @q.result(distinct: true).includes(:follower_customer).page(params[:page]).per(36)
+    @customers = @q.result.includes(:follower_customer).references(:follower_id).page(params[:page]).per(36)
   end
   
   def show
