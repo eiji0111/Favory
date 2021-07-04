@@ -117,7 +117,7 @@ class Customer < ApplicationRecord
   
   # 互いにお気に入りしている状態
   def matchers
-    Customer.where(id: passive_relationships.select(:follower_id), id: active_relationships.select(:followed_id))
+    Customer.where(id: passive_relationships.select(:follower_id)).where(id: active_relationships.select(:followed_id))
   end
   
   # 生年月日から年齢を計算
