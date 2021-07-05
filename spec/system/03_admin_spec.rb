@@ -100,7 +100,7 @@ describe '管理者側テスト', type: :system do
       fill_in 'admin[email]', with: admin.email
       fill_in 'admin[password]', with: admin.password
       click_button 'ログイン'
-      visit admin_men_path
+      visit men_admin_customers_path
     end
 
     context '表示内容の確認' do
@@ -133,7 +133,7 @@ describe '管理者側テスト', type: :system do
       fill_in 'admin[email]', with: admin.email
       fill_in 'admin[password]', with: admin.password
       click_button 'ログイン'
-      visit admin_women_path
+      visit women_admin_customers_path
     end
 
     context '表示内容の確認' do

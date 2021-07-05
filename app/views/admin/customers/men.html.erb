@@ -8,7 +8,7 @@
               aria-expanded="false" aria-controls="collapseSearch" onfocus="this.blur();">
         <i class="bi bi-search"></i> 絞り込み
       </button>
-      <% @url_type = admin_men_path %>
+      <% @url_type = men_admin_customers_path %>
       <%= render partial: 'search', locals: { q: @q, url_type: @url_type } %>
       <table class="table table-hover rounded shadow-sm">
         <thead>
