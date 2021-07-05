@@ -237,10 +237,10 @@ describe '[STEP1] ユーザログイン前のテスト', type: :system do
     
     context 'フッターの表示を確認' do
       it '男性会員一覧（四角）アイコンが表示される' do
-        expect(page).to have_link nil, href: customer_men_path
+        expect(page).to have_link nil, href: men_customers_path
       end
       it '女性会員一覧（丸）アイコンが表示される' do
-        expect(page).to have_link nil, href: customer_women_path
+        expect(page).to have_link nil, href: women_customers_path
       end
       it 'コミュニティアイコンが表示される' do
         expect(page).to have_link nil, href: communities_path

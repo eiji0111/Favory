@@ -33,11 +33,11 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
       subject { current_path }
 
       it '四角アイコンを押すと、男性会員一覧画面に遷移する' do
-        click_link href: customer_men_path
+        click_link href: men_customers_path
         is_expected.to eq '/customers/men'
       end
       it '丸アイコンを押すと、女性会員一覧画面に遷移する' do
-        click_link href: customer_women_path
+        click_link href: women_customers_path
         is_expected.to eq '/customers/women'
       end
       it 'コミュニティアイコンを押すと、コミュニティ一覧画面に遷移する' do
@@ -354,7 +354,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
   
   describe '会員一覧のテスト' do
     before do
-      visit customer_men_path
+      visit men_customers_path
     end
     
     context '男性会員一覧画面表示内容の確認' do

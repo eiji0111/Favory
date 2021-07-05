@@ -2,8 +2,8 @@
   <div class="sidebar-sticky py-2">
     <% sidebar_layout = 'col text-left btn btn-white mb-3 py-2 border rounded shadow-sm fa-lg' %>
     <%= link_to ' Dash board', admin_top_path, class: "#{sidebar_layout} bi bi-sliders" %>
-    <%= link_to ' 男性会員', admin_men_path, class: "#{sidebar_layout} bi bi-square" %>
-    <%= link_to ' 女性会員', admin_women_path, class: "#{sidebar_layout} bi bi-circle" %>
+    <%= link_to ' 男性会員', men_admin_customers_path, class: "#{sidebar_layout} bi bi-square" %>
+    <%= link_to ' 女性会員', women_admin_customers_path, class: "#{sidebar_layout} bi bi-circle" %>
     <%= link_to ' コミュニティ', admin_communities_path, class: "#{sidebar_layout} bi-people" %>
     <%= link_to ' 自衛官申請', admin_army_requests_path, class: "#{sidebar_layout} bi bi-card-checklist" %>
   </div>

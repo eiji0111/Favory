@@ -2,15 +2,15 @@
   <footer class="fixed-bottom bg-white border-top" style="height: 60px;">
     <div class="container-fluid">
       <div class="col-11 col-md-6 col-lg-4 mx-auto d-flex align-items-center justify-content-center text-center" style="height: 60px;">
-        <% if current_page?(customer_men_path) %>
-          <%= link_to '', customer_men_path, class: 'col bi bi-square-fill fa-lg men-icon' %>
+        <% if current_page?(men_customers_path) %>
+          <%= link_to '', men_customers_path, class: 'col bi bi-square-fill fa-lg men-icon' %>
         <% else %>
-          <%= link_to '', customer_men_path, class: 'col bi bi-square fa-lg men-icon' %>
+          <%= link_to '', men_customers_path, class: 'col bi bi-square fa-lg men-icon' %>
         <% end %>
-        <% if current_page?(customer_women_path) %>
-          <%= link_to '', customer_women_path, class: 'col bi bi-circle-fill fa-lg women-icon' %>
+        <% if current_page?(women_customers_path) %>
+          <%= link_to '', women_customers_path, class: 'col bi bi-circle-fill fa-lg women-icon' %>
         <% else %>
-          <%= link_to '', customer_women_path, class: 'col bi bi-circle fa-lg women-icon' %>
+          <%= link_to '', women_customers_path, class: 'col bi bi-circle fa-lg women-icon' %>
         <% end %>
         <% if current_page?(communities_path) %>
           <%= link_to '', communities_path, class: 'col bi bi-people-fill fa-lg text-dark' %>
