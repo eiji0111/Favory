@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_075927) do
+ActiveRecord::Schema.define(version: 2021_07_06_061934) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 2021_06_30_075927) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_army_requests_on_customer_id"
+  end
+
+  create_table "block_relationships", force: :cascade do |t|
+    t.integer "block_id"
+    t.integer "blocked_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["block_id", "blocked_id"], name: "index_block_relationships_on_block_id_and_blocked_id", unique: true
+    t.index ["block_id"], name: "index_block_relationships_on_block_id"
+    t.index ["blocked_id"], name: "index_block_relationships_on_blocked_id"
   end
 
   create_table "chats", force: :cascade do |t|

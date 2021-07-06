@@ -1,0 +1,6 @@
+<%= form_for(customer, url: block_path(customer.id), method: :post, remote: true) do |f| %>
+  <%= hidden_field_tag :block_id, customer.id %>
+  <%= button_tag :type => "submit", :class =>"btn btn-sm shadow-sm rounded-pill border", :onfocus => "this.blur();" do %>
+    <i class="bi bi-person-x fa-lg mr-1"></i>ブロックする
+  <% end %>
+<% end %>

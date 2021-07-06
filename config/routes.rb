@@ -33,12 +33,15 @@ Rails.application.routes.draw do
     get 'homes/privacy_policy' => 'homes#privacy_policy', as: 'privacy_policy' # プライバシーポリシー
     post 'follow/:id' => 'relationships#follow', as: 'follow' # お気に入りする
     delete 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # お気に入りから外す
+    post 'block/:id' => 'block_relationships#block', as: 'block' # ブロックする
+    delete 'unblock/:id' => 'block_relationships#unblock', as: 'unblock' # ブロックを解除する
 
     resources :chats, only: [:show, :create]
     resources :communities, except: [:new, :destroy]
     resources :community_posts, only: [:create, :destroy]
     resources :army_requests, only: [:new, :create]
     resources :notifications, only: [:index]
+    resources :block_relationships, only: [:index]
     resources :customers, only: [:show, :edit, :update] do
       collection do
         get 'men' => 'customers#men' # 男性会員一覧

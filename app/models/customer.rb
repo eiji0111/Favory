@@ -8,6 +8,10 @@ class Customer < ApplicationRecord
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :following_customer, through: :active_relationships, source: :followed
   has_many :follower_customer, through: :passive_relationships, source: :follower
+  has_many :active_block_relationships, class_name: "BlockRelationship", foreign_key: "blocked_id", dependent: :destroy
+  has_many :passive_block_relationships, class_name: "BlockRelationship", foreign_key: "block_id", dependent: :destroy
+  has_many :block_customer, through: :active_block_relationships, source: :block
+  has_many :blocked_customer, through: :passive_block_relationships, source: :blocked
   has_many :chats
   has_many :customer_rooms
   has_many :rooms, through: :customer_rooms
@@ -118,6 +122,21 @@ class Customer < ApplicationRecord
   # 互いにお気に入りしている状態
   def matchers
     Customer.where(id: passive_relationships.select(:follower_id)).where(id: active_relationships.select(:followed_id))
+  end
+  
+  # ブロックする
+  def block(customer_id)
+    active_block_relationships.create(block_id: customer_id)
+  end
+  
+  # ブロックを解除する
+  def unblock(customer_id)
+    active_block_relationships.find_by(block_id: customer_id).destroy
+  end
+  
+  # すでにブロックしているのか確認
+  def block?(customer)
+    block_customer.include?(customer)
   end
   
   # 生年月日から年齢を計算
