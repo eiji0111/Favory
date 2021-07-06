@@ -45,7 +45,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
         is_expected.to eq '/communities'
       end
       it 'ハートアイコンを押すと、お気に入り一覧画面に遷移する' do
-        click_link href: followed_path
+        click_link href: followed_customers_path
         is_expected.to eq '/customers/followed'
       end
       it '家アイコンを押すと、マイページ画面に遷移する' do
@@ -390,7 +390,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
         expect(page).to have_content 'ふぁぼされた 1人'
       end
       it 'お気に入り一覧の画面に追加されている' do
-        visit followed_path
+        visit followed_customers_path
         expect(page).to have_link href: customer_path(another_man_customer.id)
       end
     end

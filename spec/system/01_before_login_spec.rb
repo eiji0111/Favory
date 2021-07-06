@@ -246,7 +246,7 @@ describe '[STEP1] ユーザログイン前のテスト', type: :system do
         expect(page).to have_link nil, href: communities_path
       end
       it 'お気に入り一覧（ハート）アイコンが表示される' do
-        expect(page).to have_link nil, href: followed_path
+        expect(page).to have_link nil, href: followed_customers_path
       end
       it 'マイページ（家）アイコンが表示される' do
         expect(page).to have_link nil, href: customer_path(customer.id)
