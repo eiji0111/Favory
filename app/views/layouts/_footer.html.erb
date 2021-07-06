@@ -17,10 +17,10 @@
         <% else %>
           <%= link_to '', communities_path, class: 'col bi bi-people fa-lg text-dark' %>
         <% end %>
-        <% if current_page?(followed_path) %>
-          <%= link_to '', followed_path, class: 'col bi bi-heart-fill fa-lg text-dark' %>
+        <% if current_page?(followed_customers_path) %>
+          <%= link_to '', followed_customers_path, class: 'col bi bi-heart-fill fa-lg text-dark' %>
         <% else %>
-          <%= link_to '', followed_path, class: 'col bi bi-heart fa-lg text-dark' %>
+          <%= link_to '', followed_customers_path, class: 'col bi bi-heart fa-lg text-dark' %>
         <% end %>
         <% if current_page?(customer_path(current_customer)) %>
           <%= link_to '', customer_path(current_customer), class: "col bi bi-house-fill fa-lg text-dark" %>

@@ -151,7 +151,7 @@
   <div class="row mt-5">
     <div class="col text-right">
       <% if (current_customer == @customer) && (@customer.id != 124) %>
-        <%= link_to '退会をご希望の方はこちら', confirm_unsubscribe_path(@customer), class: 'text-muted' %>
+        <%= link_to '退会をご希望の方はこちら', unsubscribe_customer_path(@customer), class: 'text-muted' %>
       <% end %>
     </div>
   </div>
