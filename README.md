@@ -75,6 +75,7 @@ https://docs.google.com/spreadsheets/d/1nqrAB20gnEBvI_QPzxBkJDO9FE0FekSOV_cdJ2uo
 - 検索・ソート機能(ransack)
 - タグ機能
 - フォロー機能(ajax)
+- ブロック機能（ajax）
 - コメント機能(ajax)
 - DM機能
 - 通知機能
