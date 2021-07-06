@@ -41,7 +41,7 @@
 
 ### ✏️ データベース設計
 ER図
-![Favory_ER図](https://user-images.githubusercontent.com/78339908/123883261-a1987b00-d983-11eb-9b27-c42c7cee4042.jpg)  
+![Favory_ER図](https://user-images.githubusercontent.com/78339908/124589929-7fc45a00-de95-11eb-99ea-72131ddfbb4e.jpg)  
 
 [テーブル定義書](https://docs.google.com/spreadsheets/d/1GrihIfWc5oyqZkKEze6m6W_cvzH2DAX1/edit#gid=1739957604)
 
