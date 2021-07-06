@@ -1,14 +1,37 @@
 <% provide(:title, "ブロックリスト") %>
 <div class="container">
-  <div class="row text-center p-5">
-    <div class="col-12"><h2>ブロックリスト</h2></div>
-    <div class="col-12">
+  <div class="row py-5">
+    <div class="col-12 text-center"><h2>ブロックリスト</h2></div>
+    <div class="col-fluid mx-auto">
       <% if @block_customers.empty? %>
         <p>ブロックしているユーザーはいません。</p>
       <% end %>
-      <% @block_customers.each do |block_customer| %>
-        <p><%= block_customer.nickname %></p>
-      <% end %>
+      <table class="table table-borderless">
+        <tbody>
+          <% @block_customers.each do |block_customer| %>
+            <tr>
+              <th>
+                <%= link_to customer_path(block_customer) do %>
+                  <% if block_customer.sex == 'man' %>
+                    <%= attachment_image_tag block_customer, :profile_image, size: "50x50", format: "jpeg",
+                        fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded shadow-sm' %>
+                  <% else %>
+                    <%= attachment_image_tag block_customer, :profile_image, size: "50x50", format: "jpeg",
+                        fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle shadow-sm' %>
+                  <% end %>
+                <% end %>
+              </th>
+              <td><strong><%= block_customer.nickname %></strong></td>
+              <td class="col-auto" style="white-space: nowrap;">
+                <div class="btn-sm shadow-sm rounded-pill border">
+                  <i class=" bi bi-person-x-fill fa-lg text-danger mr-1"></i>ブロック中
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
+
