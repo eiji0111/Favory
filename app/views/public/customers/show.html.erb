@@ -12,6 +12,17 @@
       <% if @customer.army_flag == true %>
         <div class="col pt-1"><i class="bi bi-check-circle text-success mr-1"></i>自衛官認証済</div>
       <% end %>
+      <div id="block_form" class="col pt-1">
+      <% if @customer != current_customer %>
+        <% if current_customer.block?(@customer) %>
+          <%= render partial: "public/block_relationships/unblock", locals: { customer: @customer } %>
+        <% else %>
+          <%= render partial: "public/block_relationships/block", locals: { customer: @customer } %>
+        <% end %>
+      <% else %>
+        <%= link_to 'ブロックリスト', block_relationships_path, class: 'btn btn-sm shadow-sm rounded-pill border' %>
+      <% end %>
+      </div>
     </div>
     <div class="col-6">
       <div class="col">
@@ -41,7 +52,7 @@
           <div class="col pt-3"><%= link_to '自衛官認証申請', new_army_request_path, class: 'btn btn-outline-success btn-sm shadow rounded-pill' %></div>
         <% end %>
       <% else %>
-        <div class="col pt-3"><%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-success btn-sm shadow rounded-pill far fa-comments' %></div>
+        <div class="col pt-3"><%= link_to 'チャットする', chat_path(@customer), class: 'btn btn-outline-success btn-sm shadow-sm rounded-pill far fa-comments' %></div>
       <% end %>
       <div class="col d-none pt-3 d-sm-block">
         ひとこと

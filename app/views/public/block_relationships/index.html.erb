@@ -1,0 +1,14 @@
+<% provide(:title, "ブロックリスト") %>
+<div class="container">
+  <div class="row text-center p-5">
+    <div class="col-12"><h2>ブロックリスト</h2></div>
+    <div class="col-12">
+      <% if @block_customers.empty? %>
+        <p>ブロックしているユーザーはいません。</p>
+      <% end %>
+      <% @block_customers.each do |block_customer| %>
+        <p><%= block_customer.nickname %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

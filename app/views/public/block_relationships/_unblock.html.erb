@@ -1,0 +1,5 @@
+<%= form_for(customer, url: unblock_path(customer.id), method: :delete, remote: true) do |f| %>
+  <%= button_tag :type => "submit", :class =>"btn btn-sm shadow-sm rounded-pill border", :onfocus => "this.blur();" do %>
+    <i class=" bi bi-person-x-fill fa-lg text-danger mr-1"></i>ブロック中
+  <% end %>
+<% end %>

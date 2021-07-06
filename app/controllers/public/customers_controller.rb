@@ -3,6 +3,7 @@ class Public::CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :unsubscribe, :withdraw]
   before_action :correct_customer, only: [:edit, :update, :unsubscribe, :withdraw]
   before_action :ensure_normal_customer, only: [:update, :withdraw]
+  before_action :block_customer, only: [:show]
 
   def men
     @q = Customer.valid_men(params[:q])
@@ -57,6 +58,13 @@ class Public::CustomersController < ApplicationController
       :holiday, :car, :hobby, :cigarettes, :alcohol, :housemate, :marriage_history, :children,
       :willingness_to_marry, :want_kids, :hope_encounter, :date_cost
     )
+  end
+  
+  def block_customer
+    if @customer.block_customer.find_by(id: current_customer)
+      redirect_back(fallback_location: root_path)
+      flash[:alert] = '選択したユーザーからブロックされているため、閲覧することはできません'
+    end
   end
   
   def ensure_normal_customer
