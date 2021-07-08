@@ -1,0 +1,39 @@
+<% provide(:title, "チャット一覧") %>
+<div class="container">
+  <div class="row py-5">
+      <% if @customer_rooms.empty? %>
+        メッセージはありません
+      <% end %>
+      <table class="col-12 col-md-7 mx-auto table table-borderless">
+        <tbody>
+          <% @customer_rooms.each do |room| %>
+            <tr class="border">
+              <th>
+                <%= link_to chat_path(room.customer) do %>
+                  <% if room.customer.sex == 'man' %>
+                    <%= attachment_image_tag room.customer, :profile_image, size: "50x50", format: "jpeg",
+                        fallback: "no-image-man.jpg", style: 'object-fit: cover;', class: 'rounded shadow-sm' %>
+                  <% else %>
+                    <%= attachment_image_tag room.customer, :profile_image, size: "50x50", format: "jpeg",
+                        fallback: "no-image-woman.jpg", style: 'object-fit: cover;', class: 'rounded-circle shadow-sm' %>
+                  <% end %>
+                <% end %>
+              </th>
+              <td>
+                <small class="d-block d-md-inline-block"><%= room.customer.nickname %></small>
+                <% if room.chats != [] %>
+                  <small class="text-muted text-right"><%= room.chats.last.created_at.strftime('%Y/%-m/%-d %H:%M') %></small>
+                  <%= link_to chat_path(room.customer) do %>
+                    <p class="d-block text-truncate mb-0 text-dark" style="width: 280px">
+                      <%= room.chats.last.message %>
+                    </p>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>
+
