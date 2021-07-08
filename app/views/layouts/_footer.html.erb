@@ -22,6 +22,11 @@
         <% else %>
           <%= link_to '', followed_customers_path, class: 'col bi bi-heart fa-lg text-dark' %>
         <% end %>
+        <% if current_page?(rooms_path) %>
+          <%= link_to '', rooms_path, class: "col bi bi-chat-dots-fill fa-lg text-dark" %>
+        <% else %>
+          <%= link_to '', rooms_path, class: "col bi bi-chat-dots fa-lg text-dark" %>
+        <% end %>
         <% if current_page?(customer_path(current_customer)) %>
           <%= link_to '', customer_path(current_customer), class: "col bi bi-house-fill fa-lg text-dark" %>
         <% else %>
