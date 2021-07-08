@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     delete 'unblock/:id' => 'block_relationships#unblock', as: 'unblock' # ブロックを解除する
 
     resources :chats, only: [:show, :create]
+    resources :rooms, only: [:index]
     resources :communities, except: [:new, :destroy]
     resources :community_posts, only: [:create, :destroy]
     resources :army_requests, only: [:new, :create]
