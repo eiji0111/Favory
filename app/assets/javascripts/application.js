@@ -52,7 +52,7 @@ $(window).on('scroll', function() {
 
 /* チャット時のみスクロール最下部で表示 */
 $(document).on('turbolinks:load',function scrollToEnd() {
-  if(document.URL.match(/chats\/+\d/)){
+  if(document.URL.match(/chats\/\d+/)){
     var messagesArea = document.getElementById('scroll-inner');
     messagesArea.scrollTop = messagesArea.scrollHeight;
   }
