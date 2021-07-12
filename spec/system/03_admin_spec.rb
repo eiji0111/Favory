@@ -365,6 +365,24 @@ describe '管理者側テスト', type: :system do
         expect(page).to have_content '会員情報を更新できませんでした'
       end
     end
+    
+    context '会員削除のテスト' do
+      before do
+        click_link nil, href: edit_admin_customer_path(customer.id)
+      end
+      
+      it '削除するボタンを押下すると確認メッセージが表示される', js: true do
+        click_link '削除する'
+        expect(page.driver.browser.switch_to.alert.text).to eq "本当に削除しますか？"
+        page.driver.browser.switch_to.alert.dismiss
+      end
+      
+      it '削除する', js: true do
+        click_link '削除する'
+        page.driver.browser.switch_to.alert.accept
+        expect(page).to have_content '会員を削除しました'
+      end
+    end
   end
   
   describe 'コミュニティ一覧のテスト' do
