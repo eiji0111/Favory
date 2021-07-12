@@ -383,7 +383,7 @@ describe '[STEP2] ユーザログイン後のテスト', type: :system do
     context 'お気に入りに成功する', js: true do
       before do
         click_link href: customer_path(another_man_customer.id)
-        click_button 'button'
+        find(".btn-default").click
       end
       
       it 'ふぁぼされた人のカウントが１増える' do
