@@ -378,9 +378,11 @@ describe '管理者側テスト', type: :system do
       end
       
       it '削除する', js: true do
+        old_customers = Customer.all.size
         click_link '削除する'
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content '会員を削除しました'
+        expect(Customer.all.size).to eq (old_customers - 1)
       end
     end
   end
