@@ -87,3 +87,4 @@ gem 'faker'
 gem 'faker-japanese'
 gem 'gimei'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'whenever', require: false
