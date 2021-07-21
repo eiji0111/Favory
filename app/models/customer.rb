@@ -12,9 +12,9 @@ class Customer < ApplicationRecord
   has_many :passive_block_relationships, class_name: "BlockRelationship", foreign_key: "block_id", dependent: :destroy
   has_many :block_customer, through: :active_block_relationships, source: :block
   has_many :blocked_customer, through: :passive_block_relationships, source: :blocked
-  has_many :chats
-  has_many :customer_rooms
-  has_many :rooms, through: :customer_rooms
+  has_many :chats, dependent: :destroy
+  has_many :customer_rooms, dependent: :destroy
+  has_many :rooms, through: :customer_rooms, dependent: :destroy
   has_many :communities, through: :community_customers
   has_many :community_customers, dependent: :destroy
   has_many :community_posts, dependent: :destroy
