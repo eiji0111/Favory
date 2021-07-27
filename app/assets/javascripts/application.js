@@ -21,6 +21,27 @@
 //= require chartkick
 //= require Chart.bundle
 
+/* top カードふわっと表示 */
+function fadeAnime() {
+  $('.fadeInUpTrigger').each(function(){
+    var elemPos = $(this).offset().top-50;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+      $(this).addClass('fadeUp');
+    }else{
+      $(this).removeClass('fadeUp');
+    }
+  });
+}
+/* fadeAnime */
+$(window).scroll(function (){
+  fadeAnime();
+});
+$(window).on('turbolinks:load', function(){
+  fadeAnime();
+});
+
 /* 無限スクロール */
 /* global $ */
 $(window).on('scroll', function() {
